@@ -1,0 +1,8 @@
+@import "mixin";
+
+.layout {
+  padding-top: 150px;
+  @include mobile {
+    padding-top: 75px;
+  }
+}

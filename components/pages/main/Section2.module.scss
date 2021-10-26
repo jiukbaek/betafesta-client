@@ -1,0 +1,51 @@
+@import "mixin";
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6vw 0;
+  background-color: black;
+  background-image: url(/images/section2-bg.png);
+  background-size: 130%;
+  background-repeat: no-repeat;
+  background-position: center 130%;
+}
+
+.title {
+  width: 53vw;
+  height: auto;
+}
+
+.subtitle {
+  padding: 2vw 0;
+  width: 31%;
+  height: auto;
+}
+
+.countdown {
+  background: black;
+  padding: 3vw 0;
+  display: flex;
+  align-items: center;
+  width: 53vw;
+
+  @include mobile {
+    width: 80vw;
+    padding: 6vw 0;
+  }
+}
+
+.divide {
+  color: red;
+  font-size: 6vw;
+}
+
+.buttons {
+  padding: 3vw 0;
+}
+
+.button {
+  margin: 0 2vw;
+}

@@ -1,19 +1,39 @@
+/* eslint-disable @next/next/next-script-for-ga */
 /* eslint-disable @next/next/no-sync-scripts */
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import "../styles/globals.css";
+import "../styles/globals.scss";
+import Head from "next/head";
 import type { AppProps } from "next/app";
-
-const client = new ApolloClient({
-  uri: "localhost:4000/graphql",
-  cache: new InMemoryCache(),
-});
+import Layout from "components/layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ApolloProvider client={client}>
-      <script src="/smarteditor/js/service/HuskyEZCreator.js" charSet="utf-8"></script>
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <script
+        src="/smarteditor/js/service/HuskyEZCreator.js"
+        charSet="utf-8"
+      ></script>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-210123520-1"
+      ></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-210123520-1');
+`,
+        }}
+      ></script>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
 export default MyApp;

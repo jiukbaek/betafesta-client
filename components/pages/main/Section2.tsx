@@ -22,7 +22,7 @@ const parseDate = (date: number) => {
 };
 
 export const Section2 = () => {
-  const limitDate = dayjs("2021-11-21 23:59:59");
+  const limitDate = dayjs("2021-11-12 23:59:59");
   const [{ day, hour, minute }, setCountdown] = useState<
     Record<string, number>
   >({ day: 0, hour: 0, minute: 0 });

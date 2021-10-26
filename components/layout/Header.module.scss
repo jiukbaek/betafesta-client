@@ -2,13 +2,10 @@
 
 .header {
   height: 100px;
-  position: fixed;
-  top: 0;
   width: 100%;
   display: flex;
   padding: 0 30px;
   align-items: flex-end;
-  z-index: 1000;
   background: white;
 
   @include mobile {

@@ -78,8 +78,8 @@ const Slider: React.FC<SliderProp> = ({ images }) => {
             <div key={i} className={styles.image}>
               <Image
                 src={src}
-                width={isMobile ? "768" : "3840"}
-                height={isMobile ? "1367" : "2160"}
+                width={isMobile ? "1152" : "3840"}
+                height={isMobile ? "2050" : "2160"}
                 alt="image"
               />
             </div>

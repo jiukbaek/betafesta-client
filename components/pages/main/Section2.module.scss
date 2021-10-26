@@ -25,14 +25,14 @@
 }
 
 .countdown {
-  padding: 3vw 0;
+  margin: 3vw 0;
   display: flex;
   align-items: center;
   width: 53vw;
-
+  background: black;
   @include mobile {
     width: 80vw;
-    padding: 6vw 0;
+    margin: 6vw 0;
   }
 }
 

@@ -16,9 +16,6 @@
   display: inline-block;
   height: auto;
   font-size: 0;
-  @include mobile {
-    height: 100vh;
-  }
 }
 
 .container {

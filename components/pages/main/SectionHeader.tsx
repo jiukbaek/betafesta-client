@@ -1,6 +1,7 @@
 import Image from "components/Image";
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import styles from "./SectionHeader.module.scss";
 
@@ -8,7 +9,21 @@ interface SliderProp {
   images: Array<string>;
 }
 
+const useMobile = () => {
+  const [mobile, setMobile] = useState<boolean>(false);
+  const isMobile = useMediaQuery({
+    query: `(max-width: 767px)`,
+  });
+
+  useEffect(() => {
+    setMobile(isMobile);
+  }, [isMobile]);
+
+  return mobile;
+};
+
 const Slider: React.FC<SliderProp> = ({ images }) => {
+  const isMobile = useMobile();
   const [index, setIndex] = useState<number>(0);
   const isFirst = () => index === 0;
   const isLast = () => index === images.length - 1;
@@ -61,7 +76,12 @@ const Slider: React.FC<SliderProp> = ({ images }) => {
         >
           {images.map((src, i) => (
             <div key={i} className={styles.image}>
-              <Image src={src} width="3840" height="2060" />
+              <Image
+                src={src}
+                width={isMobile ? "768" : "3840"}
+                height={isMobile ? "1367" : "2160"}
+                alt="image"
+              />
             </div>
           ))}
         </div>
@@ -73,9 +93,19 @@ const Slider: React.FC<SliderProp> = ({ images }) => {
 export const SectionHeader = () => {
   return (
     <div>
-      <Slider
-        images={["/images/image-poster1.png", "/images/image-poster2.png"]}
-      />
+      <div className={styles.sliderDesktop}>
+        <Slider
+          images={["/images/image-poster1.png", "/images/image-poster2.png"]}
+        />
+      </div>
+      <div className={styles.sliderMobile}>
+        <Slider
+          images={[
+            "/images/image-poster1-mobile.png",
+            "/images/image-poster2-mobile.png",
+          ]}
+        />
+      </div>
     </div>
   );
 };

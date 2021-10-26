@@ -1,3 +1,5 @@
+@import "mixin";
+
 .imageDisplay {
   width: 100%;
   overflow: hidden;
@@ -14,6 +16,9 @@
   display: inline-block;
   height: auto;
   font-size: 0;
+  @include mobile {
+    height: 100vh;
+  }
 }
 
 .container {
@@ -36,6 +41,9 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  @include mobile {
+    width: 10vw;
+  }
 }
 
 .prev {
@@ -52,16 +60,40 @@
   bottom: 3vw;
   transform: translateX(-50%);
   display: flex;
+
+  @include mobile {
+    bottom: 5vw;
+  }
 }
 
 .point {
   width: 0.8vw;
   height: 0.8vw;
-  border-radius: 0.8vw;
+  border-radius: 100vw;
   margin: 0 0.8vw;
   background-color: #cccccc;
 
   &.active {
     background-color: red;
+  }
+
+  @include mobile {
+    width: 3vw;
+    height: 3vw;
+    margin: 0 2vw;
+  }
+}
+
+.slider {
+  &Mobile {
+    display: none;
+  }
+  @include mobile {
+    &Desktop {
+      display: none;
+    }
+    &Mobile {
+      display: block;
+    }
   }
 }

@@ -1,3 +1,5 @@
-const Board = () => {};
+const Board = () => {
+  return null;
+};
 
 export default Board;

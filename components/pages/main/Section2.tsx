@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 import Image from "components/Image";
 import { useEffect, useState } from "react";
 import styles from "./Section2.module.scss";
+import useMobile from "util/useMobile";
 
 const parseDate = (date: number) => {
   if (date <= 0) {
@@ -22,10 +23,13 @@ const parseDate = (date: number) => {
 };
 
 export const Section2 = () => {
+  const isMobile = useMobile();
   const limitDate = dayjs("2021-11-12 23:59:59");
-  const [{ day, hour, minute }, setCountdown] = useState<
-    Record<string, number>
-  >({ day: 0, hour: 0, minute: 0 });
+  const [{ day, hour, minute }, setCountdown] = useState<Record<string, number>>({
+    day: 0,
+    hour: 0,
+    minute: 0,
+  });
 
   useEffect(() => {
     const update = () => {
@@ -42,20 +46,14 @@ export const Section2 = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <Image
-          src="/images/section2-title.png"
-          width="2000"
-          height="210"
-          alt="title"
-        />
+        {isMobile ? (
+          <Image src="/images/section2-title-mobile.png" width="1000" height="500" alt="title" />
+        ) : (
+          <Image src="/images/section2-title.png" width="2000" height="210" alt="title" />
+        )}
       </div>
       <div className={styles.subtitle}>
-        <Image
-          src="/images/section2-subtitle.png"
-          width="1200"
-          height="166"
-          alt="title"
-        />
+        <Image src="/images/section2-subtitle.png" width="1200" height="166" alt="title" />
       </div>
       <div className={styles.countdown}>
         <div className={styles.led}>

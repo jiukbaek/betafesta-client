@@ -26,4 +26,13 @@
   & > div {
     margin: 0 2vw;
   }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > div {
+      margin: 2vw 0;
+    }
+  }
 }

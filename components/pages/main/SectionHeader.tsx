@@ -8,6 +8,7 @@ import Image from "components/Image";
 import main from "public/main.json";
 
 import styles from "./SectionHeader.module.scss";
+import useMobile from "util/useMobile";
 
 interface SliderProp {
   data: Array<{
@@ -18,20 +19,6 @@ interface SliderProp {
     link: string;
   }>;
 }
-
-const useMobile = () => {
-  const [mobile, setMobile] = useState<boolean>(false);
-  const isMobile = useMediaQuery({
-    query: `(max-width: 767px)`,
-  });
-
-  useEffect(() => {
-    setMobile(isMobile);
-  }, [isMobile]);
-
-  return mobile;
-};
-
 const Slider: React.FC<SliderProp> = ({ data }) => {
   const isMobile = useMobile();
   const [index, setIndex] = useState<number>(0);

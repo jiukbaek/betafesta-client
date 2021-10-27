@@ -11,17 +11,32 @@
   background-size: 130%;
   background-repeat: no-repeat;
   background-position: center 130%;
+
+  @include mobile {
+    padding: 12vw 0 45vw;
+    background-size: 230%;
+    background-position: center bottom;
+  }
 }
 
 .title {
   width: 53vw;
   height: auto;
+
+  @include mobile {
+    width: 40vw;
+    padding: 3vw 0;
+  }
 }
 
 .subtitle {
   padding: 2vw 0;
-  width: 31%;
+  width: 31vw;
   height: auto;
+
+  @include mobile {
+    width: 40vw;
+  }
 }
 
 .countdown {
@@ -32,7 +47,6 @@
   background: black;
   @include mobile {
     width: 80vw;
-    margin: 6vw 0;
   }
 }
 
@@ -43,8 +57,18 @@
 
 .buttons {
   padding: 3vw 0;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .button {
   margin: 0 2vw;
+
+  @include mobile {
+    margin: 2vw 0;
+  }
 }

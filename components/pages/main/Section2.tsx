@@ -37,7 +37,7 @@ export const Section2 = () => {
       setCountdown(parseDate(diffSecond));
     };
     update();
-    const id = setInterval(update, 1000 * 60);
+    const id = setInterval(update, 1000 * 10);
     return () => {
       clearInterval(id);
     };

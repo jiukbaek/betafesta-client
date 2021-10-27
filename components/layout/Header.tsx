@@ -45,16 +45,16 @@ const Header = () => {
       <div className={styles.menu}>
         <MenuItem
           title="행사안내"
-          link="/"
+          link="/about"
           submenus={[
             { title: "서브1", link: "/" },
             { title: "서브2", link: "/" },
             { title: "서브3", link: "/" },
           ]}
         />
-        <MenuItem title="아이디어톤" link="/" />
-        <MenuItem title="창업컨설팅" link="/" />
-        <MenuItem title="공지사항" link="/" />
+        <MenuItem title="아이디어톤" link="/ideaton" />
+        <MenuItem title="창업컨설팅" link="/consult" />
+        <MenuItem title="공지사항" link="/notice" />
       </div>
       <div className={styles.hamburger}>
         <div onClick={() => toggle((prev) => !prev)}>

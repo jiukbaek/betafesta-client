@@ -34,16 +34,9 @@ const Slider: React.FC<SliderProp> = ({ images }) => {
         {!isFirst() && (
           <div
             className={styles.prev}
-            onClick={() =>
-              setIndex((prev) => Math.abs(prev - 1) % images.length)
-            }
+            onClick={() => setIndex((prev) => Math.abs(prev - 1) % images.length)}
           >
-            <Image
-              src="/images/icon-prev.svg"
-              width="180"
-              height="180"
-              alt="prev"
-            />
+            <Image src="/images/icon-prev.svg" width="180" height="180" alt="prev" />
           </div>
         )}
         {!isLast() && (
@@ -51,12 +44,7 @@ const Slider: React.FC<SliderProp> = ({ images }) => {
             className={styles.next}
             onClick={() => setIndex((prev) => (prev + 1) % images.length)}
           >
-            <Image
-              src="/images/icon-next.svg"
-              width="180"
-              height="180"
-              alt="next"
-            />
+            <Image src="/images/icon-next.svg" width="180" height="180" alt="next" />
           </div>
         )}
         <div className={styles.nav}>
@@ -70,19 +58,9 @@ const Slider: React.FC<SliderProp> = ({ images }) => {
         </div>
       </div>
       <div className={styles.imageDisplay}>
-        <div
-          className={styles.images}
-          style={{ transform: `translateX(-${index * 100}vw)` }}
-        >
+        <div className={styles.images} style={{ transform: `translateX(-${index * 100}vw)` }}>
           {images.map((src, i) => (
-            <div key={i} className={styles.image}>
-              <Image
-                src={src}
-                width={isMobile ? "1152" : "3840"}
-                height={isMobile ? "2050" : "2160"}
-                alt="image"
-              />
-            </div>
+            <div key={i} className={styles.image} style={{ backgroundImage: `url(${src})` }} />
           ))}
         </div>
       </div>
@@ -94,17 +72,10 @@ export const SectionHeader = () => {
   return (
     <div>
       <div className={styles.sliderDesktop}>
-        <Slider
-          images={["/images/image-poster1.png", "/images/image-poster2.png"]}
-        />
+        <Slider images={["/images/image-poster1.png", "/images/image-poster2.png"]} />
       </div>
       <div className={styles.sliderMobile}>
-        <Slider
-          images={[
-            "/images/image-poster1-mobile.png",
-            "/images/image-poster2-mobile.png",
-          ]}
-        />
+        <Slider images={["/images/image-poster1-mobile.png", "/images/image-poster2-mobile.png"]} />
       </div>
     </div>
   );

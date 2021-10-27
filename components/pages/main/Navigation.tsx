@@ -20,9 +20,11 @@ export const Navigation = () => {
       }, 300);
       window.addEventListener("scroll", updateScroll);
       window.addEventListener("resize", updateScroll);
+      window.addEventListener("onload", updateScroll);
       return () => {
         window.removeEventListener("scroll", updateScroll);
         window.removeEventListener("resize", updateScroll);
+        window.removeEventListener("onload", updateScroll);
       };
     }
   }, []);

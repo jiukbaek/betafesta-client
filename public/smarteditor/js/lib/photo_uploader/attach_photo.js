@@ -344,7 +344,7 @@ function addImage(ofile) {
 function html5Upload() {
   var tempFile, sUploadURL;
 
-  sUploadURL = "http://localhost:4000/dogs/upload"; //upload URL
+  sUploadURL = "http://localhost:3000/board/upload"; //upload URL
 
   //파일을 하나씩 보내고, 결과를 받음.
   for (var j = 0, k = 0; j < nImageInfoCnt; j++) {
@@ -361,11 +361,8 @@ function html5Upload() {
 }
 
 function callAjaxForHTML5(tempFile, sUploadURL) {
-  console.log(1);
   const request = new XMLHttpRequest();
-  console.log(2);
   request.open("POST", sUploadURL, false);
-  console.log(3);
 
   const formData = new FormData();
   formData.append("content-type", "multipart/form-data");
@@ -373,64 +370,21 @@ function callAjaxForHTML5(tempFile, sUploadURL) {
   formData.append("file-size", tempFile.size);
   formData.append("file-type", tempFile.type);
   formData.append("file", tempFile);
-  console.log(request, formData);
   request.send(formData);
   const res = request.response;
-  console.log(res);
-
-  // var oAjax = jindo.$Ajax(sUploadURL, {
-  //   type: "xhr",
-  //   method: "post",
-  //   onload: function (res) {
-  //     // 요청이 완료되면 실행될 콜백 함수
-  //     var sResString = res._response.responseText;
-  //     if (res.readyState() == 4) {
-  //       if (sResString.indexOf("NOTALLOW_") > -1) {
-  //         var sFileName = sResString.replace("NOTALLOW_", "");
-  //         alert("이미지 파일(jpg,gif,png,bmp)만 업로드 하실 수 있습니다. (" + sFileName + ")");
-  //       } else {
-  //         //성공 시에  responseText를 가지고 array로 만드는 부분.
-  //         makeArrayFromString(res._response.responseText);
-  //       }
-  //     }
-  //   },
-  //   timeout: 3,
-  //   onerror: jindo.$Fn(onAjaxError, this).bind(),
-  // });
-  // oAjax.header("contentType", "multipart/form-data");
-  // oAjax.header("file-name", encodeURIComponent(tempFile.name));
-  // oAjax.header("file-size", tempFile.size);
-  // oAjax.header("file-Type", tempFile.type);
-  // console.log(tempFile);
-  // oAjax.request(tempFile);
+  makeArrayFromString(JSON.parse(res));
 }
 
-function makeArrayFromString(sResString) {
-  var aTemp = [],
-    aSubTemp = [],
-    htTemp = {};
-  aResultleng = 0;
-
-  try {
-    if (!sResString || sResString.indexOf("sFileURL") < 0) {
-      return;
-    }
-    aTemp = sResString.split("&");
-    for (var i = 0; i < aTemp.length; i++) {
-      if (!!aTemp[i] && aTemp[i] != "" && aTemp[i].indexOf("=") > 0) {
-        aSubTemp = aTemp[i].split("=");
-        htTemp[aSubTemp[0]] = aSubTemp[1];
-      }
-    }
-  } catch (e) {}
+function makeArrayFromString(fileObj) {
+  var aResultleng = 0;
 
   aResultleng = aResult.length;
-  aResult[aResultleng] = htTemp;
+  aResult[aResultleng] = fileObj;
 
   if (aResult.length == nImageFileCount) {
     setPhotoToEditor(aResult);
     aResult = null;
-    window.close();
+    // window.close();
   }
 }
 
@@ -606,6 +560,7 @@ window.onload = function () {
 	 * ]
 	 */
 function setPhotoToEditor(oFileInfo) {
+  console.log(oFileInfo);
   if (!!opener && !!opener.nhn && !!opener.nhn.husky && !!opener.nhn.husky.PopUpManager) {
     //스마트 에디터 플러그인을 통해서 넣는 방법 (oFileInfo는 Array)
     opener.nhn.husky.PopUpManager.setCallback(window, "SET_PHOTO", [oFileInfo]);

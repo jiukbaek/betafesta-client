@@ -1,3 +1,4 @@
+import Layout from "components/layout/Layout";
 import {
   SectionHeader,
   Section2,
@@ -9,14 +10,14 @@ import {
 
 const Home = () => {
   return (
-    <div>
+    <Layout>
       <SectionHeader />
       <Section2 />
       <Section3 />
       <Section4 />
       <Section5 />
       <Navigation />
-    </div>
+    </Layout>
   );
 };
 

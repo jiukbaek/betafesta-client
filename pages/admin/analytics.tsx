@@ -12,11 +12,7 @@ import Layout from "./layout";
 
 const formatDate = (date: Date) => dayjs(date).format("YYYY-MM-DD");
 
-const VisitorChart = ({
-  dateVisitor,
-}: {
-  dateVisitor: Array<Record<string, any>>;
-}) => {
+const VisitorChart = ({ dateVisitor }: { dateVisitor: Array<Record<string, any>> }) => {
   const [chart, setChart] = useState<any>();
   const ref = useRef<HTMLCanvasElement>(null);
 
@@ -32,9 +28,7 @@ const VisitorChart = ({
                   stepSize: "1".padEnd(String(maxCount).length, "0"),
                 },
                 min: 0,
-                max:
-                  parseInt(maxCount) +
-                  parseInt("1".padEnd(String(maxCount).length, "0")),
+                max: parseInt(maxCount) + parseInt("1".padEnd(String(maxCount).length, "0")),
               },
             },
           }
@@ -81,11 +75,7 @@ const Main = () => {
     } else {
       setLoading(true);
       axios
-        .get(
-          `/api/analytics?startDate=${formatDate(
-            startDate
-          )}&endDate=${formatDate(endDate)}`
-        )
+        .get(`/api/analytics?startDate=${formatDate(startDate)}&endDate=${formatDate(endDate)}`)
         .then(({ data }) => {
           setLoading(false);
           setReport(data);
@@ -104,12 +94,7 @@ const Main = () => {
       {loading && (
         <div className={styles.loading}>
           <div className={styles.loadingIcon}>
-            <Image
-              src="/images/icon-loading.svg"
-              width="48"
-              height="48"
-              alt="loading"
-            />
+            <Image src="/images/icon-loading.svg" width="48" height="48" alt="loading" />
           </div>
         </div>
       )}

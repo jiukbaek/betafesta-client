@@ -19,9 +19,7 @@ const Write = () => {
   return (
     <Layout>
       <div>Write</div>
-      <div>
-        <textarea className={styles.editor} id="editor"></textarea>
-      </div>
+      <textarea className={styles.editor} id="editor"></textarea>
     </Layout>
   );
 };

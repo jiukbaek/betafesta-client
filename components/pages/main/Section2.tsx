@@ -1,4 +1,5 @@
 import Button from "components/Button";
+import Link from "next/link";
 import DigitalNumber from "components/DigitalNumber";
 import dayjs from "dayjs";
 import Image from "components/Image";
@@ -31,6 +32,25 @@ export const Section2 = () => {
     minute: 0,
   });
 
+  const downloadPdf = () => {
+    const ele = document.createElement("a");
+    ele.setAttribute("href", "/download/betafesta.pdf");
+    ele.setAttribute(
+      "download",
+      "2021 BETA 페스티벌 창업경진대회_참가자 모집 공고문.pdf"
+    );
+
+    ele.click();
+  };
+
+  const openLink = () => {
+    const ele = document.createElement("a");
+    ele.setAttribute("href", "https://forms.gle/tZB2wMkPh8UFm7jY7");
+    ele.setAttribute("target", "_blank");
+
+    ele.click();
+  };
+
   useEffect(() => {
     const update = () => {
       const diffSecond = limitDate.diff(new Date(), "second");
@@ -48,13 +68,28 @@ export const Section2 = () => {
     <div className={styles.container}>
       <div className={styles.title}>
         {isMobile ? (
-          <Image src="/images/section2-title-mobile.png" width="1000" height="500" alt="title" />
+          <Image
+            src="/images/section2-title-mobile.png"
+            width="1000"
+            height="500"
+            alt="title"
+          />
         ) : (
-          <Image src="/images/section2-title.png" width="2000" height="210" alt="title" />
+          <Image
+            src="/images/section2-title.png"
+            width="2000"
+            height="210"
+            alt="title"
+          />
         )}
       </div>
       <div className={styles.subtitle}>
-        <Image src="/images/section2-subtitle.png" width="1200" height="166" alt="title" />
+        <Image
+          src="/images/section2-subtitle.png"
+          width="1200"
+          height="166"
+          alt="title"
+        />
       </div>
       <div className={styles.countdown}>
         <div className={styles.led}>
@@ -70,10 +105,10 @@ export const Section2 = () => {
         </div>
       </div>
       <div className={styles.buttons}>
-        <Button className={styles.button} onClick={console.log}>
+        <Button className={styles.button} onClick={downloadPdf}>
           공고문 다운받기
         </Button>
-        <Button className={styles.button} onClick={console.log}>
+        <Button className={styles.button} onClick={openLink}>
           신청하기
         </Button>
       </div>

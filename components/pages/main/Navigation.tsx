@@ -29,8 +29,6 @@ export const Navigation = () => {
     }
   }, []);
 
-  console.log(show);
-
   return (
     <div className={clsx(styles.nav, show && styles.show)}>
       {navs.map((nav) => (

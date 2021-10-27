@@ -3,14 +3,15 @@
   top: 50%;
   transform: translateY(-50%) scale(0.8);
   right: 15px;
-  z-index: 1000;
   background: black;
   padding: 5px 15px;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s, z-index 0.5s;
+  z-index: -1;
 
   &.show {
     opacity: 1;
+    z-index: 1000;
   }
 }
 

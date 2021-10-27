@@ -1,11 +1,11 @@
 import Button from "components/Button";
-import Link from "next/link";
 import DigitalNumber from "components/DigitalNumber";
 import dayjs from "dayjs";
 import Image from "components/Image";
 import { useEffect, useState } from "react";
 import styles from "./Section2.module.scss";
 import useMobile from "util/useMobile";
+import { openLink } from "util/base";
 
 const parseDate = (date: number) => {
   if (date <= 0) {
@@ -39,14 +39,6 @@ export const Section2 = () => {
       "download",
       "2021 BETA 페스티벌 창업경진대회_참가자 모집 공고문.pdf"
     );
-
-    ele.click();
-  };
-
-  const openLink = () => {
-    const ele = document.createElement("a");
-    ele.setAttribute("href", "https://forms.gle/tZB2wMkPh8UFm7jY7");
-    ele.setAttribute("target", "_blank");
 
     ele.click();
   };
@@ -108,7 +100,10 @@ export const Section2 = () => {
         <Button className={styles.button} onClick={downloadPdf}>
           공고문 다운받기
         </Button>
-        <Button className={styles.button} onClick={openLink}>
+        <Button
+          className={styles.button}
+          onClick={() => openLink("https://forms.gle/tZB2wMkPh8UFm7jY7")}
+        >
           신청하기
         </Button>
       </div>

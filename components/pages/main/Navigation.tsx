@@ -1,11 +1,12 @@
 import clsx from "clsx";
+import Link from "next/link";
 import { throttle } from "lodash";
 import { useEffect, useState } from "react";
 import styles from "./Navigation.module.scss";
+import { openLink } from "util/base";
 
 export const Navigation = () => {
   const [show, setShow] = useState<boolean>(false);
-  const navs = ["notice", "schedule", "event", "youtube", "fb", "insta"];
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -31,9 +32,31 @@ export const Navigation = () => {
 
   return (
     <div className={clsx(styles.nav, show && styles.show)}>
-      {navs.map((nav) => (
-        <div className={clsx(styles.icon, styles[`icon-${nav}`])} key={nav} />
-      ))}
+      <Link href="/notice">
+        <div className={clsx(styles.icon, styles["icon-notice"])} />
+      </Link>
+      <Link href="#schedule">
+        <div className={clsx(styles.icon, styles["icon-schedule"])} />
+      </Link>
+      <Link href="#event">
+        <div className={clsx(styles.icon, styles["icon-event"])} />
+      </Link>
+      <div
+        onClick={() =>
+          openLink("https://www.youtube.com/channel/UCX7IRsH1eGOruoGZhY-kebw")
+        }
+        className={clsx(styles.icon, styles["icon-youtube"])}
+      />
+      <div
+        onClick={() =>
+          openLink("https://www.facebook.com/profile.php?id=100073682116389")
+        }
+        className={clsx(styles.icon, styles["icon-fb"])}
+      />
+      <div
+        onClick={() => openLink("https://www.instagram.com/beta_festival_/")}
+        className={clsx(styles.icon, styles["icon-insta"])}
+      />
     </div>
   );
 };

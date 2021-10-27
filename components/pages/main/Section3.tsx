@@ -4,7 +4,7 @@ import styles from "./Section3.module.scss";
 
 export const Section3 = () => {
   return (
-    <div className={styles.container}>
+    <div id="schedule" className={styles.container}>
       <div className={styles.title}>
         <Image
           src="/images/section3-title.png"

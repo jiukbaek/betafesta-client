@@ -15,6 +15,7 @@
 }
 
 .logo > div {
+  cursor: pointer;
   max-width: 200px;
 }
 
@@ -24,6 +25,7 @@
   height: 45px;
 
   & > div {
+    cursor: pointer;
     width: 45px;
     margin: 0 5px;
   }
@@ -46,6 +48,7 @@
   }
 
   &Image {
+    cursor: pointer;
     width: 100px;
     margin-left: 5px;
 

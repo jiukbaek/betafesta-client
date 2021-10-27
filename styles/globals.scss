@@ -6,6 +6,10 @@ body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -37,4 +41,11 @@ a {
   src: url(/fonts/NanumSquareB.otf.otf);
   font-style: normal;
   font-weight: bold;
+}
+
+@font-face {
+  font-family: Impact;
+  src: url(/fonts/impact.ttf);
+  font-style: normal;
+  font-weight: normal;
 }

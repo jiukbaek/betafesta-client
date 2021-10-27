@@ -9,11 +9,27 @@
 }
 
 .title {
-  width: 27vw;
-  margin-bottom: 3vw;
+  display: flex;
+  align-items: center;
+  padding-bottom: 3vw;
+}
+
+.title1 {
+  font-family: Impact;
+  font-size: 73px;
+  margin-right: 15px;
 
   @include mobile {
-    width: 60vw;
+    margin-right: 3px;
+    font-size: 28px;
+  }
+}
+.title2 {
+  font-family: Nanum;
+  font-size: 57px;
+  color: rgb(134, 134, 134);
+  @include mobile {
+    font-size: 19px;
   }
 }
 

@@ -1,0 +1,19 @@
+{
+  "banner": [
+    {
+      "image": {
+        "desktop": "/images/image-poster1.png",
+        "mobile": "/images/image-poster1-mobile.png"
+      },
+      "link": "/"
+    },
+    {
+      "image": {
+        "desktop": "/images/image-poster2.png",
+        "mobile": "/images/image-poster2-mobile.png"
+      },
+      "link": "/"
+    }
+  ],
+  "sns": []
+}

@@ -25,7 +25,7 @@ const parseDate = (date: number) => {
 export const Section2 = () => {
   const isMobile = useMobile();
   const limitDate = dayjs("2021-11-12 23:59:59");
-  const [{ day, hour, minute }, setCountdown] = useState<Record<string, number>>({
+  const [countdown, setCountdown] = useState<Record<string, number>>({
     day: 0,
     hour: 0,
     minute: 0,
@@ -34,10 +34,11 @@ export const Section2 = () => {
   useEffect(() => {
     const update = () => {
       const diffSecond = limitDate.diff(new Date(), "second");
-      setCountdown(parseDate(diffSecond));
+      const parsed = parseDate(diffSecond);
+      setCountdown(parsed);
     };
     update();
-    const id = setInterval(update, 1000 * 10);
+    const id = setInterval(update, 1000);
     return () => {
       clearInterval(id);
     };
@@ -57,15 +58,15 @@ export const Section2 = () => {
       </div>
       <div className={styles.countdown}>
         <div className={styles.led}>
-          <DigitalNumber nums={String(day).padStart(2, "0")} />
+          <DigitalNumber nums={String(countdown.day).padStart(2, "0")} />
         </div>
         <div className={styles.divide}>:</div>
         <div>
-          <DigitalNumber nums={String(hour).padStart(2, "0")} />
+          <DigitalNumber nums={String(countdown.hour).padStart(2, "0")} />
         </div>
         <div className={styles.divide}>:</div>
         <div>
-          <DigitalNumber nums={String(minute).padStart(2, "0")} />
+          <DigitalNumber nums={String(countdown.minute).padStart(2, "0")} />
         </div>
       </div>
       <div className={styles.buttons}>

@@ -23,7 +23,7 @@ const Header = () => {
           <Link href="/">행사안내</Link>
         </div>
         <div>
-          <Link href="/">아이디어톤</Link>
+          <Link href="/ideaton">아이디어톤</Link>
         </div>
         <div>
           <Link href="/">창업컨설팅</Link>

@@ -3,6 +3,30 @@ import Image from "components/Image";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 
+interface Menu {
+  title: string;
+  link: string;
+}
+
+interface MenuItemProp extends Menu {
+  submenus?: Array<Menu>;
+}
+
+const MenuItem: React.FC<MenuItemProp> = ({ title, link, submenus = [] }) => (
+  <div className={styles.menuItem}>
+    <div>
+      <Link href={link}>{title}</Link>
+    </div>
+    <div className={styles.submenus}>
+      {submenus.map((menu) => (
+        <div key={menu.title}>
+          <Link href={menu.link}>{menu.title}</Link>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const Header = () => {
   const [toggled, toggle] = useState(false);
 
@@ -19,18 +43,18 @@ const Header = () => {
         </div>
       </Link>
       <div className={styles.menu}>
-        <div>
-          <Link href="/">행사안내</Link>
-        </div>
-        <div>
-          <Link href="/ideaton">아이디어톤</Link>
-        </div>
-        <div>
-          <Link href="/">창업컨설팅</Link>
-        </div>
-        <div>
-          <Link href="/">공지사항</Link>
-        </div>
+        <MenuItem
+          title="행사안내"
+          link="/"
+          submenus={[
+            { title: "서브1", link: "/" },
+            { title: "서브2", link: "/" },
+            { title: "서브3", link: "/" },
+          ]}
+        />
+        <MenuItem title="아이디어톤" link="/" />
+        <MenuItem title="창업컨설팅" link="/" />
+        <MenuItem title="공지사항" link="/" />
       </div>
       <div className={styles.hamburger}>
         <div onClick={() => toggle((prev) => !prev)}>

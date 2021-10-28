@@ -18,8 +18,8 @@ export const Section3 = () => {
           <div key={index} className={styles.schedule}>
             <Image
               src={`/images/image-schedule${index + 1}.png`}
-              width="877"
-              height="773"
+              width="1168"
+              height="1030"
               alt="schedule"
             />
           </div>

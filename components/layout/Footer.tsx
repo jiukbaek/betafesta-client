@@ -35,8 +35,13 @@ const Footer = () => (
       </div>
       <div className={styles.info}>
         <div>(안동형 일자리 사업단)</div>
-        <div>전화번호 : 054-820-6368~9</div>
-        <div>이메일: betafesta@gmail.com</div>
+        <div>
+          전화번호 : <a href="tel:054-820-6368">054-820-6368</a>~9
+        </div>
+        <div>
+          이메일:{" "}
+          <a href="mailto:andongbetafesta@gmail.com">betafesta@gmail.com</a>
+        </div>
         <div>COPYRIGHT © 2021 안동형 일자리 BETA페스티벌</div>
       </div>
     </div>

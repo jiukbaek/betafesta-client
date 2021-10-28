@@ -3,13 +3,13 @@
 import "../styles/globals.scss";
 import Head from "next/head";
 import type { AppProps } from "next/app";
-import Layout from "components/layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>베타페스티벌 - Beta Festival</title>
       </Head>
       <script
         src="/smarteditor/js/service/HuskyEZCreator.js"

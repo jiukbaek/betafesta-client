@@ -2,6 +2,8 @@ import Button from "components/Button";
 import styles from "./Section4.module.scss";
 
 export const Section4 = () => {
+  const ready = () => alert("준비중 입니다");
+
   return (
     <div className={styles.container}>
       <div className={styles.vedio}>
@@ -16,8 +18,8 @@ export const Section4 = () => {
         ></iframe>
       </div>
       <div className={styles.buttons}>
-        <Button onClick={console.log}>유튜브 바로가기</Button>
-        <Button onClick={console.log}>라이브 커머스 바로가기</Button>
+        <Button onClick={ready}>유튜브 바로가기</Button>
+        <Button onClick={ready}>라이브 커머스 바로가기</Button>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@
   justify-content: space-between;
   background: #333333;
 
-  @include footerMobile {
+  @include middle {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -22,7 +22,7 @@
 
 .center {
   margin: 0 20px;
-  @include footerMobile {
+  @include middle {
     margin: 0 0 20px 0;
   }
 }
@@ -38,7 +38,7 @@
     margin: 0 5px;
   }
 
-  @include footerMobile {
+  @include middle {
     margin: 30px 0;
   }
 }
@@ -48,7 +48,7 @@
   display: grid;
   grid-template-columns: repeat(2, 30px auto);
   gap: 15px;
-  @include footerMobile {
+  @include middle {
     grid-template-columns: 30px auto;
     gap: 10px;
   }
@@ -61,7 +61,7 @@
   cursor: pointer;
   max-width: 180px;
 
-  @include footerMobile {
+  @include middle {
     max-width: 120px;
   }
 }
@@ -71,7 +71,7 @@
   font-size: 14px;
   line-height: 1.4;
 
-  @include footerMobile {
+  @include middle {
     font-size: 12px;
   }
 }
@@ -86,7 +86,7 @@
   width: 400px;
   min-width: 400px;
 
-  @include footerMobile {
+  @include middle {
     width: 100%;
     min-width: 100%;
   }
@@ -103,7 +103,7 @@
     justify-content: space-between;
     grid-column: span 3;
 
-    @include footerMobile {
+    @include middle {
       grid-column: unset;
       gap: 10px;
       justify-content: flex-start;

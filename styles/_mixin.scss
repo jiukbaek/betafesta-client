@@ -4,7 +4,7 @@
   }
 }
 
-@mixin footerMobile {
+@mixin middle {
   @media (max-width: 969px) {
     @content;
   }

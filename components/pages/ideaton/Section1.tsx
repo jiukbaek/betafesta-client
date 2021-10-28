@@ -5,7 +5,9 @@ export const Section1 = () => {
   return (
     <div className={styles.container}>
       <div className={styles.display}>
-        <div className={styles.title}>『2021 BETA 페스티벌』 아이디어톤</div>
+        <div className={styles.titleDesktop}>
+          『2021 BETA 페스티벌』 아이디어톤
+        </div>
         <div className={styles.content}>
           <div className={styles.poster}>
             <div className={styles.posterImage}>
@@ -17,6 +19,9 @@ export const Section1 = () => {
             </div>
           </div>
           <div className={styles.info}>
+            <div className={styles.titleMobile}>
+              『2021 BETA 페스티벌』 아이디어톤
+            </div>
             <div className={styles.infoContent}>
               <div>일 시</div>
               <div>2021. 11. 18. (목) ~ 2021. 11. 19. (금)</div>

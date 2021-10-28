@@ -1,4 +1,5 @@
 import Image from "components/Image";
+import { ReactNode, StyleHTMLAttributes } from "react";
 import styles from "./Section2.module.scss";
 
 const Title: React.FC = ({ children }) => (
@@ -18,7 +19,7 @@ const SubTitle: React.FC = ({ children }) => (
   </div>
 );
 const Content: React.FC = ({ children }) => (
-  <div className={styles.content}>{children}</div>
+  <div className={styles.content}>- {children}</div>
 );
 const Note: React.FC = ({ children }) => (
   <div className={styles.note}>* {children}</div>
@@ -100,7 +101,7 @@ export const Section2 = () => (
           사행성 및 환경오염 유발 등 반 사회적 성격의 창업 아이템
         </SubTitle>
         <SubTitle>
-          통합공고일 기준(’21.10.27.) 동일 또는 유사한 아이템으로 과거 他
+          통합공고일 기준(’21.10.27.) 동일 또는 유사한 아이템으로 과거
           창업경진대회를 통해 누적 상금 3천만원 이상을 받은자
         </SubTitle>
         <Note>
@@ -178,7 +179,7 @@ export const Section2 = () => (
       </div>
       <div>
         <Title>시상내역</Title>
-        <div className={styles.award}>
+        <div className={styles.awardDesktop}>
           <div className={styles.tableHeader} style={{ gridColumn: "span 3" }}>
             예비창업자 아이디어톤
           </div>
@@ -196,14 +197,14 @@ export const Section2 = () => (
           <div>300만원</div>
           <div>대상</div>
           <div style={{ gridRow: "span 3" }}>안동시장</div>
-          <div style={{ padding: "10px 20px" }}>
+          <div className={styles.awardContent}>
             2022 창업성장 지원사업 대상자 선정 (최대 3000만원 지원)
           </div>
           <div style={{ gridRow: "span 2" }}>우수상</div>
           <div>가톨릭상지대학교 총장</div>
           <div style={{ gridRow: "span 2" }}>200만원</div>
           <div style={{ gridRow: "span 2" }}>우수상(2팀)</div>
-          <div style={{ gridRow: "span 2", padding: "10px 20px" }}>
+          <div className={styles.awardContent} style={{ gridRow: "span 2" }}>
             2022 수요맞춤형 지원사업 수혜기업 선정 안동과학대학교 (최대 1000만원
             지원)
           </div>
@@ -215,6 +216,40 @@ export const Section2 = () => (
         </div>
         <Note>적격자가 없을 경우 선정하지 않을 수 있음</Note>
       </div>
+      <div className={styles.awardMobile}>
+        <div className={styles.tableHeader} style={{ gridColumn: "span 3" }}>
+          예비창업자 아이디어톤
+        </div>
+        <div className={styles.tableSubHeader}>구분</div>
+        <div className={styles.tableSubHeader}>훈격</div>
+        <div className={styles.tableSubHeader}>부상</div>
+        <div>대상 </div>
+        <div>안동대학교 총장</div>
+        <div>300만원</div>
+        <div style={{ gridRow: "span 2" }}>우수상</div>
+        <div>가톨릭상지대학교 총장</div>
+        <div style={{ gridRow: "span 2" }}>200만원</div>
+        <div>안동과학대학교 총장</div>
+        <div>장려상</div>
+        <div></div>
+        <div>부상</div>
+        <div className={styles.tableHeader} style={{ gridColumn: "span 3" }}>
+          창업기업 아이디어톤
+        </div>
+        <div className={styles.tableSubHeader}>구분</div>
+        <div className={styles.tableSubHeader}>훈격</div>
+        <div className={styles.tableSubHeader}>부상</div>
+        <div>대상</div>
+        <div style={{ gridRow: "span 3" }}>안동시장</div>
+        <div className={styles.awardContent}>
+          2022 창업성장 지원사업 대상자 선정 (최대 3000만원 지원)
+        </div>
+        <div style={{ gridRow: "span 2" }}>우수상(2팀)</div>
+        <div className={styles.awardContent} style={{ gridRow: "span 2" }}>
+          2022 수요맞춤형 지원사업 수혜기업 선정 안동과학대학교 (최대 1000만원
+          지원)
+        </div>
+      </div>
       <div>
         <Title>신청시 주의사항</Title>
         <SubTitle>참가신청 전 모집공고문을 반드시 확인 후 참가 신청</SubTitle>
@@ -222,6 +257,8 @@ export const Section2 = () => (
           공고문 미확인 등으로 발생할 수 있는 불이익 및 그에 따른 책임은 본
           경진대회 신청자에게 있음
         </Note>
+      </div>
+      <div>
         <Title>지식재산권 보호 및 보안 관련</Title>
         <SubTitle>
           (지식재산권 보호) 타인의 아이디어, 기술 등을 모방하였을 경우 발생되는
@@ -233,6 +270,8 @@ export const Section2 = () => (
           경우, 공개된 시점부터 12개월 이내 (디자인은 6개월 이내) 공지 예외 적용
           주장을 통해 출원 가능
         </Content>
+      </div>
+      <div>
         <Title>기타사항</Title>
         <SubTitle>
           모집공고문 미숙지 등으로 인해 발생하는 불이익 및 그에 따른 책임은 동

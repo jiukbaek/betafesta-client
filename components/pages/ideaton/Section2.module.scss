@@ -1,3 +1,5 @@
+@import "mixin";
+
 .container {
   display: flex;
   width: 100%;
@@ -14,11 +16,23 @@
   & > div {
     margin-bottom: 60px;
   }
+
+  @include mobile {
+    padding: 20px;
+
+    & > div {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .point {
   font-size: 0;
   margin-right: 10px;
+
+  @include mobile {
+    margin-right: 5px;
+  }
 }
 
 .title {
@@ -26,9 +40,18 @@
   font-size: 23px;
   margin: 20px 0;
 
+  @include mobile {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
   &Point {
     @extend .point;
     padding-top: 1px;
+
+    @include mobile {
+      width: 15px;
+    }
   }
 }
 
@@ -37,15 +60,30 @@
   font-size: 18px;
   margin: 15px 0;
 
+  @include mobile {
+    font-size: 15px;
+    margin: 7px 0;
+  }
+
   &Point {
     @extend .point;
     padding-top: 8px;
+
+    @include mobile {
+      padding-top: 5px;
+      min-width: 3px;
+      width: 3px;
+    }
   }
 }
 
 .content {
   font-size: 16px;
   margin: 5px 0;
+
+  @include mobile {
+    font-size: 13px;
+  }
 }
 
 .note {
@@ -53,51 +91,118 @@
   padding-left: 14px;
   font-size: 14px;
   margin: 5px 0;
+
+  @include mobile {
+    font-size: 10px;
+    padding-left: 7px;
+  }
 }
 
 .firstText {
   font-size: 16px;
   margin: 10px 0;
+
+  @include mobile {
+    font-size: 13px;
+    margin: 5px 0;
+  }
 }
 
 .secondText {
   font-size: 14px;
   padding-left: 15px;
   margin: 5px 0;
+  @include mobile {
+    font-size: 10px;
+    padding-left: 7px;
+    margin: 2px 0;
+  }
 }
 
 .qualification {
   display: grid;
   width: 100%;
   grid-template-columns: 110px 1fr 1fr;
+
+  @include mobile {
+    grid-template-columns: 60px 1fr 1fr;
+  }
 }
 
 .rating {
   display: grid;
   grid-template-columns: 110px 1fr;
+
+  @include mobile {
+    grid-template-columns: 60px 1fr;
+  }
 }
 
 .award {
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(2, 110px 1fr 1fr);
+  display: none;
+  border: solid 1px lightgray;
+
+  & > div {
+    height: 100%;
+    border: solid 1px lightgray;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &Desktop {
+    @extend .award;
+    grid-template-columns: repeat(2, 110px 1fr 1fr);
+    display: grid;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &Mobile {
+    @extend .award;
+
+    @include mobile {
+      font-size: 13px;
+      display: grid;
+      grid-template-columns: 60px 1fr 1fr;
+    }
+  }
+
+  &Content {
+    padding: 10px 20px !important;
+
+    @include mobile {
+      padding: 10px 5px !important;
+    }
+  }
 }
 
 .qualification,
-.rating,
-.award {
+.rating {
   border: solid 1px lightgray;
+
   & > div {
     height: 100%;
     border: solid 1px lightgray;
     padding: 10px 0;
     text-align: center;
   }
+
+  @include mobile {
+    font-size: 13px;
+  }
 }
 
 .noneAlign {
   text-align: unset !important;
   padding: 10px 20px !important;
+
+  @include mobile {
+    padding: 10px !important;
+  }
 }
 
 .tableHeader {

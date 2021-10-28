@@ -1,3 +1,5 @@
+@import "mixin";
+
 .container {
   width: 100%;
   min-height: calc(100vh - 100px);
@@ -11,14 +13,28 @@
   width: 100%;
   padding: 20px 60px;
   margin: 0 auto;
+
+  @include mobile {
+    padding: 20px;
+  }
 }
 
 .poster {
   margin-right: 30px;
+
   &Image {
     margin-left: auto;
     font-size: 0;
     width: 100%;
+  }
+
+  @include middle {
+    margin-right: 15px;
+  }
+
+  @include mobile {
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 }
 
@@ -29,6 +45,53 @@
   flex-direction: column;
   position: relative;
   margin-left: 30px;
+
+  @include middle {
+    min-width: 360px;
+    margin-left: 15px;
+  }
+
+  @include mobile {
+    min-width: unset;
+    margin-left: 0px;
+  }
+
+  &Content {
+    padding-top: 20px;
+    font-family: Nanum;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    column-gap: 40px;
+    grid-auto-rows: 60px;
+    font-size: 18px;
+
+    & > div {
+      &:nth-child(odd) {
+        text-align: justify;
+
+        &:after {
+          display: inline-block;
+          content: "";
+          width: 100%;
+        }
+      }
+    }
+
+    @include middle {
+      font-size: 16px;
+      grid-template-columns: 70px 1fr;
+      column-gap: 20px;
+      grid-auto-rows: 50px;
+    }
+
+    @include mobile {
+      grid-template-columns: 60px 1fr;
+      column-gap: 15px;
+      grid-auto-rows: 40px;
+      font-size: 14px;
+    }
+  }
 }
 
 .content {
@@ -37,6 +100,10 @@
 
   & > div {
     flex: 1;
+  }
+
+  @include mobile {
+    flex-direction: column;
   }
 }
 
@@ -48,32 +115,33 @@
   padding: 10px 0;
   border-bottom: 1px solid lightgray;
   font-size: 28px;
-}
 
-.infoContent {
-  padding-top: 20px;
-  font-family: Nanum;
-  flex: 1;
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  column-gap: 40px;
-  grid-auto-rows: 60px;
-  font-size: 18px;
+  &Desktop {
+    @extend .title;
+    @include middle {
+      min-width: 360px;
+      width: calc(50% - 15px);
+      font-size: 20px;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
 
-  & > div {
-    &:nth-child(odd) {
-      text-align: justify;
-
-      &:after {
-        display: inline-block;
-        content: "";
-        width: 100%;
-      }
+  &Mobile {
+    @extend .title;
+    display: none;
+    @include mobile {
+      font-size: 18px;
+      width: 100%;
+      min-width: unset;
+      display: block;
     }
   }
 }
 
 .buttons {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
 
@@ -90,6 +158,10 @@
 
     &:first-child {
       margin-right: 20px;
+    }
+
+    @include mobile {
+      font-size: 14px;
     }
   }
 }

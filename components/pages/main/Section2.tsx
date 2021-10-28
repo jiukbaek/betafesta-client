@@ -85,14 +85,17 @@ export const Section2 = () => {
       </div>
       <div className={styles.countdown}>
         <div className={styles.led}>
+          <div>DAY</div>
           <DigitalNumber nums={String(countdown.day).padStart(2, "0")} />
         </div>
         <div className={styles.divide}>:</div>
-        <div>
+        <div className={styles.led}>
+          <div>HOUR</div>
           <DigitalNumber nums={String(countdown.hour).padStart(2, "0")} />
         </div>
         <div className={styles.divide}>:</div>
-        <div>
+        <div className={styles.led}>
+          <div>MINUTE</div>
           <DigitalNumber nums={String(countdown.minute).padStart(2, "0")} />
         </div>
       </div>

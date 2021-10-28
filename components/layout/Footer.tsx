@@ -8,9 +8,7 @@ const Footer = () => (
   <div className={styles.footer}>
     <div className={styles.logo}>
       <Link href="/">
-        <div>
-          <Image src="/images/logo-white.png" width="348" height="155" />
-        </div>
+        <Image src="/images/logo-white.png" width="348" height="155" />
       </Link>
     </div>
     <div className={styles.center}>
@@ -37,32 +35,27 @@ const Footer = () => (
       </div>
       <div className={styles.info}>
         <div>(안동형 일자리 사업단)</div>
-        <div>전화번호 : 070-4174-0009 이메일: betafesta@gmail.com</div>
+        <div>전화번호 : 054-820-6368~9</div>
+        <div>이메일: betafesta@gmail.com</div>
         <div>COPYRIGHT © 2021 안동형 일자리 BETA페스티벌</div>
       </div>
     </div>
-    <div>
+    <div className={styles.right}>
       <div className={styles.locale}>
-        <div>
-          <div className={styles.title}>주최</div>
-          <div
-            className={styles.symbol}
-            onClick={() => openLink("https://www.andong.go.kr/main.do")}
-          >
-            <Image src="/images/icon-locale1.png" width="139" height="33" />
-          </div>
+        <div className={styles.title}>주최</div>
+        <div
+          className={styles.symbol}
+          onClick={() => openLink("https://www.andong.go.kr/main.do")}
+        >
+          <Image src="/images/icon-locale1.png" width="139" height="33" />
         </div>
-        <div>
-          <div className={styles.title}>주관</div>
-          <div
-            className={styles.symbol}
-            onClick={() => openLink("https://andongjob.kr/")}
-          >
-            <Image src="/images/image-subject.png" width="186" height="33" />
-          </div>
+        <div className={styles.title}>주관</div>
+        <div
+          className={styles.symbol}
+          onClick={() => openLink("https://andongjob.kr/")}
+        >
+          <Image src="/images/image-subject.png" width="186" height="33" />
         </div>
-      </div>
-      <div className={styles.support}>
         <div className={styles.title}>후원</div>
         <div className={styles.supportSymbol}>
           <div className={styles.symbol}>

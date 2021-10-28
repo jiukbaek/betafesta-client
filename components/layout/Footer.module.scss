@@ -2,13 +2,12 @@
 
 .footer {
   font-family: Nanum;
-  padding: 40px 7vw;
+  padding: 40px 6.5vw;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   background: #333333;
 
-  @include mobile {
+  @include footerMobile {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -17,12 +16,14 @@
 
 .logo > div {
   cursor: pointer;
-  max-width: 200px;
+  min-width: 200px;
+  width: 200px;
 }
 
 .center {
-  @include mobile {
-    margin-bottom: 20px;
+  margin: 0 20px;
+  @include footerMobile {
+    margin: 0 0 20px 0;
   }
 }
 
@@ -37,41 +38,31 @@
     margin: 0 5px;
   }
 
-  @include mobile {
+  @include footerMobile {
     margin: 30px 0;
   }
 }
 
 .locale {
-  display: flex;
-  margin-bottom: 30px;
-
-  & > div {
-    font-family: Nanum;
-    color: white;
-    display: flex;
-
-    &:last-child {
-      margin-left: 30px;
-    }
-  }
-
-  @include mobile {
-    justify-content: flex-start;
-    margin-bottom: 10px;
-
-    & > div:last-child {
-      margin-left: 10px;
-    }
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 30px auto);
+  gap: 15px;
+  @include footerMobile {
+    grid-template-columns: 30px auto;
+    gap: 10px;
   }
 }
 
 .symbol {
+  display: flex;
+  align-items: center;
   font-size: 0;
   cursor: pointer;
-  transform: scale(0.8);
+  max-width: 180px;
 
-  @include mobile {
+  @include footerMobile {
+    max-width: 120px;
   }
 }
 
@@ -80,30 +71,42 @@
   font-size: 14px;
   line-height: 1.4;
 
-  @include mobile {
+  @include footerMobile {
     font-size: 12px;
   }
 }
 
 .title {
-  display: flex;
-  align-items: center;
-  min-width: 30px;
-  height: 33px;
+  color: white;
+  font-size: 16px;
+  line-height: 32px;
+}
 
-  @include mobile {
-    min-width: 25px;
-    font-size: 12px;
+.right {
+  width: 400px;
+  min-width: 400px;
+
+  @include footerMobile {
+    width: 100%;
+    min-width: 100%;
   }
 }
 
 .support {
-  min-width: 400px;
   color: white;
   display: flex;
 
   &Symbol {
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
+    justify-content: space-between;
+    grid-column: span 3;
+
+    @include footerMobile {
+      grid-column: unset;
+      gap: 10px;
+      justify-content: flex-start;
+    }
   }
 }

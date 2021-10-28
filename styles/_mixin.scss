@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin footerMobile {
+  @media (max-width: 969px) {
+    @content;
+  }
+}

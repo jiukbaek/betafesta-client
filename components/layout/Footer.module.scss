@@ -1,6 +1,7 @@
 @import "mixin";
 
 .footer {
+  font-family: Nanum;
   padding: 40px 7vw;
   display: flex;
   align-items: center;
@@ -19,9 +20,15 @@
   max-width: 200px;
 }
 
+.center {
+  @include mobile {
+    margin-bottom: 20px;
+  }
+}
+
 .sns {
   display: flex;
-  justify-content: center;
+  margin-bottom: 10px;
   height: 45px;
 
   & > div {
@@ -37,34 +44,34 @@
 
 .locale {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 30px;
 
   & > div {
     font-family: Nanum;
     color: white;
     display: flex;
-    align-items: center;
-  }
 
-  &Image {
-    cursor: pointer;
-    width: 100px;
-    margin-left: 5px;
-
-    @include mobile {
-      width: 70px;
+    &:last-child {
+      margin-left: 30px;
     }
   }
 
   @include mobile {
-    font-size: 12px;
     justify-content: flex-start;
     margin-bottom: 10px;
 
-    & > div {
-      margin-right: 20px;
+    & > div:last-child {
+      margin-left: 10px;
     }
+  }
+}
+
+.symbol {
+  font-size: 0;
+  cursor: pointer;
+  transform: scale(0.8);
+
+  @include mobile {
   }
 }
 
@@ -75,5 +82,28 @@
 
   @include mobile {
     font-size: 12px;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  min-width: 30px;
+  height: 33px;
+
+  @include mobile {
+    min-width: 25px;
+    font-size: 12px;
+  }
+}
+
+.support {
+  min-width: 400px;
+  color: white;
+  display: flex;
+
+  &Symbol {
+    display: flex;
+    flex-wrap: wrap;
   }
 }

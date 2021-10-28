@@ -21,7 +21,7 @@
   width: 180px;
   min-width: 180px;
   height: auto;
-  margin-right: 60px;
+  margin-right: 3vw;
   @include mobile {
     min-width: 100px;
     width: 100px;
@@ -31,7 +31,7 @@
 .menu {
   display: flex;
   justify-content: flex-end;
-  padding-right: 50px;
+  padding-right: 2.5vw;
   flex: 1;
 
   & > div {
@@ -39,7 +39,7 @@
     white-space: nowrap;
     font-size: 20px;
     padding-bottom: 20px;
-    margin-left: 100px;
+    margin-left: 5vw;
   }
 
   @include mobile {

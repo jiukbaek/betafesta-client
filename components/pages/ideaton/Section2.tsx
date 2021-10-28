@@ -288,7 +288,11 @@ export const Section2 = () => (
         <SubTitle>접수시스템: http://www.betafesta.kr/</SubTitle>
         <SubTitle>참가 관련 문의</SubTitle>
         <Content>
-          문의: 070-4271-3288(월-금 09:00-18:00), andongbetafesta@gmail.com
+          문의: <a href="tel:070-4271-3288">070-4271-3288</a>(월-금
+          09:00-18:00),
+          <a href="mailto:andongbetafesta@gmail.com">
+            andongbetafesta@gmail.com
+          </a>
         </Content>
       </div>
     </div>

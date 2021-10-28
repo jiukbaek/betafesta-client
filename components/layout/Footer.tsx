@@ -56,29 +56,6 @@ const Footer = () => (
         >
           <Image src="/images/image-subject.png" width="186" height="33" />
         </div>
-        <div className={styles.title}>후원</div>
-        <div className={styles.supportSymbol}>
-          <div
-            className={styles.symbol}
-            onClick={() =>
-              openLink("http://www.moel.go.kr/local/andong/index.do")
-            }
-          >
-            <Image src="/images/image-support1.png" width="165" height="33" />
-          </div>
-          <div
-            className={styles.symbol}
-            onClick={() => openLink("http://www.asc.ac.kr/asc/902/subview.do")}
-          >
-            <Image src="/images/image-support2.png" width="159" height="33" />
-          </div>
-          <div
-            className={styles.symbol}
-            onClick={() => openLink("https://www.csj.ac.kr/main.html")}
-          >
-            <Image src="/images/image-support3.png" width="138" height="33" />
-          </div>
-        </div>
       </div>
     </div>
   </div>

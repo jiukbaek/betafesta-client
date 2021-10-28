@@ -11,8 +11,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <script src="/smarteditor/js/service/HuskyEZCreator.js" charSet="utf-8"></script>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-210123520-1"></script>
+      <script
+        src="/smarteditor/js/service/HuskyEZCreator.js"
+        charSet="utf-8"
+      ></script>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-BEES4T6SLY"
+      ></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -20,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-210123520-1');
+  gtag('config', 'G-BEES4T6SLY');
 `,
         }}
       ></script>

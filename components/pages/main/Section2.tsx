@@ -5,7 +5,7 @@ import Image from "components/Image";
 import { useEffect, useState } from "react";
 import styles from "./Section2.module.scss";
 import useMobile from "util/useMobile";
-import { openLink } from "util/base";
+import { downloadPdf, openLink } from "util/base";
 
 const parseDate = (date: number) => {
   if (date <= 0) {
@@ -31,17 +31,6 @@ export const Section2 = () => {
     hour: 0,
     minute: 0,
   });
-
-  const downloadPdf = () => {
-    const ele = document.createElement("a");
-    ele.setAttribute("href", "/download/betafesta.pdf");
-    ele.setAttribute(
-      "download",
-      "2021 BETA 페스티벌 창업경진대회_참가자 모집 공고문.pdf"
-    );
-
-    ele.click();
-  };
 
   useEffect(() => {
     const update = () => {

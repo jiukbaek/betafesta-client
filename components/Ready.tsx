@@ -9,6 +9,7 @@ const Ready = () => (
       justifyContent: "center",
       height: "100vh",
       backgroundColor: "#f1f1f1",
+      fontFamily: "Nanum",
     }}
   >
     <div>

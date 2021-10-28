@@ -1,10 +1,21 @@
+import Image from "components/Image";
 import styles from "./Section2.module.scss";
 
 const Title: React.FC = ({ children }) => (
-  <div className={styles.title}>{children}</div>
+  <div className={styles.title}>
+    <div className={styles.titlePoint}>
+      <Image src="/images/icon-point-title.png" width="25" height="25" />
+    </div>
+    {children}
+  </div>
 );
 const SubTitle: React.FC = ({ children }) => (
-  <div className={styles.subtitle}>{children}</div>
+  <div className={styles.subtitle}>
+    <div className={styles.subtitlePoint}>
+      <Image src="/images/icon-point-subtitle.png" width="5" height="5" />
+    </div>
+    {children}
+  </div>
 );
 const Content: React.FC = ({ children }) => (
   <div className={styles.content}>{children}</div>
@@ -38,20 +49,19 @@ export const Section2 = () => (
         <Title>참가자격</Title>
         <SubTitle>예비창업자 및 창업 7년 이내 창업자</SubTitle>
         <div className={styles.qualification}>
-          <div>구분</div>
-          <div style={{ gridColumn: "span 2" }}>아이디어톤</div>
-          <div>창업구분</div>
+          <div className={styles.tableHeader}>구분</div>
+          <div className={styles.tableHeader} style={{ gridColumn: "span 2" }}>
+            아이디어톤
+          </div>
+          <div className={styles.tableSubHeader}>창업구분</div>
           <div>예비 창업자</div>
           <div>창업 기업</div>
-          <div>신청자격</div>
+          <div className={styles.tableSubHeader}>신청자격</div>
           <div className={styles.noneAlign}>
             <FirstText>예비창업자(대학생)</FirstText>
             <SecondText>
-              일반인
-              <div>
-                (주민등록상 주소 및 근로하는 사업장의 주소가 안동시일 경우만
-                해당/단 고용 보험에 가입되어 있어야 함)
-              </div>
+              일반인 (주민등록상 주소 및 근로하는 사업장의 주소가 안동시일
+              경우만 해당/단 고용 보험에 가입되어 있어야 함)
             </SecondText>
             <SecondText>
               대학생 및 대학교 창업동아리 (안동지역 대학교만 해당)
@@ -147,21 +157,21 @@ export const Section2 = () => (
           발표평가 방식으로 진행하며, 별도의 발표자료 준비 필요(PPT등)
         </Note>
         <div className={styles.rating}>
-          <div>평가항목</div>
-          <div>세부내용</div>
-          <div>문제인식</div>
+          <div className={styles.tableHeader}>평가항목</div>
+          <div className={styles.tableHeader}>세부내용</div>
+          <div className={styles.tableSubHeader}>문제인식</div>
           <div className={styles.noneAlign}>
             창업아이템 개발동기, 목적 및 필요성
           </div>
-          <div>해결방안</div>
+          <div className={styles.tableSubHeader}>해결방안</div>
           <div className={styles.noneAlign}>
             창업아이템의 사업화 전략, 시장분석 및 경쟁력 확보방안
           </div>
-          <div>성장전략</div>
+          <div className={styles.tableSubHeader}>성장전략</div>
           <div className={styles.noneAlign}>
             자금소요 및 조달계획, 시장진입 및 성과창출 전략
           </div>
-          <div>팀 구성</div>
+          <div className={styles.tableSubHeader}>팀 구성</div>
           <div className={styles.noneAlign}>대표자 및 팀원의 보유역량</div>
         </div>
         <Note>대내외 사정에 따라 평가방법, 평가일정 등은 변경될 수 있음</Note>
@@ -169,25 +179,31 @@ export const Section2 = () => (
       <div>
         <Title>시상내역</Title>
         <div className={styles.award}>
-          <div style={{ gridColumn: "span 3" }}>예비창업자 아이디어톤</div>
-          <div style={{ gridColumn: "span 3" }}>창업기업 아이디어톤</div>
-          <div>구분</div>
-          <div>훈격</div>
-          <div>부상</div>
-          <div>구분</div>
-          <div>훈격</div>
-          <div>부상</div>
+          <div className={styles.tableHeader} style={{ gridColumn: "span 3" }}>
+            예비창업자 아이디어톤
+          </div>
+          <div className={styles.tableHeader} style={{ gridColumn: "span 3" }}>
+            창업기업 아이디어톤
+          </div>
+          <div className={styles.tableSubHeader}>구분</div>
+          <div className={styles.tableSubHeader}>훈격</div>
+          <div className={styles.tableSubHeader}>부상</div>
+          <div className={styles.tableSubHeader}>구분</div>
+          <div className={styles.tableSubHeader}>훈격</div>
+          <div className={styles.tableSubHeader}>부상</div>
           <div>대상 </div>
           <div>안동대학교 총장</div>
           <div>300만원</div>
           <div>대상</div>
           <div style={{ gridRow: "span 3" }}>안동시장</div>
-          <div>2022 창업성장 지원사업 대상자 선정 (최대 3000만원 지원)</div>
+          <div style={{ padding: "10px 20px" }}>
+            2022 창업성장 지원사업 대상자 선정 (최대 3000만원 지원)
+          </div>
           <div style={{ gridRow: "span 2" }}>우수상</div>
           <div>가톨릭상지대학교 총장</div>
           <div style={{ gridRow: "span 2" }}>200만원</div>
           <div style={{ gridRow: "span 2" }}>우수상(2팀)</div>
-          <div style={{ gridRow: "span 2" }}>
+          <div style={{ gridRow: "span 2", padding: "10px 20px" }}>
             2022 수요맞춤형 지원사업 수혜기업 선정 안동과학대학교 (최대 1000만원
             지원)
           </div>
@@ -233,7 +249,7 @@ export const Section2 = () => (
         <SubTitle>접수시스템: http://www.betafesta.kr/</SubTitle>
         <SubTitle>참가 관련 문의</SubTitle>
         <Content>
-          문의: 070-4174-0009(월-금 09:00-18:00), andongbetafesta@gmail.com
+          문의: 070-4271-3288(월-금 09:00-18:00), andongbetafesta@gmail.com
         </Content>
       </div>
     </div>

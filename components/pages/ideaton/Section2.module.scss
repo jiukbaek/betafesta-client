@@ -16,14 +16,31 @@
   }
 }
 
+.point {
+  font-size: 0;
+  margin-right: 10px;
+}
+
 .title {
+  display: flex;
   font-size: 23px;
   margin: 20px 0;
+
+  &Point {
+    @extend .point;
+    padding-top: 1px;
+  }
 }
 
 .subtitle {
+  display: flex;
   font-size: 18px;
   margin: 15px 0;
+
+  &Point {
+    @extend .point;
+    padding-top: 8px;
+  }
 }
 
 .content {
@@ -33,16 +50,20 @@
 
 .note {
   color: red;
+  padding-left: 14px;
   font-size: 14px;
+  margin: 5px 0;
 }
 
 .firstText {
   font-size: 16px;
+  margin: 10px 0;
 }
 
 .secondText {
   font-size: 14px;
-  text-indent: 14px;
+  padding-left: 15px;
+  margin: 5px 0;
 }
 
 .qualification {
@@ -77,4 +98,14 @@
 .noneAlign {
   text-align: unset !important;
   padding: 10px 20px !important;
+}
+
+.tableHeader {
+  color: white;
+  background-color: #333333;
+  padding: 15px 0 !important;
+}
+
+.tableSubHeader {
+  background-color: #f8f8f8;
 }

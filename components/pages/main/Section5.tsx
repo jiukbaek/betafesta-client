@@ -21,10 +21,18 @@ export const Section5 = () => (
       ))}
     </div>
     <div className={styles.posts}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div>
+        <div>COMMING SOON</div>
+      </div>
+      <div>
+        <div>COMMING SOON</div>
+      </div>
+      <div>
+        <div>COMMING SOON</div>
+      </div>
+      <div>
+        <div>COMMING SOON</div>
+      </div>
     </div>
   </div>
 );

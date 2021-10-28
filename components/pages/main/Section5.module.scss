@@ -60,7 +60,13 @@
   grid-auto-rows: 20vw;
 
   & > div {
+    font-family: Nanum;
     background: gray;
+    color: white;
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @include mobile {

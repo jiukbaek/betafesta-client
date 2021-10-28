@@ -70,16 +70,16 @@ const Header = () => {
           style={{ transform: `translateX(${!toggled ? "-100" : "0"}%)` }}
         >
           <div>
-            <Link href="/">행사안내</Link>
+            <Link href="/about">행사안내</Link>
           </div>
           <div>
-            <Link href="/">아이디어톤</Link>
+            <Link href="/ideaton">아이디어톤</Link>
           </div>
           <div>
-            <Link href="/">창업컨설팅</Link>
+            <Link href="/consult">창업컨설팅</Link>
           </div>
           <div>
-            <Link href="/">공지사항</Link>
+            <Link href="/notice">공지사항</Link>
           </div>
         </div>
       </div>

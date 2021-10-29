@@ -9,15 +9,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="title" content="Beta Festival" />
+        <meta name="title" content="Beta Festival" />
         <meta
-          property="keyword"
+          name="keyword"
           content="Beta Festival, 베타페스타, 안동 베타페스타, 안동 베타, betafesta, 베타 페스티벌, 베타페스티벌"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://www.betafesta.kr" />
+        <meta property="og:url" content="http://www.betafesta.kr/" />
+        <meta property="og:title" content="betafesta" />
         <meta property="og:image" content="http://www.betafesta.kr/images/logo-color.png" />
         <meta property="og:description" content="2021 베타페스티벌 - BetaFestival" />
+        <meta property="og:site_name" content="베타페스티벌" />
         <title>베타페스티벌 - Beta Festival</title>
       </Head>
       <script src="/smarteditor/js/service/HuskyEZCreator.js" charSet="utf-8"></script>

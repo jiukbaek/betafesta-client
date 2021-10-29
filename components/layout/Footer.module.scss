@@ -20,6 +20,10 @@
     flex-wrap: wrap;
     align-items: flex-start;
   }
+
+  & > div {
+    flex: 1;
+  }
 }
 
 .logo > div {
@@ -54,10 +58,11 @@
 .locale {
   color: white;
   display: grid;
-  grid-template-columns: repeat(2, max-content auto);
-  gap: 0 15px;
+  justify-content: flex-end;
+  grid-template-columns: max-content auto;
+  gap: 15px;
   @include middle {
-    grid-template-columns: max-content auto;
+    justify-content: unset;
     gap: 10px;
   }
 }
@@ -88,16 +93,6 @@
   color: white;
   font-size: 16px;
   line-height: 32px;
-}
-
-.right {
-  width: 400px;
-  min-width: 400px;
-
-  @include middle {
-    width: 100%;
-    min-width: 100%;
-  }
 }
 
 .support {

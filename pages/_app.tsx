@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://www.betafesta.kr" />
-        <meta property="og:image" content="/images/logo-color.png" />
+        <meta property="og:image" content="http://www.betafesta.kr/images/logo-color.png" />
         <meta property="og:description" content="2021 베타페스티벌 - BetaFestival" />
         <title>베타페스티벌 - Beta Festival</title>
       </Head>

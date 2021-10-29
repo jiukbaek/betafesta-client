@@ -11,27 +11,37 @@ export const Section5 = () => (
     className={styles.container}
     onClick={() => openLink("https://www.instagram.com/beta_festival_/")}
   >
-    <div className={styles.title}>
-      <span className={styles.title1}>INSTAGRAM</span>
-      <span className={styles.title2}>@beta_festival_</span>
-    </div>
-    <div className={styles.tags}>
-      {main.sns.tags.map((tag) => (
-        <div key={tag}>#{tag}</div>
-      ))}
-    </div>
-    <div className={styles.posts}>
-      <div>
-        <div>COMMING SOON</div>
+    <div className={styles.display}>
+      <div className={styles.title}>
+        <span className={styles.title1}>INSTAGRAM</span>
+        <span className={styles.title2}>@beta_festival_</span>
       </div>
-      <div>
-        <div>COMMING SOON</div>
+      <div className={styles.tags}>
+        {main.sns.tags.map((tag) => (
+          <div key={tag}>#{tag}</div>
+        ))}
       </div>
-      <div>
-        <div>COMMING SOON</div>
-      </div>
-      <div>
-        <div>COMMING SOON</div>
+      <div className={styles.posts}>
+        <div>
+          <div>
+            <div>COMMING SOON</div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>COMMING SOON</div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>COMMING SOON</div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>COMMING SOON</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

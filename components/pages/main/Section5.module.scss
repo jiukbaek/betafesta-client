@@ -2,17 +2,26 @@
 
 .container {
   width: 100%;
-  display: flex;
+  padding: 120px 0;
+  @include mobile {
+    padding: 50px 0;
+  }
+}
+
+.display {
+  @include safeArea;
   flex-direction: column;
   align-items: center;
-  padding: 6vw 0;
 }
 
 .title {
   display: flex;
   align-items: center;
-  padding-bottom: 3vw;
+  margin-bottom: 60px;
   cursor: pointer;
+  @include mobile {
+    margin-bottom: 20px;
+  }
 }
 
 .title1 {
@@ -37,41 +46,68 @@
 .tags {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 6vw;
+  margin-bottom: 70px;
 
   & > div {
-    font-size: 1.4vw;
-    border-radius: 17vw;
+    font-size: 16px;
+    border-radius: 100px;
     background-color: #cccccc;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 17vw;
-    height: 3vw;
-    margin: 0 0.8vw;
+    min-width: 200px;
+    height: 40px;
+    margin: 0 10px;
+  }
+
+  @include mobile {
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    & > div {
+      font-size: 10px;
+      min-width: 100px;
+      height: 20px;
+      margin: 5px;
+    }
   }
 }
 
 .posts {
-  display: grid;
-  grid-template-columns: repeat(4, 20vw);
-  gap: 2vw;
-  grid-auto-rows: 20vw;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 
   & > div {
     font-family: Nanum;
-    background: gray;
+    width: 25%;
+    padding: 10px;
     color: white;
     font-size: 1.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
 
-  @include mobile {
-    grid-template-columns: repeat(2, 40vw);
-    grid-auto-rows: 40vw;
-    gap: 4vw;
+    & > div {
+      width: 100%;
+      height: 100%;
+      background: gray;
+      padding-top: 100%;
+      position: relative;
+
+      & > div {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    @include mobile {
+      width: 50%;
+    }
   }
 }

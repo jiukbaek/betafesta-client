@@ -47,57 +47,44 @@ export const Section2 = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        {isMobile ? (
-          <Image
-            src="/images/section2-title-mobile.png"
-            width="1000"
-            height="500"
-            alt="title"
-          />
-        ) : (
-          <Image
-            src="/images/section2-title.png"
-            width="2000"
-            height="210"
-            alt="title"
-          />
-        )}
-      </div>
-      <div className={styles.subtitle}>
-        <Image
-          src="/images/section2-subtitle.png"
-          width="1200"
-          height="166"
-          alt="title"
-        />
-      </div>
-      <div className={styles.countdown}>
-        <div className={styles.led}>
-          <div>DAY</div>
-          <DigitalNumber nums={String(countdown.day).padStart(2, "0")} />
+      <div className={styles.display}>
+        <div className={styles.title}>
+          {isMobile ? (
+            <Image src="/images/section2-title-mobile.png" width="1000" height="500" alt="title" />
+          ) : (
+            <Image src="/images/section2-title.png" width="2000" height="210" alt="title" />
+          )}
         </div>
-        <div className={styles.divide}>:</div>
-        <div className={styles.led}>
-          <div>HOUR</div>
-          <DigitalNumber nums={String(countdown.hour).padStart(2, "0")} />
+        <div className={styles.subtitle}>
+          <Image src="/images/section2-subtitle.png" width="1200" height="166" alt="title" />
         </div>
-        <div className={styles.divide}>:</div>
-        <div className={styles.led}>
-          <div>MINUTE</div>
-          <DigitalNumber nums={String(countdown.minute).padStart(2, "0")} />
+        <div className={styles.countdown}>
+          <div className={styles.led}>
+            <div>DAY</div>
+            <DigitalNumber nums={String(countdown.day).padStart(2, "0")} />
+          </div>
+          <div className={styles.divide}>:</div>
+          <div className={styles.led}>
+            <div>HOUR</div>
+            <DigitalNumber nums={String(countdown.hour).padStart(2, "0")} />
+          </div>
+          <div className={styles.divide}>:</div>
+          <div className={styles.led}>
+            <div>MINUTE</div>
+            <DigitalNumber nums={String(countdown.minute).padStart(2, "0")} />
+          </div>
         </div>
-      </div>
-      <div className={styles.buttons}>
-        <Button className={styles.button} onClick={downloadPdf}>
-          공고문 다운받기
-        </Button>
-        <Button
-          className={styles.button}
-          onClick={() => openLink("https://forms.gle/tZB2wMkPh8UFm7jY7")}
-        >
-          신청하기
-        </Button>
+        <div className={styles.buttons}>
+          <Button className={styles.button} onClick={downloadPdf}>
+            공고문 다운받기
+          </Button>
+          <Button
+            className={styles.button}
+            onClick={() => openLink("https://forms.gle/tZB2wMkPh8UFm7jY7")}
+          >
+            신청하기
+          </Button>
+        </div>
       </div>
     </div>
   );

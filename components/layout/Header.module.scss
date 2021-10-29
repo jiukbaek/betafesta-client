@@ -1,16 +1,18 @@
 @import "mixin";
 
 .header {
+  background: white;
+}
+
+.display {
+  @include safeArea;
   height: 100px;
-  width: 100%;
-  display: flex;
-  padding: 0 30px;
+  flex-direction: row;
   align-items: flex-end;
   background: white;
 
   @include mobile {
-    height: 60px;
-    padding: 0 15px;
+    height: 75px;
     align-items: center;
     justify-content: space-between;
   }

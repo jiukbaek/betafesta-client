@@ -35,49 +35,63 @@
   left: 0;
   width: 100%;
   height: 100%;
+
+  &Display {
+    @include safeArea;
+    height: 100%;
+    position: relative;
+  }
 }
 
 .prev,
 .next {
   cursor: pointer;
-  width: 4vw;
-  height: 4vw;
+  width: 45px;
+  height: 45px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 100;
   @include mobile {
-    width: 10vw;
+    width: 30px;
   }
 }
 
 .prev {
-  left: 3vw;
+  left: 60px;
+
+  @include mobile {
+    left: 20px;
+  }
 }
 
 .next {
-  right: 3vw;
+  right: 60px;
+
+  @include mobile {
+    right: 20px;
+  }
 }
 
 .nav {
   cursor: pointer;
   position: absolute;
   left: 50%;
-  bottom: 3vw;
+  bottom: 60px;
   transform: translateX(-50%);
   display: flex;
   z-index: 100;
 
   @include mobile {
-    bottom: 5vw;
+    bottom: 20px;
   }
 }
 
 .point {
-  width: 0.8vw;
-  height: 0.8vw;
-  border-radius: 100vw;
-  margin: 0 0.8vw;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  margin: 0 10px;
   background-color: #cccccc;
 
   &.active {
@@ -85,9 +99,6 @@
   }
 
   @include mobile {
-    width: 3vw;
-    height: 3vw;
-    margin: 0 2vw;
   }
 }
 

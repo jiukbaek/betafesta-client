@@ -1,10 +1,18 @@
 @import "mixin";
 
 .footer {
-  font-family: Nanum;
-  padding: 40px 6.5vw;
-  display: flex;
+  padding: 60px 0;
+  background: #333333;
+
+  @include mobile {
+    padding: 20px 0;
+  }
+}
+
+.display {
+  @include safeArea;
   justify-content: space-between;
+  flex-direction: row;
   background: #333333;
 
   @include middle {

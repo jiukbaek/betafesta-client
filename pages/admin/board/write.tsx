@@ -28,6 +28,10 @@ const Write = () => {
       <div>Write</div>
       <textarea className={styles.editor} id="editor" ref={ref} />
       <input type="file" id="file1" />
+      <input type="file" id="file2" />
+      <input type="file" id="file3" />
+      <input type="file" id="file4" />
+      <input type="file" id="file5" />
       <div onClick={update}>등록</div>
     </Layout>
   );

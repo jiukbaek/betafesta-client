@@ -1,38 +1,36 @@
 @import "mixin";
 
-.container {
-  width: 100%;
-  display: flex;
+.display {
+  @include safeArea;
   flex-direction: column;
   align-items: center;
-  padding: 6vw 0;
+
+  padding: 120px 60px;
   @include mobile {
-    padding: 12vw 0;
+    padding: 50px 20px;
   }
 }
 
 .title {
-  width: 27vw;
-  margin-bottom: 3vw;
+  width: 40%;
+  margin-bottom: 60px;
   @include mobile {
-    width: 60vw;
-    margin-bottom: 6vw;
+    width: 70%;
+    margin-bottom: 30px;
   }
 }
 
 .schedules {
   display: flex;
-  padding: 0 6.5vw;
 
   & > div {
     margin: 0 10px;
     @include mobile {
-      margin: 0 0 5vw 0;
+      margin: 0 0 10px 0;
     }
   }
 
   @include mobile {
-    padding: 0 10vw;
     flex-direction: column;
   }
 }

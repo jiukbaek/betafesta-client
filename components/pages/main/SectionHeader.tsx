@@ -28,27 +28,32 @@ const Slider: React.FC<SliderProp> = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={styles.controller}>
-        {!isFirst() && (
-          <div
-            className={styles.prev}
-            onClick={() => setIndex((prev) => Math.abs(prev - 1) % data.length)}
-          >
-            <Image src="/images/icon-prev.svg" width="180" height="180" alt="prev" />
-          </div>
-        )}
-        {!isLast() && (
-          <div className={styles.next} onClick={() => setIndex((prev) => (prev + 1) % data.length)}>
-            <Image src="/images/icon-next.svg" width="180" height="180" alt="next" />
-          </div>
-        )}
-        <div className={styles.nav}>
-          {data.map((_, i) => (
+        <div className={styles.controllerDisplay}>
+          {!isFirst() && (
             <div
-              className={clsx(styles.point, i === index && styles.active)}
-              key={i}
-              onClick={() => setIndex(i)}
-            />
-          ))}
+              className={styles.prev}
+              onClick={() => setIndex((prev) => Math.abs(prev - 1) % data.length)}
+            >
+              <Image src="/images/icon-prev.svg" width="180" height="180" alt="prev" />
+            </div>
+          )}
+          {!isLast() && (
+            <div
+              className={styles.next}
+              onClick={() => setIndex((prev) => (prev + 1) % data.length)}
+            >
+              <Image src="/images/icon-next.svg" width="180" height="180" alt="next" />
+            </div>
+          )}
+          <div className={styles.nav}>
+            {data.map((_, i) => (
+              <div
+                className={clsx(styles.point, i === index && styles.active)}
+                key={i}
+                onClick={() => setIndex(i)}
+              />
+            ))}
+          </div>
         </div>
       </div>
       <div className={styles.imageDisplay}>

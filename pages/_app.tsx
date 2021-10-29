@@ -11,14 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>베타페스티벌 - Beta Festival</title>
       </Head>
-      <script
-        src="/smarteditor/js/service/HuskyEZCreator.js"
-        charSet="utf-8"
-      ></script>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-BEES4T6SLY"
-      ></script>
+      <script src="/smarteditor/js/service/HuskyEZCreator.js" charSet="utf-8"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BEES4T6SLY"></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `

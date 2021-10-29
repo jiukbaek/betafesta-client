@@ -27,6 +27,7 @@ const Write = () => {
     <Layout>
       <div>Write</div>
       <textarea className={styles.editor} id="editor" ref={ref} />
+      <input type="file" id="file1" />
       <div onClick={update}>등록</div>
     </Layout>
   );

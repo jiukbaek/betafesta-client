@@ -54,10 +54,10 @@
 .locale {
   color: white;
   display: grid;
-  grid-template-columns: repeat(2, 30px auto);
-  gap: 15px;
+  grid-template-columns: repeat(2, max-content auto);
+  gap: 0 15px;
   @include middle {
-    grid-template-columns: 30px auto;
+    grid-template-columns: max-content auto;
     gap: 10px;
   }
 }

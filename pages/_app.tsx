@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="keyword"
           content="Beta Festival, 베타페스타, 안동 베타페스타, 안동 베타, betafesta, 베타 페스티벌, 베타페스티벌"
         />
+        <meta name="description" content="2021 안동 베타페스티벌" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://www.betafesta.kr/" />
         <meta property="og:title" content="betafesta" />

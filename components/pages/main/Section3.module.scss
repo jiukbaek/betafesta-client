@@ -3,6 +3,7 @@
 .display {
   @include safeArea;
   flex-direction: column;
+  min-height: 100vh;
   align-items: center;
 
   padding: 120px 60px;

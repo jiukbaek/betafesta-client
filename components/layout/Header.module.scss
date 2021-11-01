@@ -85,9 +85,8 @@
 
   &:hover {
     & .submenus {
-      & > div {
-        height: 35px;
-      }
+      max-height: 300px;
+      opacity: 1;
     }
   }
 }
@@ -95,17 +94,30 @@
 .submenus {
   position: absolute;
   transform: translateY(100%);
-  bottom: 10px;
-  left: 0;
+  bottom: 0px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s;
+  left: -20px;
   z-index: 100;
 
   & > div {
+    padding: 20px;
+    color: white;
+    background: #333333;
     font-size: 18px;
     white-space: nowrap;
     overflow: hidden;
     display: flex;
     align-items: center;
-    height: 0px;
-    transition: height 0.3s;
+
+    &:not(:last-child) {
+      border-bottom: solid 1px #979797;
+    }
+
+    &:hover {
+      color: #c13bff;
+    }
   }
 }

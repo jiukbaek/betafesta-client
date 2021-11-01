@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 export const openLink = (link: string) => {
   const ele = document.createElement("a");
   ele.setAttribute("href", link);
@@ -16,3 +18,5 @@ export const downloadPdf = () => {
 
   ele.click();
 };
+
+export const formatDate = (date: Date) => dayjs(date).format("YYYY-MM-DD");

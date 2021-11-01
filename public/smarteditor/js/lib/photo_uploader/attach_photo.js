@@ -344,7 +344,7 @@ function addImage(ofile) {
 function html5Upload() {
   var tempFile, sUploadURL;
 
-  sUploadURL = "http://localhost:3000/board/upload"; //upload URL
+  sUploadURL = "http://localhost:3000/board/upload/image"; //upload URL
 
   //파일을 하나씩 보내고, 결과를 받음.
   for (var j = 0, k = 0; j < nImageInfoCnt; j++) {
@@ -384,7 +384,7 @@ function makeArrayFromString(fileObj) {
   if (aResult.length == nImageFileCount) {
     setPhotoToEditor(aResult);
     aResult = null;
-    // window.close();
+    window.close();
   }
 }
 
@@ -441,7 +441,7 @@ function removeEvent() {
  * @return
  */
 function onAjaxError() {
-  alert("[가이드]사진 업로더할 서버URL셋팅이 필요합니다.-onAjaxError");
+  alert("예기치 못한 이유로 등록하지 못했습니다.");
 }
 
 /**

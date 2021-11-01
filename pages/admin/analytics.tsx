@@ -9,8 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import styles from "./analytics.module.scss";
 import Layout from "./layout";
-
-const formatDate = (date: Date) => dayjs(date).format("YYYY-MM-DD");
+import { formatDate } from "util/base";
 
 const VisitorChart = ({ dateVisitor }: { dateVisitor: Array<Record<string, any>> }) => {
   const [chart, setChart] = useState<any>();
@@ -75,7 +74,11 @@ const Main = () => {
     } else {
       setLoading(true);
       axios
-        .get(`/api/analytics?startDate=${formatDate(startDate)}&endDate=${formatDate(endDate)}`)
+        .get(
+          `http://localhost:3000/analytics/report?startDate=${formatDate(
+            startDate
+          )}&endDate=${formatDate(endDate)}`
+        )
         .then(({ data }) => {
           setLoading(false);
           setReport(data);

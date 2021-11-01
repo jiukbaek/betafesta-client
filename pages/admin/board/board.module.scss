@@ -1,0 +1,22 @@
+.container {
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  max-width: 800px;
+}
+
+.item {
+  padding: 8px 0;
+  display: grid;
+  grid-template-columns: 50px 1fr 100px;
+  gap: 10px;
+
+  & > div {
+    &:first-child,
+    &:last-child {
+      text-align: center;
+    }
+  }
+}

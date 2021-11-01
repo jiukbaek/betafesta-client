@@ -99,14 +99,14 @@
   max-height: 0;
   opacity: 0;
   transition: max-height 0.5s, opacity 0.5s;
-  left: -20px;
+  left: -18px;
   z-index: 100;
 
   & > div {
-    padding: 20px;
+    padding: 18px;
     color: white;
     background: #333333;
-    font-size: 18px;
+    font-size: 16px;
     white-space: nowrap;
     overflow: hidden;
     display: flex;
@@ -117,7 +117,7 @@
     }
 
     &:hover {
-      color: #c13bff;
+      color: #8375b3;
     }
   }
 }

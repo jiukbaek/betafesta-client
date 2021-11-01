@@ -4,22 +4,21 @@
   display: flex;
   width: 100%;
   font-family: Nanum;
+  padding: 60px 0;
+
+  @include mobile {
+    padding: 20px 0;
+  }
 }
 
 .display {
-  box-sizing: border-box;
-  max-width: 1200px;
-  width: 100%;
-  padding: 20px 60px;
-  margin: 0 auto;
+  @include safeArea;
 
   & > div {
     margin-bottom: 60px;
   }
 
   @include mobile {
-    padding: 20px;
-
     & > div {
       margin-bottom: 30px;
     }

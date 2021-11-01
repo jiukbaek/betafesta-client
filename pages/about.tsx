@@ -22,7 +22,7 @@ const About = () => (
           <div className={styles.section}>
             <Title>목적</Title>
             <div className={styles.text1}>
-              안동 지역을 중심으로 한 경부 북부 지역 창업 지원 기관과 기업의
+              안동 지역을 중심으로 한 경북 북부 지역 창업 지원 기관과 기업의
               육성을 통한 성과 공유 확산 및 창업 활성화 분위기를 조성하고,
               스타트업 홍보 및 창업 문화 전파를 위해 마련되었습니다.
             </div>

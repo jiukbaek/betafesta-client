@@ -1,0 +1,176 @@
+@import "mixin";
+
+.container {
+  width: 100%;
+  padding: 120px 0;
+
+  @include mobile {
+    padding: 40px 0;
+  }
+}
+
+.display {
+  @include safeArea;
+  align-items: center;
+  font-family: Nanum;
+}
+
+.top {
+  width: 50%;
+  font-size: 0;
+  @include mobile {
+    width: 90%;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 15px 0;
+
+  &Icon {
+    width: 20px;
+    height: 20px;
+    background: black;
+    margin-right: 10px;
+
+    @include mobile {
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+    }
+  }
+
+  @include mobile {
+    font-size: 18px;
+    margin: 8px 0;
+  }
+}
+
+.content {
+  border-top: solid 1px lightgray;
+  margin: 60px 0;
+
+  @include mobile {
+    margin: 20px 0;
+  }
+}
+
+.section {
+  width: 100%;
+  padding: 60px 0;
+  border-bottom: solid 1px lightgray;
+
+  @include mobile {
+    padding: 20px 0;
+  }
+}
+
+.text {
+  &1 {
+    font-size: 20px;
+    line-height: 28px;
+
+    @include mobile {
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+
+  &2 {
+    font-size: 30px;
+
+    @include mobile {
+      font-size: 19px;
+    }
+  }
+
+  &3 {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 19px;
+    }
+  }
+
+  &Bold {
+    font-size: 32px;
+    font-weight: bold;
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  &Icon {
+    cursor: pointer;
+    font-size: 0;
+    margin-left: 35px;
+
+    @include mobile {
+      width: 180px;
+      margin: 10px 0 0 0;
+    }
+  }
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  padding: 35px 40px 20px;
+  background-color: #e6e6e6;
+
+  @include mobile {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  &Left {
+    min-width: 280px;
+
+    @include mobile {
+      min-width: unset;
+      width: 100%;
+    }
+  }
+
+  &Right {
+    display: flex;
+  }
+
+  &Item {
+    display: flex;
+    height: 32px;
+    margin: 0 20px 20px 0;
+  }
+
+  &Title {
+    min-width: 33px;
+    margin: 7px 10px 0 0;
+
+    @include mobile {
+      margin: 7px 20px 0 0;
+    }
+  }
+}
+
+.logos {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+
+  & > div {
+    height: 35px;
+    margin: 0 20px 20px 0;
+  }
+
+  & .sk {
+    transform: translateY(-15px);
+  }
+}

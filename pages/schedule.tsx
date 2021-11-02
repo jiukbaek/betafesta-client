@@ -38,7 +38,7 @@ const Day1 = () => (
       style={{ animationDelay: "0.13s", gridRow: "7", gridColumn: 3 }}
     >
       <div>
-        창업특장 ① - <span style={{ fontWeight: 700 }}>허경환</span>
+        창업특장 ① - <span className={styles.name}>허경환</span>
       </div>
     </div>
     <div
@@ -117,7 +117,7 @@ const Day2 = () => (
       style={{ animationDelay: "0.13s", gridRow: "7", gridColumn: 3 }}
     >
       <div>
-        창업특강 ① - <span style={{ fontWeight: 700 }}>조용민</span>
+        창업특강 ① - <span className={styles.name}>조용민</span>
       </div>
     </div>
     <div

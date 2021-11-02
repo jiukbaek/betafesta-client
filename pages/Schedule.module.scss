@@ -140,7 +140,7 @@
   transform: translateY(-40px);
   animation: show 0.5s forwards;
   font-size: 19px;
-  font-weight: 500;
+  font-weight: bold;
   padding: 5px;
   text-align: center;
 
@@ -180,6 +180,12 @@
     width: 8px;
     margin: 8px 0;
   }
+}
+
+.name {
+  font-weight: 900;
+  display: inline-block;
+  transform: scale(1.05);
 }
 
 .bg {

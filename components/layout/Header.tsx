@@ -44,8 +44,8 @@ const Header = () => {
             link="/about"
             submenus={[
               { title: "행사소개", link: "/about" },
-              { title: "프로그램 일정", link: "/about" },
-              { title: "오시는길", link: "/about" },
+              { title: "프로그램 일정", link: "/schedule" },
+              { title: "오시는길", link: "/location" },
             ]}
           />
           <MenuItem title="아이디어톤" link="/ideaton" />

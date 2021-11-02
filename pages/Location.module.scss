@@ -1,0 +1,75 @@
+@import "mixin";
+
+.container {
+  padding: 120px 0;
+
+  @include mobile {
+    padding: 40px 0;
+  }
+}
+
+.display {
+  @include safeArea;
+}
+
+.location {
+  width: 100%;
+  height: 450px;
+
+  &Map {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title {
+  font-family: Impact;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 60px;
+
+  @include mobile {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+  border-bottom: solid 1px lightgray;
+  padding: 15px 0;
+  margin: 15px 0;
+
+  &Icon {
+    width: 20px;
+    height: 20px;
+    background: black;
+    margin-right: 10px;
+
+    @include mobile {
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+    }
+  }
+
+  @include mobile {
+    flex-wrap: wrap;
+    font-size: 18px;
+    padding: 8px 0;
+    margin: 8px 0;
+  }
+}
+
+.address {
+  margin-left: 20px;
+  font-weight: normal;
+  font-size: 20px;
+
+  @include mobile {
+    font-size: 16px;
+  }
+}

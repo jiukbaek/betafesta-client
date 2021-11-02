@@ -15,9 +15,9 @@ const Day1 = () => (
     >
       <div>스타트업 전시관</div>
       <div className={styles.divide} />
-      <div>창업컨설팅</div>
+      <div>창업 컨설팅</div>
       <div className={styles.divide} />
-      <div>기업투자상담</div>
+      <div>기업투자 상담</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgPink)}
@@ -71,21 +71,21 @@ const Day1 = () => (
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgGreen)}
-      style={{ animationDelay: "0.28s", gridRow: "2", gridColumn: 5 }}
+      style={{ animationDelay: "0.28s", gridRow: "3", gridColumn: 5 }}
     >
       <div>스타트업</div>
       <div>라이브 커머스</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgGreen)}
-      style={{ animationDelay: "0.31s", gridRow: "5", gridColumn: 5 }}
+      style={{ animationDelay: "0.31s", gridRow: "6", gridColumn: 5 }}
     >
       <div>스타트업</div>
       <div>라이브 커머스</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgGreen)}
-      style={{ animationDelay: "0.34s", gridRow: "8", gridColumn: 5 }}
+      style={{ animationDelay: "0.34s", gridRow: "9", gridColumn: 5 }}
     >
       <div>스타트업</div>
       <div>라이브 커머스</div>
@@ -101,9 +101,9 @@ const Day2 = () => (
     >
       <div>스타트업 전시관</div>
       <div className={styles.divide} />
-      <div>창업컨설팅</div>
+      <div>창업 컨설팅</div>
       <div className={styles.divide} />
-      <div>기업투자상담</div>
+      <div>기업투자 상담</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgYellow)}

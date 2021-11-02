@@ -5,8 +5,6 @@ import Head from "next/head";
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { googleId } = process.env;
-
   return (
     <>
       <Head>
@@ -26,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>베타페스티벌 - Beta Festival</title>
       </Head>
       <script src="/smarteditor/js/service/HuskyEZCreator.js" charSet="utf-8"></script>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleId}`}></script>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=G-BEES4T6SLY`}></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -34,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '${googleId}');
+  gtag('config', 'G-BEES4T6SLY');
 `,
         }}
       ></script>

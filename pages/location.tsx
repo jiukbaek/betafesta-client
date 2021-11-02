@@ -13,9 +13,13 @@ const Location = () => {
         center: position,
         zoom: 20,
       });
-      new naver.maps.Marker({ map, position, title: "안동그랜드호텔 컨벤션홀" });
+      new naver.maps.Marker({
+        map,
+        position,
+        title: "안동그랜드호텔 컨벤션홀",
+      });
     }
-  }, []);
+  });
 
   return (
     <>

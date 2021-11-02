@@ -1,0 +1,216 @@
+@import "mixin";
+
+.container {
+  width: 100%;
+  padding: 120px 0;
+
+  @include mobile {
+    padding: 40px 0;
+  }
+}
+
+.display {
+  @include safeArea;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: Impact;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+
+  @include mobile {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  &Small {
+    margin-left: 15px;
+    font-family: Nanum;
+    font-size: 55px;
+    line-height: 80px;
+    color: #808080;
+
+    @include mobile {
+      margin-left: 10px;
+      font-size: 35px;
+      line-height: 55px;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+
+  & > div {
+    font-weight: 700;
+    font-size: 25px;
+    margin: 0 30px;
+  }
+
+  @include mobile {
+    width: 80%;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    & > div {
+      font-weight: 700;
+      font-size: 25px;
+      margin: 8px 0px;
+    }
+  }
+}
+
+.schedule {
+  width: 100%;
+}
+
+.itemHeader {
+  color: white;
+  font-family: Nanum;
+  font-size: 20px;
+  font-weight: bold;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.itemTime {
+  @extend .itemHeader;
+  background: #666666;
+  grid-column: 1;
+
+  @include mobile {
+    font-size: 13px;
+  }
+}
+
+.item {
+  background: #f2f2f2;
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(10, minmax(60px, auto));
+
+  @include mobile {
+    padding: 5px;
+    gap: 3px;
+  }
+
+  &Head1 {
+    @extend .itemHeader;
+    grid-column: 2;
+    background: linear-gradient(90deg, #7472ab, #b26aa7);
+  }
+  &Head2 {
+    @extend .itemHeader;
+    grid-column: 3;
+    background: linear-gradient(90deg, #e2737d, #b14d82);
+  }
+  &Head3 {
+    @extend .itemHeader;
+    grid-column: 4;
+    background: linear-gradient(90deg, #ec8546, #e65851);
+  }
+  &Head4 {
+    @extend .itemHeader;
+    grid-column: 5;
+    background: linear-gradient(90deg, #f0a63f, #78b940);
+  }
+}
+
+.daySchedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: show 0.5s forwards;
+  font-size: 19px;
+  font-weight: 500;
+  padding: 5px;
+  text-align: center;
+
+  @include mobile {
+    padding: 2px;
+    font-size: 13px;
+  }
+}
+
+.icon {
+  font-size: 0;
+  margin-right: 10px;
+
+  @include mobile {
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+  }
+}
+
+.bigText {
+  font-size: 30px;
+  font-weight: bold;
+
+  @include mobile {
+    font-size: 15px;
+  }
+}
+
+.divide {
+  height: 1px;
+  width: 15px;
+  margin: 15px 0;
+  background: black;
+
+  @include mobile {
+    width: 8px;
+    margin: 8px 0;
+  }
+}
+
+.bg {
+  &Gray {
+    background: #cccccc;
+  }
+  &Pink {
+    background: #ff7d96;
+  }
+  &Blue {
+    background: #b8e9ff;
+  }
+  &Purple {
+    background: #ebccff;
+  }
+  &Yellow {
+    background: #ffe388;
+  }
+  &Green {
+    background: #d6ffd4;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

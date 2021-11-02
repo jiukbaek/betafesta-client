@@ -70,13 +70,12 @@ const Edit = () => {
     const deleteFiles = item.files.filter((prevFile: any) =>
       files.every((nextFile: any) => !isEqual(prevFile, nextFile))
     );
-    const { data: updated } = await axios.put(`http://localhost:3000/board/${item.id}`, {
+
+    await axios.put(`http://localhost:3000/board/${item.id}`, {
       content,
       deleteFiles,
       title,
     });
-
-    console.log(updated);
 
     const addFiles = files.filter((f: any) => f && !f.originalName);
 

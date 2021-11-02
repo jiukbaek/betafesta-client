@@ -55,17 +55,26 @@ export const Section2 = () => (
           <div className={styles.noneAlign}>
             <FirstText>예비창업자(대학생)</FirstText>
             <SecondText>
-              일반인 (주민등록상 주소 및 근로하는 사업장의 주소가 안동시일 경우만 해당/단 고용
-              보험에 가입되어 있어야 함)
+              일반인
+              <br />
+              <span className={styles.red}>
+                (주민등록상 주소 및 근로하는 사업장의 주소가 안동시일 경우만 해당/단 고용 보험에
+                가입되어 있어야 함)
+              </span>
             </SecondText>
-            <SecondText>대학생 및 대학교 창업동아리 (안동지역 대학교만 해당)</SecondText>
+            <SecondText>
+              대학생 및 대학교 창업동아리&nbsp;
+              <span className={styles.red}>(안동지역 대학교만 해당)</span>
+            </SecondText>
             <SecondText>사업자가 없는 경우</SecondText>
           </div>
           <div className={styles.noneAlign}>
-            <FirstText> 창업 7년 미만 사업자</FirstText>
-            <SecondText> 사업장 주소가 안동시일 경우만 해당</SecondText>
-            <SecondText> 14. 10. 1. 이후 창업자</SecondText>
-            <SecondText> (법인) 설립등기일, (개인)사업자등록일 기준</SecondText>
+            <FirstText>창업 7년 미만 사업자</FirstText>
+            <SecondText>
+              <span className={styles.red}>사업장 주소가 안동시일 경우만 해당</span>
+            </SecondText>
+            <SecondText>15. 3. 1. 이후 창업자</SecondText>
+            <SecondText>(법인) 설립등기일, (개인)사업자등록일 기준</SecondText>
           </div>
         </div>
         <Content>

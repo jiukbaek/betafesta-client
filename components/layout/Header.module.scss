@@ -58,10 +58,9 @@
 }
 
 .mobileMenu {
-  font-size: 16px;
   display: none;
   @include mobile {
-    padding: 150px 15px;
+    padding: 100px 15px;
     transition: transform 0.5s;
     display: flex;
     flex-direction: column;
@@ -75,7 +74,7 @@
   }
 
   & > div {
-    margin: 24px 0;
+    margin: 15px 0;
     font-size: 24px;
   }
 }
@@ -89,6 +88,11 @@
       opacity: 1;
     }
   }
+}
+
+.submenuMobile {
+  margin: 10px 0 10px 10px;
+  font-size: 18px;
 }
 
 .submenus {

@@ -2,29 +2,41 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import "../styles/globals.scss";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  console.log(process.env.mapId);
   return (
     <>
+      <NextSeo
+        title="Beta Festival"
+        description="2021 안동 베타페스티벌 Beta Festival"
+        canonical="http://www.betafesta.kr"
+        openGraph={{
+          url: "http://www.betafesta.kr",
+          title: "2021 안동 베타페스티벌",
+          description: "2021 베타페스티벌 - BetaFestival",
+          images: [
+            {
+              url: "http://www.betafesta.kr/images/logo-color.png",
+            },
+          ],
+          site_name: "Betafesta",
+        }}
+      />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="title" content="Beta Festival" />
-        <meta
-          name="keyword"
-          content="Beta Festival, 베타페스타, 안동 베타페스타, 안동 베타, betafesta, 베타 페스티벌, 베타페스티벌"
-        />
-        <meta name="description" content="2021 안동 베타페스티벌" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://www.betafesta.kr/" />
-        <meta property="og:title" content="betafesta" />
-        <meta property="og:image" content="http://www.betafesta.kr/images/logo-color.png" />
-        <meta property="og:description" content="2021 베타페스티벌 - BetaFestival" />
-        <meta property="og:site_name" content="베타페스티벌" />
         <title>베타페스티벌 - Beta Festival</title>
       </Head>
-      <script src="/smarteditor/js/service/HuskyEZCreator.js" charSet="utf-8"></script>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=G-BEES4T6SLY`}></script>
+      <script
+        src="/smarteditor/js/service/HuskyEZCreator.js"
+        charSet="utf-8"
+      ></script>
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=G-BEES4T6SLY`}
+      ></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -35,6 +47,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   gtag('config', 'G-BEES4T6SLY');
 `,
         }}
+      ></script>
+      <script
+        type="text/javascript"
+        src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.mapId}`}
       ></script>
       <Component {...pageProps} />
     </>

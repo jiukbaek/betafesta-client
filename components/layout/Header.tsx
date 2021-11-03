@@ -26,7 +26,6 @@ const MenuItem: React.FC<MenuItemProp> = ({ title, link, submenus = [] }) => (
     </div>
   </div>
 );
-
 const Header = () => {
   const [toggled, toggle] = useState(false);
 
@@ -35,7 +34,12 @@ const Header = () => {
       <div className={styles.display}>
         <Link href="/" passHref>
           <div className={styles.logo}>
-            <Image src="/images/logo-color.png" width="252" height="113" alt="logo" />
+            <Image
+              src="/images/logo-color.png"
+              width="252"
+              height="113"
+              alt="logo"
+            />
           </div>
         </Link>
         <div className={styles.menu}>
@@ -66,7 +70,18 @@ const Header = () => {
             style={{ transform: `translateX(${!toggled ? "-100" : "0"}%)` }}
           >
             <div>
-              <Link href="/about">행사안내</Link>
+              <div>
+                <Link href="/about">행사안내</Link>
+              </div>
+              <div className={styles.submenuMobile}>
+                <Link href="/about">행사소개</Link>
+              </div>
+              <div className={styles.submenuMobile}>
+                <Link href="/schedule">프로그램 일정</Link>
+              </div>
+              <div className={styles.submenuMobile}>
+                <Link href="/location">오시는길</Link>
+              </div>
             </div>
             <div>
               <Link href="/ideaton">아이디어톤</Link>

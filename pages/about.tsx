@@ -57,7 +57,7 @@ const About = () => (
           <div className={styles.section}>
             <Title>주요내용</Title>
             <div className={styles.text1}>
-              스타트업 전시관 | 창업 컨설팅 | 기업투자 상담 | 창업특장 |
+              스타트업 전시관 | 창업 컨설팅 | 기업투자 상담 | 창업특강 |
               아이디어톤 | 버스킹 공연 | 라이브 커머스
             </div>
           </div>

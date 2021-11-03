@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { useState } from "react";
 
-import Button from "components/Button";
 import Layout from "components/layout/Layout";
 import Image from "components/Image";
 
@@ -168,8 +167,40 @@ const Schedule = () => {
             <div className={styles.titleSmall}>schedule</div>
           </div>
           <div className={styles.buttons}>
-            <Button onClick={() => display(1)}>11.18 Thu</Button>
-            <Button onClick={() => display(2)}>11.19 Fri</Button>
+            <div
+              onClick={() => display(1)}
+              className={displayed === 1 ? styles.button1 : ""}
+            >
+              <div className={styles.buttonText}>11.18. Thu</div>
+              <div className={styles.buttonIcon}>
+                {displayed === 1 ? (
+                  <Image src="/images/icon-down.png" width="32" height="32" />
+                ) : (
+                  <Image
+                    src="/images/icon-down-default.png"
+                    width="32"
+                    height="32"
+                  />
+                )}
+              </div>
+            </div>
+            <div
+              onClick={() => display(2)}
+              className={displayed === 2 ? styles.button2 : ""}
+            >
+              <div className={styles.buttonText}>11.19 Fri</div>
+              <div className={styles.buttonIcon}>
+                {displayed === 2 ? (
+                  <Image src="/images/icon-down.png" width="32" height="32" />
+                ) : (
+                  <Image
+                    src="/images/icon-down-default.png"
+                    width="32"
+                    height="32"
+                  />
+                )}
+              </div>
+            </div>
           </div>
           <div className={styles.schedule}>
             <div className={styles.item}>

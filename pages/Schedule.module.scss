@@ -48,14 +48,27 @@
   margin-bottom: 60px;
 
   & > div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #cbcbcb, #ffffff);
+    border: solid 1px lightgray;
+    padding: 15px;
+    letter-spacing: -1px;
+    width: 250px;
+    border-radius: 200px;
     font-weight: 700;
     font-size: 25px;
     margin: 0 30px;
+    box-shadow: 6px 3px 4px #c1c1c1;
   }
 
   @include mobile {
     width: 80%;
     flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
 
     & > div {
@@ -63,6 +76,26 @@
       font-size: 25px;
       margin: 8px 0px;
     }
+  }
+}
+
+.button {
+  &1 {
+    color: white;
+    background: linear-gradient(270deg, #ff8a8a, #ff3879) !important;
+  }
+
+  &2 {
+    color: white;
+    background: linear-gradient(270deg, #c163ff, #5a4cca) !important;
+  }
+
+  &Text {
+    text-align: center;
+    flex: 1;
+  }
+  &Icon {
+    font-size: 0;
   }
 }
 

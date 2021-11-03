@@ -1,0 +1,7 @@
+@import "mixin";
+
+.container {
+  @include mobile {
+    margin-top: 75px;
+  }
+}

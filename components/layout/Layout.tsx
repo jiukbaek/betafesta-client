@@ -1,8 +1,10 @@
 import Footer from "./Footer";
 import Header from "./Header";
 
+import styles from "./Layout.module.scss";
+
 const Layout: React.FC = ({ children }) => (
-  <div>
+  <div className={styles.container}>
     <Header />
     {children}
     <Footer />

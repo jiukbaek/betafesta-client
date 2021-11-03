@@ -27,10 +27,6 @@
 
 .container {
   position: relative;
-
-  @include mobile {
-    margin-top: 75px;
-  }
 }
 
 .controller {

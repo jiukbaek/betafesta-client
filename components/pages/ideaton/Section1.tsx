@@ -1,5 +1,5 @@
 import Image from "components/Image";
-import { downloadPdf, openLink } from "util/base";
+import { download, openLink } from "util/base";
 import styles from "./Section1.module.scss";
 
 export const Section1 = () => {
@@ -38,7 +38,17 @@ export const Section1 = () => {
               <div>예비창업자 1천만 원 / 스타트업 5천만 원</div>
             </div>
             <div className={styles.buttons}>
-              <div onClick={downloadPdf}>공고문 다운받기</div>
+              <div
+                onClick={() =>
+                  download({
+                    path: "/download/betafesta.pdf",
+                    fileName:
+                      "2021 BETA 페스티벌 창업경진대회_참가자 모집 공고문.pdf",
+                  })
+                }
+              >
+                공고문 다운받기
+              </div>
               <div
                 onClick={() => openLink("https://forms.gle/tZB2wMkPh8UFm7jY7")}
               >

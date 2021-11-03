@@ -18,9 +18,9 @@ const Board = () => {
   return (
     <Layout>
       <div>
-        <div>공지사항</div>
+        <div className={styles.title}>공지사항</div>
         <div className={styles.list}>
-          <div className={styles.item}>
+          <div className={styles.itemHead}>
             <div>번호</div>
             <div>제목</div>
             <div>작성 일</div>
@@ -28,7 +28,7 @@ const Board = () => {
           {list.map((item) => (
             <div
               key={item.id}
-              className={styles.item}
+              className={styles.itemRow}
               onClick={() => router.push(`/admin/board/${item.id}`)}
             >
               <div>{item.id}</div>
@@ -36,6 +36,9 @@ const Board = () => {
               <div>{formatDate(item.createdAt)}</div>
             </div>
           ))}
+        </div>
+        <div className={styles.buttons}>
+          <div onClick={() => router.push("/admin/board/write")}>글 쓰기</div>
         </div>
       </div>
     </Layout>

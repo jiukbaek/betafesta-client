@@ -1,9 +1,12 @@
 import axios from "axios";
 import router from "next/router";
-import { useEffect, useRef, createRef, RefObject, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Layout from "pages/admin/layout";
 
+import common from "./board.module.scss";
 import styles from "./edit.module.scss";
+import { File } from "./[id]/edit";
+import { clone } from "lodash";
 
 declare const nhn: any;
 
@@ -11,12 +14,8 @@ const oEditors: any = [];
 
 const Write = () => {
   const [title, setTitle] = useState("");
+  const [files, setFiles] = useState<any>([]);
   const editorRef = useRef<HTMLTextAreaElement>(null);
-  const fileRef = useRef<Array<RefObject<HTMLInputElement>>>(
-    Array(5)
-      .fill(null)
-      .map(() => createRef())
-  );
 
   useEffect(() => {
     nhn.husky.EZCreator.createInIFrame({
@@ -27,27 +26,30 @@ const Write = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (files.length < 5) {
+      setFiles(files.concat(Array(5 - files.length).fill(null)));
+    }
+  }, [files]);
+
   const write = async () => {
-    console.log(oEditors);
     oEditors.getById["editor"].exec("UPDATE_CONTENTS_FIELD", []);
     const content = editorRef.current?.value;
-    const { data: writed } = await axios.post("http://localhost:3000/board/write", {
-      content,
-      title,
-    });
-
-    const files = fileRef.current.reduce((prev: Array<File>, { current }) => {
-      if (current && current.files?.length) {
-        prev.push(current.files[0]);
+    const { data: writed } = await axios.post(
+      "http://localhost:3000/board/write",
+      {
+        content,
+        title,
       }
-      return prev;
-    }, []);
+    );
 
-    if (files.length) {
+    const addFiles = files.filter((f: any) => f && !f.originalName);
+
+    if (addFiles.length) {
       const formData = new FormData();
       formData.append("content-type", "multipart/form-data");
       formData.append("boardId", writed.id);
-      files.forEach((file) => {
+      addFiles.forEach((file: any) => {
         formData.append("files", file);
       });
       await axios.post("http://localhost:3000/board/upload/files", formData);
@@ -57,49 +59,58 @@ const Write = () => {
     router.push("/admin/board");
   };
 
+  const handleFiles = (updated: any, index: number) => {
+    const cloneFiles = clone(files);
+
+    if (updated) {
+      cloneFiles[index] = updated;
+    } else {
+      cloneFiles.splice(index, 1);
+    }
+
+    setFiles(cloneFiles);
+  };
+
   return (
     <Layout>
-      <div>공지사항 등록</div>
-      <input value={title} onChange={(e) => setTitle(e.target.value)} />
-      <textarea className={styles.editor} id="editor" ref={editorRef} />
-      <input
-        type="file"
-        id="file1"
-        ref={fileRef.current[0]}
-        accept=".hwp, .pdf, .jpg, .jpeg, .png"
-      />
-      <input
-        type="file"
-        id="file2"
-        ref={fileRef.current[1]}
-        accept=".hwp, .pdf, .jpg, .jpeg, .png"
-      />
-      <input
-        type="file"
-        id="file3"
-        ref={fileRef.current[2]}
-        accept=".hwp, .pdf, .jpg, .jpeg, .png"
-      />
-      <input
-        type="file"
-        id="file4"
-        ref={fileRef.current[3]}
-        accept=".hwp, .pdf, .jpg, .jpeg, .png"
-      />
-      <input
-        type="file"
-        id="file5"
-        ref={fileRef.current[4]}
-        accept=".hwp, .pdf, .jpg, .jpeg, .png"
-      />
-      <div
-        onClick={() => {
-          if (confirm("등록 하시겠습니까?")) {
-            write();
-          }
-        }}
-      >
-        등록
+      <div className={styles.container}>
+        <div className={common.title}>공지사항 등록</div>
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>제목</div>
+          <input
+            className={styles.titleInput}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>본문</div>
+          <textarea className={styles.editor} id="editor" ref={editorRef} />
+        </div>
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>첨부파일</div>
+          <div>
+            {files.map((file: any, index: any) => (
+              <File
+                file={file}
+                key={index}
+                setFile={(updated: any) => handleFiles(updated, index)}
+              />
+            ))}
+          </div>
+        </div>
+        <div className={common.buttons}>
+          <div onClick={() => confirm("등록 하시겠습니까?") && write()}>
+            등록
+          </div>
+          <div
+            onClick={() =>
+              confirm("취소 하시겠습니까?") && router.push("/admin/board")
+            }
+          >
+            취소
+          </div>
+        </div>
       </div>
     </Layout>
   );

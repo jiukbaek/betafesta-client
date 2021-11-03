@@ -1,6 +1,10 @@
+.container {
+  width: 800px;
+}
+
 .editor {
-  max-width: 900px;
-  width: 100%;
+  min-width: calc(100% - 82px);
+  height: 500px;
 }
 
 .file {
@@ -17,5 +21,21 @@
     cursor: pointer;
     padding: 3px;
     border: solid 1px;
+  }
+}
+
+.titleInput {
+  height: 35px;
+  width: 100%;
+}
+
+.section {
+  display: flex;
+  margin-bottom: 20px;
+
+  &Title {
+    margin-top: 5px;
+    font-size: 15px;
+    min-width: 80px;
   }
 }

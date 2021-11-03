@@ -4,19 +4,22 @@ import router, { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import Layout from "pages/admin/layout";
 
+import common from "pages/admin/board/board.module.scss";
 import styles from "pages/admin/board/edit.module.scss";
 
 declare const nhn: any;
 
 const oEditors: any = [];
 
-const File = ({ file, setFile }: { file: any; setFile: any }) =>
+export const File = ({ file, setFile }: { file: any; setFile: any }) =>
   file ? (
     <div className={styles.file}>
       <div className={styles.fileName}>{file.originalName || file.name}</div>
       <div
         className={styles.fileDelete}
-        onClick={() => confirm("첨부파일을 삭제 하시겠습니까?") && setFile(null)}
+        onClick={() =>
+          confirm("첨부파일을 삭제 하시겠습니까?") && setFile(null)
+        }
       >
         X
       </div>
@@ -41,7 +44,9 @@ const Edit = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:3000/board/${id}`).then(({ data }) => setItem(data));
+      axios
+        .get(`http://localhost:3000/board/${id}`)
+        .then(({ data }) => setItem(data));
     }
   }, [id]);
 
@@ -90,7 +95,7 @@ const Edit = () => {
     }
 
     alert("게시글이 수정 되었습니다.");
-    router.push("/admin/board");
+    router.push(`/admin/board/${item.id}`);
   };
 
   const handleFiles = (updated: any, index: number) => {
@@ -108,13 +113,51 @@ const Edit = () => {
   return (
     item && (
       <Layout>
-        <div>공지사항 수정</div>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} />
-        <textarea className={styles.editor} id="editor" ref={editorRef} value={item.content} />
-        {files.map((file: any, index: any) => (
-          <File file={file} key={index} setFile={(updated: any) => handleFiles(updated, index)} />
-        ))}
-        <div onClick={() => confirm("수정 하시겠습니까?") && write()}>수정</div>
+        <div className={styles.container}>
+          <div className={common.title}>공지사항 수정</div>
+          <div className={styles.section}>
+            <div className={styles.sectionTitle}>제목</div>
+            <input
+              className={styles.titleInput}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div className={styles.section}>
+            <div className={styles.sectionTitle}>본문</div>
+            <textarea
+              className={styles.editor}
+              id="editor"
+              ref={editorRef}
+              value={item.content}
+            />
+          </div>
+          <div className={styles.section}>
+            <div className={styles.sectionTitle}>첨부파일</div>
+            <div>
+              {files.map((file: any, index: any) => (
+                <File
+                  file={file}
+                  key={index}
+                  setFile={(updated: any) => handleFiles(updated, index)}
+                />
+              ))}
+            </div>
+          </div>
+          <div className={common.buttons}>
+            <div onClick={() => confirm("수정 하시겠습니까?") && write()}>
+              수정
+            </div>
+            <div
+              onClick={() =>
+                confirm("취소 하시겠습니까?") &&
+                router.push(`/admin/board/${item.id}`)
+              }
+            >
+              취소
+            </div>
+          </div>
+        </div>
       </Layout>
     )
   );

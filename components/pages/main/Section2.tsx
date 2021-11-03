@@ -5,7 +5,7 @@ import Image from "components/Image";
 import { useEffect, useState } from "react";
 import styles from "./Section2.module.scss";
 import useMobile from "util/useMobile";
-import { downloadPdf, openLink } from "util/base";
+import { download, openLink } from "util/base";
 
 const parseDate = (date: number) => {
   if (date <= 0) {
@@ -50,13 +50,28 @@ export const Section2 = () => {
       <div className={styles.display}>
         <div className={styles.title}>
           {isMobile ? (
-            <Image src="/images/section2-title-mobile.png" width="1000" height="500" alt="title" />
+            <Image
+              src="/images/section2-title-mobile.png"
+              width="1000"
+              height="500"
+              alt="title"
+            />
           ) : (
-            <Image src="/images/section2-title.png" width="2000" height="210" alt="title" />
+            <Image
+              src="/images/section2-title.png"
+              width="2000"
+              height="210"
+              alt="title"
+            />
           )}
         </div>
         <div className={styles.subtitle}>
-          <Image src="/images/section2-subtitle.png" width="1200" height="166" alt="title" />
+          <Image
+            src="/images/section2-subtitle.png"
+            width="1200"
+            height="166"
+            alt="title"
+          />
         </div>
         <div className={styles.countdown}>
           <div className={styles.led}>
@@ -75,7 +90,16 @@ export const Section2 = () => {
           </div>
         </div>
         <div className={styles.buttons}>
-          <Button className={styles.button} onClick={downloadPdf}>
+          <Button
+            className={styles.button}
+            onClick={() =>
+              download({
+                path: "/download/betafesta.pdf",
+                fileName:
+                  "2021 BETA 페스티벌 창업경진대회_참가자 모집 공고문.pdf",
+              })
+            }
+          >
             공고문 다운받기
           </Button>
           <Button

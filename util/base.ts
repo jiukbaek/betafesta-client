@@ -8,13 +8,13 @@ export const openLink = (link: string) => {
   ele.click();
 };
 
-export const downloadPdf = () => {
+export const download = ({ path = "", fileName = "" }) => {
+  console.log(fileName, path);
   const ele = document.createElement("a");
-  ele.setAttribute("href", "/download/betafesta.pdf");
-  ele.setAttribute(
-    "download",
-    "2021 BETA 페스티벌 창업경진대회_참가자 모집 공고문.pdf"
-  );
+  ele.setAttribute("href", path);
+  ele.setAttribute("download", fileName);
+
+  console.log(ele);
 
   ele.click();
 };

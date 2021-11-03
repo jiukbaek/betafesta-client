@@ -1,0 +1,71 @@
+@import "mixin";
+
+.container {
+  padding: 120px 0;
+
+  @include mobile {
+    padding: 40px 0;
+  }
+}
+
+.display {
+  @include safeArea;
+}
+
+.title {
+  font-family: Impact;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 60px;
+
+  @include mobile {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+.list {
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 70px 1fr 150px;
+  padding: 20px 0;
+  font-family: Nanum;
+  column-gap: 20px;
+  border-bottom: solid 1px gray;
+
+  @include mobile {
+    padding: 10px 0;
+    column-gap: 10px;
+    grid-template-columns: 40px 1fr 100px;
+  }
+
+  & > div {
+    &:first-child,
+    &:last-child {
+      text-align: center;
+    }
+  }
+
+  &Head {
+    @extend .item;
+    color: white;
+    background-color: #333333;
+    font-weight: bold;
+    font-size: 18px;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &Row {
+    @extend .item;
+    cursor: pointer;
+
+    @include mobile {
+      font-size: 13px;
+    }
+  }
+}

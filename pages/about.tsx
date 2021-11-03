@@ -91,35 +91,35 @@ const About = () => (
               <div>
                 <Image
                   src="/images/image-about-support1.png"
-                  width="285"
+                  width="145"
                   height="32"
                 />
               </div>
               <div>
                 <Image
                   src="/images/image-about-support2.png"
-                  width="168"
+                  width="275"
                   height="32"
                 />
               </div>
               <div>
                 <Image
                   src="/images/image-about-support3.png"
-                  width="150"
+                  width="410"
                   height="32"
                 />
               </div>
               <div>
                 <Image
                   src="/images/image-about-support4.png"
-                  width="188"
+                  width="175"
                   height="32"
                 />
               </div>
               <div>
                 <Image
                   src="/images/image-about-support5.png"
-                  width="134"
+                  width="195"
                   height="32"
                 />
               </div>

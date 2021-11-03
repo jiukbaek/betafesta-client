@@ -33,7 +33,7 @@ export const Section1 = () => {
               <div>참가 구분</div>
               <div>예비창업자 / 창업기업(스타트업)</div>
               <div>평가 장소</div>
-              <div>안동그랜드호텔(특설무대)</div>
+              <div>안동그랜드호텔 컨벤션홀</div>
               <div>총 상 금</div>
               <div>예비창업자 1천만 원 / 스타트업 5천만 원</div>
             </div>

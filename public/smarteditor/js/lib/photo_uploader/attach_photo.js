@@ -183,7 +183,10 @@ function cuttingNameByLength(sName, nMaxLng) {
   var sTemp, nIndex;
   if (sName.length > nMaxLng) {
     nIndex = sName.indexOf(".");
-    sTemp = sName.substring(0, nMaxLng) + "..." + sName.substring(nIndex, sName.length);
+    sTemp =
+      sName.substring(0, nMaxLng) +
+      "..." +
+      sName.substring(nIndex, sName.length);
   } else {
     sTemp = sName;
   }
@@ -321,7 +324,11 @@ function addImage(ofile) {
 
     //List 마크업 생성하기
     aFileList.push(
-      '	<li id="img' + nImageInfoCnt + '" class="imgLi"><span>' + sFileName + "</span>"
+      '	<li id="img' +
+        nImageInfoCnt +
+        '" class="imgLi"><span>' +
+        sFileName +
+        "</span>"
     );
     aFileList.push("	<em>" + sFileSize + "</em>");
     aFileList.push(
@@ -344,7 +351,7 @@ function addImage(ofile) {
 function html5Upload() {
   var tempFile, sUploadURL;
 
-  sUploadURL = "http://localhost:3000/board/upload/image"; //upload URL
+  sUploadURL = "http://betafesta.kr:3000/board/upload/image"; //upload URL
 
   //파일을 하나씩 보내고, 결과를 받음.
   for (var j = 0, k = 0; j < nImageInfoCnt; j++) {
@@ -561,7 +568,12 @@ window.onload = function () {
 	 */
 function setPhotoToEditor(oFileInfo) {
   console.log(oFileInfo);
-  if (!!opener && !!opener.nhn && !!opener.nhn.husky && !!opener.nhn.husky.PopUpManager) {
+  if (
+    !!opener &&
+    !!opener.nhn &&
+    !!opener.nhn.husky &&
+    !!opener.nhn.husky.PopUpManager
+  ) {
     //스마트 에디터 플러그인을 통해서 넣는 방법 (oFileInfo는 Array)
     opener.nhn.husky.PopUpManager.setCallback(window, "SET_PHOTO", [oFileInfo]);
     //본문에 바로 tag를 넣는 방법 (oFileInfo는 String으로 <img src=....> )
@@ -583,7 +595,11 @@ jindo.$Ajax.prototype.request = function (oData) {
   var url = this._url;
   this._is_abort = false;
 
-  if (opt.postBody && opt.type.toUpperCase() == "XHR" && opt.method.toUpperCase() != "GET") {
+  if (
+    opt.postBody &&
+    opt.type.toUpperCase() == "XHR" &&
+    opt.method.toUpperCase() != "GET"
+  ) {
     if (typeof oData == "string") {
       data = oData;
     } else {
@@ -598,7 +614,10 @@ jindo.$Ajax.prototype.request = function (oData) {
   req.open(opt.method.toUpperCase(), url, opt.async);
   if (opt.sendheader) {
     if (!this._headers["Content-Type"]) {
-      req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
+      req.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded; charset=utf-8"
+      );
     }
     req.setRequestHeader("charset", "utf-8");
     for (var x in this._headers) {
@@ -609,7 +628,11 @@ jindo.$Ajax.prototype.request = function (oData) {
     }
   }
   var navi = navigator.userAgent;
-  if (req.addEventListener && !(navi.indexOf("Opera") > -1) && !(navi.indexOf("MSIE") > -1)) {
+  if (
+    req.addEventListener &&
+    !(navi.indexOf("Opera") > -1) &&
+    !(navi.indexOf("MSIE") > -1)
+  ) {
     /*
      * opera 10.60에서 XMLHttpRequest에 addEventListener기 추가되었지만 정상적으로 동작하지 않아 opera는 무조건 dom1방식으로 지원함.
      * IE9에서도 opera와 같은 문제가 있음.
@@ -638,7 +661,10 @@ jindo.$Ajax.prototype.request = function (oData) {
  				 * 그래서 interval로 체크하여 timeout이벤트가 정상적으로 발생되도록 수정. 비동기 방식일때만
 
  	             */
-      if (window.navigator.userAgent.match(/(?:MSIE) ([0-9.]+)/)[1] == 6 && opt.async) {
+      if (
+        window.navigator.userAgent.match(/(?:MSIE) ([0-9.]+)/)[1] == 6 &&
+        opt.async
+      ) {
         var onreadystatechange = function (rq) {
           if (req.readyState == 4 && !t._is_abort) {
             if (_timer) {

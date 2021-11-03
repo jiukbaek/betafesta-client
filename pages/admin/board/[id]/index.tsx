@@ -15,7 +15,7 @@ const Detail = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/me", {
+      .get("http://betafesta.kr:3000/auth/me", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .catch(() => router.push("/admin/login"));
@@ -24,7 +24,7 @@ const Detail = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:3000/board/${id}`)
+        .get(`http://betafesta.kr:3000/board/${id}`)
         .then(({ data }) => setItem(data));
     }
   }, [id]);
@@ -53,7 +53,7 @@ const Detail = () => {
                     key={file.id}
                     onClick={() =>
                       window.location.assign(
-                        `http://localhost:3000/board/file/${file.id}`
+                        `http://betafesta.kr:3000/board/file/${file.id}`
                       )
                     }
                   >
@@ -70,7 +70,7 @@ const Detail = () => {
               onClick={() =>
                 confirm("삭제하시겠습니까?") &&
                 axios
-                  .delete(`http://localhost:3000/board/${item.id}`, {
+                  .delete(`http://betafesta.kr:3000/board/${item.id}`, {
                     headers: {
                       Authorization: `Bearer ${sessionStorage.getItem(
                         "token"

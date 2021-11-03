@@ -30,7 +30,7 @@ const Login = () => {
       setError("패스워드를 입력해주세요");
     }
     axios
-      .post("http://localhost:3000/auth/login", { username: id, password })
+      .post("http://betafesta.kr:3000/auth/login", { username: id, password })
       .then(({ data }) => {
         sessionStorage.setItem("token", data.access_token);
         router.push("/admin");

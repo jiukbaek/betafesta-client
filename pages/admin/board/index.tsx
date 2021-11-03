@@ -13,14 +13,16 @@ const Board = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/me", {
+      .get("http://betafesta.kr:3000/auth/me", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .catch(() => router.push("/admin/login"));
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/board").then(({ data }) => setList(data));
+    axios
+      .get("http://betafesta.kr:3000/board")
+      .then(({ data }) => setList(data));
   }, []);
 
   return (

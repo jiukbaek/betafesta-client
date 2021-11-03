@@ -44,7 +44,7 @@ const Edit = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/me", {
+      .get("http://betafesta.kr:3000/auth/me", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .catch(() => router.push("/admin/login"));
@@ -53,7 +53,7 @@ const Edit = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:3000/board/${id}`)
+        .get(`http://betafesta.kr:3000/board/${id}`)
         .then(({ data }) => setItem(data));
     }
   }, [id]);
@@ -85,7 +85,7 @@ const Edit = () => {
     );
 
     await axios.put(
-      `http://localhost:3000/board/${item.id}`,
+      `http://betafesta.kr:3000/board/${item.id}`,
       {
         content,
         deleteFiles,
@@ -108,7 +108,7 @@ const Edit = () => {
         formData.append("files", file);
       });
       await axios
-        .post("http://localhost:3000/board/upload/files", formData, {
+        .post("http://betafesta.kr:3000/board/upload/files", formData, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           },

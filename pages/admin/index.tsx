@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const Admin = () => {
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/me", {
+      .get("http://betafesta.kr:3000/auth/me", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .then(() => router.push("/admin/analytics"))

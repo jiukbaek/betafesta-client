@@ -74,7 +74,7 @@ const Main = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/auth/me", {
+      .get("http://betafesta.kr:3000/auth/me", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .catch(() => router.push("/admin/login"));
@@ -89,7 +89,7 @@ const Main = () => {
       setLoading(true);
       axios
         .get(
-          `http://localhost:3000/analytics/report?startDate=${formatDate(
+          `http://betafesta.kr:3000/analytics/report?startDate=${formatDate(
             startDate
           )}&endDate=${formatDate(endDate)}`,
           {

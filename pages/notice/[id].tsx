@@ -15,7 +15,7 @@ const Detail = () => {
   useEffect(() => {
     if (query.id) {
       axios
-        .get(`http://localhost:3000/board/${query.id}`)
+        .get(`http://betafesta.kr:3000/board/${query.id}`)
         .then(({ data }) => setItem(data));
     }
   }, [query]);
@@ -43,7 +43,7 @@ const Detail = () => {
                       key={file.id}
                       onClick={() =>
                         window.location.assign(
-                          `http://localhost:3000/board/file/${file.id}`
+                          `http://betafesta.kr:3000/board/file/${file.id}`
                         )
                       }
                     >

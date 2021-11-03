@@ -11,7 +11,9 @@ const Notice = () => {
   const [list, setList] = useState<any>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/board").then(({ data }) => setList(data));
+    axios
+      .get("http://betafesta.kr:3000/board")
+      .then(({ data }) => setList(data));
   }, []);
 
   console.log(list);

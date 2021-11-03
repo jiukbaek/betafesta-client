@@ -73,12 +73,11 @@
 
 .buttons {
   display: flex;
-  width: 350px;
-  justify-content: space-between;
 
   & > div {
     cursor: pointer;
     width: 150px;
+    margin-right: 20px;
     padding: 15px 0;
     text-align: center;
     background: #333333;

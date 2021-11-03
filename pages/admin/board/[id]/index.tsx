@@ -18,7 +18,6 @@ const Detail = () => {
       .get("http://localhost:3000/auth/me", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
-      .then(() => router.push("/admin/analytics"))
       .catch(() => router.push("/admin/login"));
   }, []);
 
@@ -44,9 +43,49 @@ const Detail = () => {
           <div className={styles.content}>
             <div dangerouslySetInnerHTML={{ __html: item.content }} />
           </div>
+          {item.files.length > 0 && (
+            <div style={{ margin: "20px 0" }}>
+              <div style={{ fontSize: 18 }}>첨부파일</div>
+              <div>
+                {item.files.map((file: any) => (
+                  <div
+                    style={{ cursor: "pointer" }}
+                    key={file.id}
+                    onClick={() =>
+                      window.location.assign(
+                        `http://localhost:3000/board/file/${file.id}`
+                      )
+                    }
+                  >
+                    {file.originalName}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           <div className={styles.buttons}>
             <div onClick={() => router.push(`${asPath}/edit`)}>수정</div>
             <div onClick={() => router.push("/admin/board")}>목록</div>
+            <div
+              onClick={() =>
+                confirm("삭제하시겠습니까?") &&
+                axios
+                  .delete(`http://localhost:3000/board/${item.id}`, {
+                    headers: {
+                      Authorization: `Bearer ${sessionStorage.getItem(
+                        "token"
+                      )}`,
+                    },
+                  })
+                  .then(() => {
+                    alert("삭제되었습니다.");
+                    router.push("/admin/board");
+                  })
+                  .catch(() => alert("예기치 못한 이유로 삭제되지 않았습니다"))
+              }
+            >
+              삭제
+            </div>
           </div>
         </div>
       </Layout>

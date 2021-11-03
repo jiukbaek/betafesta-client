@@ -22,7 +22,6 @@ const Write = () => {
       .get("http://localhost:3000/auth/me", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
-      .then(() => router.push("/admin/analytics"))
       .catch(() => router.push("/admin/login"));
   }, []);
 

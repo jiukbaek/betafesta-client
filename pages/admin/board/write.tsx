@@ -13,13 +13,14 @@ declare const nhn: any;
 const oEditors: any = [];
 
 const Write = () => {
+  const { apiHost } = process.env;
   const [title, setTitle] = useState("");
   const [files, setFiles] = useState<any>([]);
   const editorRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     axios
-      .get("http://betafesta.kr:3000/auth/me", {
+      .get(`${apiHost}/auth/me`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .catch(() => router.push("/admin/login"));
@@ -44,7 +45,7 @@ const Write = () => {
     oEditors.getById["editor"].exec("UPDATE_CONTENTS_FIELD", []);
     const content = editorRef.current?.value;
     const { data: writed } = await axios.post(
-      "http://betafesta.kr:3000/board/write",
+      `${apiHost}/board/write`,
       {
         content,
         title,
@@ -65,15 +66,11 @@ const Write = () => {
       addFiles.forEach((file: any) => {
         formData.append("files", file);
       });
-      await axios.post(
-        "http://betafesta.kr:3000/board/upload/files",
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-          },
-        }
-      );
+      await axios.post(`${apiHost}/board/upload/files`, formData, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      });
     }
 
     alert("게시글이 등록 되었습니다.");

@@ -7,13 +7,12 @@ import { formatDate } from "util/base";
 import styles from "./Notice.module.scss";
 
 const Notice = () => {
+  const { apiHost } = process.env;
   const router = useRouter();
   const [list, setList] = useState<any>([]);
 
   useEffect(() => {
-    axios
-      .get("http://betafesta.kr:3000/board")
-      .then(({ data }) => setList(data));
+    axios.get(`${apiHost}/board`).then(({ data }) => setList(data));
   }, []);
 
   console.log(list);

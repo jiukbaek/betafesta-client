@@ -16,6 +16,7 @@ const Input = ({ label, ...inputProps }: InputProps) => (
 );
 
 const Login = () => {
+  const { apiHost } = process.env;
   const router = useRouter();
   const [error, setError] = useState<string>("");
   const [id, setId] = useState<string>("");
@@ -30,7 +31,7 @@ const Login = () => {
       setError("패스워드를 입력해주세요");
     }
     axios
-      .post("http://betafesta.kr:3000/auth/login", { username: id, password })
+      .post(`${apiHost}/auth/login`, { username: id, password })
       .then(({ data }) => {
         sessionStorage.setItem("token", data.access_token);
         router.push("/admin");

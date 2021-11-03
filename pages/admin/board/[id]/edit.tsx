@@ -34,6 +34,7 @@ export const File = ({ file, setFile }: { file: any; setFile: any }) =>
   );
 
 const Edit = () => {
+  const { apiHost } = process.env;
   const {
     query: { id },
   } = useRouter();
@@ -44,7 +45,7 @@ const Edit = () => {
 
   useEffect(() => {
     axios
-      .get("http://betafesta.kr:3000/auth/me", {
+      .get(`${apiHost}/auth/me`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .catch(() => router.push("/admin/login"));
@@ -52,9 +53,7 @@ const Edit = () => {
 
   useEffect(() => {
     if (id) {
-      axios
-        .get(`http://betafesta.kr:3000/board/${id}`)
-        .then(({ data }) => setItem(data));
+      axios.get(`${apiHost}/board/${id}`).then(({ data }) => setItem(data));
     }
   }, [id]);
 
@@ -85,7 +84,7 @@ const Edit = () => {
     );
 
     await axios.put(
-      `http://betafesta.kr:3000/board/${item.id}`,
+      `${apiHost}/board/${item.id}`,
       {
         content,
         deleteFiles,
@@ -108,7 +107,7 @@ const Edit = () => {
         formData.append("files", file);
       });
       await axios
-        .post("http://betafesta.kr:3000/board/upload/files", formData, {
+        .post(`${apiHost}/board/upload/files`, formData, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           },

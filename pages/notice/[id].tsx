@@ -9,13 +9,14 @@ import { formatDate, openLink } from "util/base";
 import styles from "./Detail.module.scss";
 
 const Detail = () => {
+  const { apiHost } = process.env;
   const [item, setItem] = useState<any>(null);
   const { query, push } = useRouter();
 
   useEffect(() => {
     if (query.id) {
       axios
-        .get(`http://betafesta.kr:3000/board/${query.id}`)
+        .get(`${apiHost}/board/${query.id}`)
         .then(({ data }) => setItem(data));
     }
   }, [query]);
@@ -43,7 +44,7 @@ const Detail = () => {
                       key={file.id}
                       onClick={() =>
                         window.location.assign(
-                          `http://betafesta.kr:3000/board/file/${file.id}`
+                          `${apiHost}/board/file/${file.id}`
                         )
                       }
                     >

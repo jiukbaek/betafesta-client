@@ -3,9 +3,11 @@ import router from "next/router";
 import { useEffect } from "react";
 
 const Admin = () => {
+  const { apiHost } = process.env;
+
   useEffect(() => {
     axios
-      .get("http://betafesta.kr:3000/auth/me", {
+      .get(`${apiHost}/auth/me`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .then(() => router.push("/admin/analytics"))

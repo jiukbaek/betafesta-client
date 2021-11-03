@@ -7,6 +7,7 @@ import styles from "pages/admin/board/board.module.scss";
 import { formatDate } from "util/base";
 
 const Detail = () => {
+  const { apiHost } = process.env;
   const {
     query: { id },
     asPath,
@@ -15,7 +16,7 @@ const Detail = () => {
 
   useEffect(() => {
     axios
-      .get("http://betafesta.kr:3000/auth/me", {
+      .get(`${apiHost}/auth/me`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .catch(() => router.push("/admin/login"));
@@ -23,9 +24,7 @@ const Detail = () => {
 
   useEffect(() => {
     if (id) {
-      axios
-        .get(`http://betafesta.kr:3000/board/${id}`)
-        .then(({ data }) => setItem(data));
+      axios.get(`${apiHost}/board/${id}`).then(({ data }) => setItem(data));
     }
   }, [id]);
 
@@ -52,9 +51,7 @@ const Detail = () => {
                     style={{ cursor: "pointer" }}
                     key={file.id}
                     onClick={() =>
-                      window.location.assign(
-                        `http://betafesta.kr:3000/board/file/${file.id}`
-                      )
+                      window.location.assign(`${apiHost}/board/file/${file.id}`)
                     }
                   >
                     {file.originalName}
@@ -70,7 +67,7 @@ const Detail = () => {
               onClick={() =>
                 confirm("삭제하시겠습니까?") &&
                 axios
-                  .delete(`http://betafesta.kr:3000/board/${item.id}`, {
+                  .delete(`${apiHost}/board/${item.id}`, {
                     headers: {
                       Authorization: `Bearer ${sessionStorage.getItem(
                         "token"

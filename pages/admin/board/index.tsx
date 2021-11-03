@@ -8,21 +8,20 @@ import styles from "./board.module.scss";
 import { formatDate } from "util/base";
 
 const Board = () => {
+  const { apiHost } = process.env;
   const router = useRouter();
   const [list, setList] = useState<Array<any>>([]);
 
   useEffect(() => {
     axios
-      .get("http://betafesta.kr:3000/auth/me", {
+      .get(`${apiHost}/auth/me`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .catch(() => router.push("/admin/login"));
   }, []);
 
   useEffect(() => {
-    axios
-      .get("http://betafesta.kr:3000/board")
-      .then(({ data }) => setList(data));
+    axios.get(`${apiHost}/board`).then(({ data }) => setList(data));
   }, []);
 
   return (

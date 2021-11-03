@@ -67,6 +67,7 @@ const VisitorChart = ({
 };
 
 const Main = () => {
+  const { apiHost } = process.env;
   const [startDate, setStartDate] = useState<Date>(new Date());
   const [endDate, setEndDate] = useState<Date>(new Date());
   const [loading, setLoading] = useState<boolean>(false);
@@ -74,7 +75,7 @@ const Main = () => {
 
   useEffect(() => {
     axios
-      .get("http://betafesta.kr:3000/auth/me", {
+      .get(`${apiHost}/auth/me`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
       .catch(() => router.push("/admin/login"));
@@ -89,7 +90,7 @@ const Main = () => {
       setLoading(true);
       axios
         .get(
-          `http://betafesta.kr:3000/analytics/report?startDate=${formatDate(
+          `${apiHost}/analytics/report?startDate=${formatDate(
             startDate
           )}&endDate=${formatDate(endDate)}`,
           {
@@ -102,7 +103,7 @@ const Main = () => {
           setLoading(false);
           setReport(data);
         })
-        .catch(() => router.push("/admin"));
+        .catch(() => router.push("/admin/login"));
     }
   };
 

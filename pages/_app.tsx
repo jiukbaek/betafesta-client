@@ -30,6 +30,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="naver-site-verification"
           content="36c55a0227834dcf718e020a8928b61ee58960ea"
         />
+        <meta
+          name="naver-site-verification"
+          content="80435a81b4d0a5f02a1faeff7718e8c5b3427fd3"
+        />
+
         <title>베타페스티벌 - Beta Festival</title>
       </Head>
       <script

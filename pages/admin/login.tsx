@@ -1,4 +1,5 @@
-import router from "next/router";
+import axios from "axios";
+import router, { useRouter } from "next/router";
 import { KeyboardEvent, InputHTMLAttributes, useState } from "react";
 
 import styles from "./login.module.scss";
@@ -15,6 +16,7 @@ const Input = ({ label, ...inputProps }: InputProps) => (
 );
 
 const Login = () => {
+  const router = useRouter();
   const [error, setError] = useState<string>("");
   const [id, setId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -26,12 +28,14 @@ const Login = () => {
       setError("아이디를 입력해주세요");
     } else if (!password) {
       setError("패스워드를 입력해주세요");
-    } else if (id !== "admin" || password !== "admin") {
-      setError("아이디 또는 패스워드를 잘못 입력했습니다.");
-    } else {
-      sessionStorage.setItem("logged", "Y");
-      router.push("/admin");
     }
+    axios
+      .post("http://localhost:3000/auth/login", { username: id, password })
+      .then(({ data }) => {
+        sessionStorage.setItem("token", data.access_token);
+        router.push("/admin");
+      })
+      .catch(() => setError("계정 정보가 일치하지 않습니다."));
   };
 
   return (
@@ -52,7 +56,9 @@ const Login = () => {
             onKeyPress={onEnter}
           />
           <div className={styles.error}>{error}</div>
-          <button className={styles.submit}>로그인</button>
+          <button className={styles.submit} onClick={submit}>
+            로그인
+          </button>
         </div>
       </div>
     </div>

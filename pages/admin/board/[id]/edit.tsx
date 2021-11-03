@@ -43,6 +43,15 @@ const Edit = () => {
   const editorRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
+    axios
+      .get("http://localhost:3000/auth/me", {
+        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
+      })
+      .then(() => router.push("/admin/analytics"))
+      .catch(() => router.push("/admin/login"));
+  }, []);
+
+  useEffect(() => {
     if (id) {
       axios
         .get(`http://localhost:3000/board/${id}`)
@@ -76,11 +85,19 @@ const Edit = () => {
       files.every((nextFile: any) => !isEqual(prevFile, nextFile))
     );
 
-    await axios.put(`http://localhost:3000/board/${item.id}`, {
-      content,
-      deleteFiles,
-      title,
-    });
+    await axios.put(
+      `http://localhost:3000/board/${item.id}`,
+      {
+        content,
+        deleteFiles,
+        title,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      }
+    );
 
     const addFiles = files.filter((f: any) => f && !f.originalName);
 
@@ -91,7 +108,13 @@ const Edit = () => {
       addFiles.forEach((file: any) => {
         formData.append("files", file);
       });
-      await axios.post("http://localhost:3000/board/upload/files", formData);
+      await axios
+        .post("http://localhost:3000/board/upload/files", formData, {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        })
+        .catch(() => router.push("/admin"));
     }
 
     alert("게시글이 수정 되었습니다.");

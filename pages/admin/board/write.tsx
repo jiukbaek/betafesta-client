@@ -18,6 +18,15 @@ const Write = () => {
   const editorRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
+    axios
+      .get("http://localhost:3000/auth/me", {
+        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
+      })
+      .then(() => router.push("/admin/analytics"))
+      .catch(() => router.push("/admin/login"));
+  }, []);
+
+  useEffect(() => {
     nhn.husky.EZCreator.createInIFrame({
       oAppRef: oEditors,
       elPlaceHolder: "editor",
@@ -40,6 +49,11 @@ const Write = () => {
       {
         content,
         title,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
       }
     );
 
@@ -52,7 +66,11 @@ const Write = () => {
       addFiles.forEach((file: any) => {
         formData.append("files", file);
       });
-      await axios.post("http://localhost:3000/board/upload/files", formData);
+      await axios.post("http://localhost:3000/board/upload/files", formData, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      });
     }
 
     alert("게시글이 등록 되었습니다.");

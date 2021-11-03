@@ -27,17 +27,23 @@ const Notice = () => {
               <div>제목</div>
               <div>날짜</div>
             </div>
-            {list.map((item: any) => (
-              <div
-                className={styles.itemRow}
-                key={item.id}
-                onClick={() => router.push(`${router.asPath}/${item.id}`)}
-              >
-                <div>{item.id}</div>
-                <div>{item.title}</div>
-                <div>{formatDate(item.createdAt)}</div>
+            {list.length > 0 ? (
+              list.map((item: any) => (
+                <div
+                  className={styles.itemRow}
+                  key={item.id}
+                  onClick={() => router.push(`${router.asPath}/${item.id}`)}
+                >
+                  <div>{item.id}</div>
+                  <div>{item.title}</div>
+                  <div>{formatDate(item.createdAt)}</div>
+                </div>
+              ))
+            ) : (
+              <div className={styles.emptyNotice}>
+                등록된 공지사항이 없습니다.
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>

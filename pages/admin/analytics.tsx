@@ -10,15 +10,20 @@ import "react-datepicker/dist/react-datepicker.css";
 import styles from "./analytics.module.scss";
 import Layout from "./layout";
 import { formatDate } from "util/base";
+import router from "next/router";
 
-const VisitorChart = ({ dateVisitor }: { dateVisitor: Array<Record<string, any>> }) => {
+const VisitorChart = ({
+  dateVisitor,
+}: {
+  dateVisitor: Array<Record<string, any>>;
+}) => {
   const [chart, setChart] = useState<any>();
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (ref.current) {
       const canvas = ref.current;
-      const maxCount = max(dateVisitor.map(({ count }) => count));
+      const maxCount = max(dateVisitor.map(({ count }) => parseInt(count)));
       const options: any = maxCount
         ? {
             scales: {
@@ -27,7 +32,8 @@ const VisitorChart = ({ dateVisitor }: { dateVisitor: Array<Record<string, any>>
                   stepSize: "1".padEnd(String(maxCount).length, "0"),
                 },
                 min: 0,
-                max: parseInt(maxCount) + parseInt("1".padEnd(String(maxCount).length, "0")),
+                max:
+                  maxCount + parseInt("1".padEnd(String(maxCount).length, "0")),
               },
             },
           }
@@ -66,6 +72,15 @@ const Main = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [report, setReport] = useState<Record<string, any>>();
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/auth/me", {
+        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
+      })
+      .then(() => router.push("/admin/analytics"))
+      .catch(() => router.push("/admin/login"));
+  }, []);
+
   const fetchReport = () => {
     if (!startDate || !endDate) {
       alert("날짜를 선택 해주세요");
@@ -77,12 +92,18 @@ const Main = () => {
         .get(
           `http://localhost:3000/analytics/report?startDate=${formatDate(
             startDate
-          )}&endDate=${formatDate(endDate)}`
+          )}&endDate=${formatDate(endDate)}`,
+          {
+            headers: {
+              Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+            },
+          }
         )
         .then(({ data }) => {
           setLoading(false);
           setReport(data);
-        });
+        })
+        .catch(() => router.push("/admin"));
     }
   };
 
@@ -97,7 +118,12 @@ const Main = () => {
       {loading && (
         <div className={styles.loading}>
           <div className={styles.loadingIcon}>
-            <Image src="/images/icon-loading.svg" width="48" height="48" alt="loading" />
+            <Image
+              src="/images/icon-loading.svg"
+              width="48"
+              height="48"
+              alt="loading"
+            />
           </div>
         </div>
       )}

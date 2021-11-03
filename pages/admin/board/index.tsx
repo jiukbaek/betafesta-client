@@ -12,6 +12,15 @@ const Board = () => {
   const [list, setList] = useState<Array<any>>([]);
 
   useEffect(() => {
+    axios
+      .get("http://localhost:3000/auth/me", {
+        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
+      })
+      .then(() => router.push("/admin/analytics"))
+      .catch(() => router.push("/admin/login"));
+  }, []);
+
+  useEffect(() => {
     axios.get("http://localhost:3000/board").then(({ data }) => setList(data));
   }, []);
 

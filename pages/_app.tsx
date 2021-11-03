@@ -6,7 +6,6 @@ import { NextSeo } from "next-seo";
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log(process.env.mapId);
   return (
     <>
       <NextSeo
@@ -27,6 +26,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="naver-site-verification"
+          content="36c55a0227834dcf718e020a8928b61ee58960ea"
+        />
         <title>베타페스티벌 - Beta Festival</title>
       </Head>
       <script

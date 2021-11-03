@@ -118,8 +118,8 @@ const About = () => (
               </div>
               <div>
                 <Image
-                  src="/images/image-about-support5.png"
-                  width="178"
+                  src="/images/image-support3.png"
+                  width="134"
                   height="32"
                 />
               </div>

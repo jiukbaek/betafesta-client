@@ -17,6 +17,15 @@
   ],
   "sns": {
     "tags": ["베타페스티벌", "스타트업", "창업"],
-    "posts": [{ "image": "", "link": "" }]
+    "posts": [
+      {
+        "image": "/images/image-post1.jpeg",
+        "link": "https://www.instagram.com/p/CV2havJPq4J/"
+      },
+      {
+        "image": "/images/image-post2.jpeg",
+        "link": "https://www.instagram.com/p/CV2g8oDPRe0/"
+      }
+    ]
   }
 }

@@ -6,13 +6,12 @@ import { openLink } from "util/base";
 import styles from "./Section5.module.scss";
 
 export const Section5 = () => (
-  <div
-    id="event"
-    className={styles.container}
-    onClick={() => openLink("https://www.instagram.com/beta_festival_/")}
-  >
+  <div id="event" className={styles.container}>
     <div className={styles.display}>
-      <div className={styles.title}>
+      <div
+        className={styles.title}
+        onClick={() => openLink("https://www.instagram.com/beta_festival_/")}
+      >
         <span className={styles.title1}>INSTAGRAM</span>
         <span className={styles.title2}>@beta_festival_</span>
       </div>
@@ -22,26 +21,11 @@ export const Section5 = () => (
         ))}
       </div>
       <div className={styles.posts}>
-        <div>
-          <div>
-            <div>COMMING SOON</div>
+        {main.sns.posts.map(({ image, link }, index) => (
+          <div key={index} onClick={() => openLink(link)}>
+            <Image src={image} width="500" height="500" />
           </div>
-        </div>
-        <div>
-          <div>
-            <div>COMMING SOON</div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>COMMING SOON</div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>COMMING SOON</div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </div>

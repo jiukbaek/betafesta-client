@@ -22,7 +22,11 @@ export const Section5 = () => (
       </div>
       <div className={styles.posts}>
         {main.sns.posts.map(({ image, link }, index) => (
-          <div key={index} onClick={() => openLink(link)}>
+          <div
+            key={index}
+            onClick={() => openLink(link)}
+            className={styles.post}
+          >
             <Image src={image} width="500" height="500" />
           </div>
         ))}

@@ -36,15 +36,20 @@ const Location = () => {
               <div id="map" className={styles.locationMap} />
             </div>
           </div>
-          <div className={styles.section}>
+          <div className={styles.section2}>
             <div className={styles.sectionTitle}>
               <div className={styles.sectionTitleIcon} />
               무료 셔틀버스
             </div>
+            <div className={styles.shuttleBG}>
+              <div className={styles.shuttleBGObj} />
+            </div>
             <div className={styles.shuttle}>
               <div className={styles.shuttleInfo}>
                 <div className={styles.shuttleTitle}>· 운행기간</div>
-                <div className={styles.shuttleContent}>11월 18일 ~ 19일 (2일간)</div>
+                <div className={styles.shuttleContent}>
+                  11월 18일 ~ 19일 (2일간)
+                </div>
               </div>
               <div className={styles.shuttleInfo}>
                 <div className={styles.shuttleTitle}>· 운행시간</div>
@@ -56,10 +61,11 @@ const Location = () => {
               </div>
               <div className={styles.shuttleInfo}>
                 <div className={styles.shuttleTitle}>· 운행구간</div>
-                <div className={styles.shuttleContent}>모디 684 → 용상사거리 → 안동그랜드호텔</div>
+                <div className={styles.shuttleContent}>
+                  모디 684 → 용상사거리 → 안동그랜드호텔
+                </div>
               </div>
             </div>
-            <div></div>
           </div>
         </div>
       </div>

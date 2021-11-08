@@ -78,14 +78,63 @@
 
 .section {
   margin-bottom: 40px;
+  position: relative;
 
   @include mobile {
     margin-bottom: 20px;
+  }
+
+  &2 {
+    @extend .section;
+    padding-bottom: 40px;
+
+    @include mobile {
+      padding-bottom: 60px;
+    }
   }
 }
 
 .shuttle {
   font-family: Nanum;
+
+  &BG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/image-roadline.png");
+    background-repeat: no-repeat;
+    background-size: 100% 35px;
+    background-position: bottom;
+
+    @include mobile {
+      background-size: 100% 20px;
+    }
+
+    &Obj {
+      position: absolute;
+      bottom: 15px;
+      right: 80px;
+      width: 300px;
+      height: 200px;
+      background-repeat: no-repeat;
+      background-image: url("/images/image-roadsign.png"),
+        url("/images/image-bus.png");
+      background-size: 75px, 200px;
+      background-position: left bottom, right bottom;
+
+      @include mobile {
+        bottom: 7px;
+        right: 20px;
+        width: 120px;
+        height: 80px;
+        background-size: 25px, 80px;
+      }
+    }
+
+    z-index: -1;
+  }
 
   &Info {
     display: flex;

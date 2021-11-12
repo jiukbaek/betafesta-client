@@ -185,13 +185,20 @@
   }
 }
 
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
 .timeTable {
-  font-family: NanumEB;
+  font-family: Nanum;
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 3px;
-  text-align: center;
+  font-weight: bold;
+  grid-template-columns: repeat(9, 1fr) 2fr;
+  grid-auto-rows: 40px;
   align-items: center;
+  justify-content: center;
+  gap: 3px;
   margin-bottom: 40px;
 
   @include mobile {
@@ -200,8 +207,13 @@
   }
 
   & > div {
-    padding: 10px 0;
-
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
     &:nth-child(odd) {
       background-color: #f2f2f2;
     }
@@ -243,6 +255,23 @@
       color: white;
       background: linear-gradient(270deg, #ef8686, #e73d73);
     }
+
+    &Alive {
+      @extend .flexRow;
+
+      & > div {
+        @extend .flexRow;
+        align-items: center;
+
+        &:first-child {
+          margin-right: 15px;
+
+          @include mobile {
+            margin-right: 7px;
+          }
+        }
+      }
+    }
   }
 
   &2 {
@@ -257,5 +286,62 @@
       color: white;
       background: linear-gradient(270deg, #906aac, #4f4e9f);
     }
+
+    &Alive {
+      @extend .flexRow;
+      & > div {
+        @extend .flexRow;
+        align-items: center;
+
+        &:first-child {
+          margin-right: 15px;
+
+          @include mobile {
+            margin-right: 7px;
+          }
+        }
+      }
+    }
   }
+
+  &Num {
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+
+    @include mobile {
+      font-size: 14px;
+      min-width: 18px;
+      min-height: 18px;
+      margin: 0 3px;
+    }
+  }
+
+  &Course {
+    flex-direction: column;
+    align-items: flex-start !important;
+    grid-column: 8 span;
+    grid-row: 2 span;
+    padding-left: 20px;
+    background-color: #f2f2f2 !important;
+
+    & > div {
+      display: grid;
+      align-items: center;
+      grid-template-columns: auto auto 1fr;
+      margin: 5px 0;
+    }
+
+    @include mobile {
+      grid-column: 2 span;
+    }
+  }
+}
+
+.bgGray {
+  background-color: #f2f2f2 !important;
 }

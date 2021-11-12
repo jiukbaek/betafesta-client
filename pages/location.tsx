@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-sync-scripts */
+import clsx from "clsx";
 import { useEffect } from "react";
 
 import Layout from "components/layout/Layout";
@@ -26,7 +27,24 @@ const TimeTable: React.FC<TimeTableProp> = ({ type }) => (
     <div>1차</div>
     <div>10:30</div>
     <div>1차 도착</div>
-    <div>11:00</div>
+    <div className={styles[`timeTable${type}Alive`]}>
+      <div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          1
+        </div>
+        <div>10:20</div>
+      </div>
+      <div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          2
+        </div>
+        <div>11:00</div>
+      </div>
+    </div>
     <div>2차</div>
     <div>11:50</div>
     <div>2차</div>
@@ -36,15 +54,49 @@ const TimeTable: React.FC<TimeTableProp> = ({ type }) => (
     <div>2차</div>
     <div>12:40</div>
     <div>2차 도착</div>
-    <div>13:00</div>
-    <div className={styles.timeTableEmpty} />
-    <div className={styles.timeTableEmpty} />
+    <div className={styles[`timeTable${type}Alive`]}>
+      <div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          1
+        </div>
+        12:30
+      </div>
+      <div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          2
+        </div>
+        13:00
+      </div>
+    </div>
+    <div className={styles.timeTableCourse}>
+      <div>
+        <div>노선</div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          1
+        </div>
+        <div>안동과학대학교 ▶ 가톨릭상지대학교 ▶ 모디684 ▶ 안동 그랜드호텔</div>
+      </div>
+      <div>
+        <div>노선</div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          2
+        </div>
+        안동대학교 ▶ 안동 그랜드호텔
+      </div>
+    </div>
     <div className={styles[`timeTable${type}BG`]}>1차 출차</div>
-    <div>{type === 1 ? "15:30" : "18:30"}</div>
-    <div className={styles.timeTableEmpty} />
-    <div className={styles.timeTableEmpty} />
+    <div className={styles.bgGray}>{type === 1 ? "15:30" : "14:30"}</div>
+
     <div className={styles[`timeTable${type}BG`]}>2차 출차</div>
-    <div>{type === 1 ? "14:30" : "17:30"}</div>
+    <div className={styles.bgGray}>{type === 1 ? "18:30" : "17:30"}</div>
   </div>
 );
 

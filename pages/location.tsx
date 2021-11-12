@@ -1,9 +1,52 @@
 /* eslint-disable @next/next/no-sync-scripts */
-import Layout from "components/layout/Layout";
 import { useEffect } from "react";
+
+import Layout from "components/layout/Layout";
+import Image from "components/Image";
+
 import styles from "./Location.module.scss";
 
 declare const naver: any;
+
+interface TimeTableProp {
+  type: 1 | 2;
+}
+
+const TimeTable: React.FC<TimeTableProp> = ({ type }) => (
+  <div className={styles[`timeTable${type}`]}>
+    <div className={styles[`timeTable${type}Head`]}>
+      {type === 1 ? "11월 18일 목요일" : "11월 19일 금요일"}
+    </div>
+    <div>1차</div>
+    <div>09:30</div>
+    <div>1차</div>
+    <div>10:00</div>
+    <div>1차</div>
+    <div>10:10</div>
+    <div>1차</div>
+    <div>10:30</div>
+    <div>1차 도착</div>
+    <div>11:00</div>
+    <div>2차</div>
+    <div>11:50</div>
+    <div>2차</div>
+    <div>12:10</div>
+    <div>2차</div>
+    <div>12:20</div>
+    <div>2차</div>
+    <div>12:40</div>
+    <div>2차 도착</div>
+    <div>13:00</div>
+    <div className={styles.timeTableEmpty} />
+    <div className={styles.timeTableEmpty} />
+    <div className={styles[`timeTable${type}BG`]}>1차 출차</div>
+    <div>{type === 1 ? "15:30" : "18:30"}</div>
+    <div className={styles.timeTableEmpty} />
+    <div className={styles.timeTableEmpty} />
+    <div className={styles[`timeTable${type}BG`]}>2차 출차</div>
+    <div>{type === 1 ? "14:30" : "17:30"}</div>
+  </div>
+);
 
 const Location = () => {
   useEffect(() => {
@@ -66,6 +109,77 @@ const Location = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className={styles.section}>
+            <div className={styles.course}>
+              <div className={styles.courseImage}>
+                <Image
+                  src="/images/image-location1.png"
+                  width="708"
+                  height="653"
+                />
+              </div>
+              <div className={styles.courseIcon}>
+                <Image
+                  src="/images/icon-location-next1.png"
+                  width="60"
+                  height="68"
+                />
+              </div>
+              <div className={styles.courseImage}>
+                <Image
+                  src="/images/image-location2.png"
+                  width="708"
+                  height="653"
+                />
+              </div>
+              <div className={styles.courseIcon}>
+                <Image
+                  src="/images/icon-location-next2.png"
+                  width="60"
+                  height="68"
+                />
+              </div>
+              <div className={styles.courseImage}>
+                <Image
+                  src="/images/image-location3.png"
+                  width="708"
+                  height="653"
+                />
+              </div>
+              <div className={styles.courseIcon}>
+                <Image
+                  src="/images/icon-location-next3.png"
+                  width="60"
+                  height="68"
+                />
+              </div>
+              <div className={styles.courseImage}>
+                <Image
+                  src="/images/image-location4.png"
+                  width="708"
+                  height="653"
+                />
+              </div>
+              <div className={styles.courseIcon}>
+                <Image
+                  src="/images/icon-location-next4.png"
+                  width="60"
+                  height="68"
+                />
+              </div>
+              <div className={styles.courseImage}>
+                <Image
+                  src="/images/image-location5.png"
+                  width="708"
+                  height="653"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <TimeTable type={1} />
+            <TimeTable type={2} />
           </div>
         </div>
       </div>

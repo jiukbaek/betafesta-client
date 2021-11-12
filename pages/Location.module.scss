@@ -87,9 +87,11 @@
   &2 {
     @extend .section;
     padding-bottom: 40px;
+    margin-bottom: 100px;
 
     @include mobile {
       padding-bottom: 60px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -156,6 +158,104 @@
     @include mobile {
       padding-right: 7px;
       margin-right: 7px;
+    }
+  }
+}
+
+.course {
+  display: flex;
+  align-items: center;
+
+  @include mobile {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &Image {
+    @include mobile {
+      width: 43%;
+      font-size: 0;
+    }
+  }
+
+  &Icon {
+    @include mobile {
+      width: 15px;
+    }
+  }
+}
+
+.timeTable {
+  font-family: NanumEB;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 3px;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+
+  @include mobile {
+    font-size: 14px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  & > div {
+    padding: 10px 0;
+
+    &:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+    &:nth-child(even) {
+      background-color: #cccccc;
+    }
+  }
+
+  &Empty {
+    grid-column: span 4;
+    background-color: unset !important;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &Head {
+    font-size: 22px;
+    color: white;
+    transform: translateY(-3px);
+    grid-column: span 10;
+
+    @include mobile {
+      font-size: 16px;
+      grid-column: span 2;
+      transform: unset;
+    }
+  }
+
+  &1 {
+    @extend .timeTable;
+
+    &Head {
+      @extend .timeTableHead;
+      background: linear-gradient(90deg, #ef8686, #e73d73);
+    }
+
+    &BG {
+      color: white;
+      background: linear-gradient(270deg, #ef8686, #e73d73);
+    }
+  }
+
+  &2 {
+    @extend .timeTable;
+
+    &Head {
+      @extend .timeTableHead;
+      background: linear-gradient(90deg, #906aac, #4f4e9f);
+    }
+
+    &BG {
+      color: white;
+      background: linear-gradient(270deg, #906aac, #4f4e9f);
     }
   }
 }

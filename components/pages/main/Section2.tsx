@@ -25,7 +25,7 @@ const parseDate = (date: number) => {
 
 export const Section2 = () => {
   const isMobile = useMobile();
-  const limitDate = dayjs("2021-11-12 23:59:59");
+  const limitDate = dayjs("2021-11-16 23:59:59");
   const [countdown, setCountdown] = useState<Record<string, number>>({
     day: 0,
     hour: 0,
@@ -50,28 +50,13 @@ export const Section2 = () => {
       <div className={styles.display}>
         <div className={styles.title}>
           {isMobile ? (
-            <Image
-              src="/images/section2-title-mobile.png"
-              width="1000"
-              height="500"
-              alt="title"
-            />
+            <Image src="/images/section2-title-mobile.png" width="1000" height="500" alt="title" />
           ) : (
-            <Image
-              src="/images/section2-title.png"
-              width="2000"
-              height="210"
-              alt="title"
-            />
+            <Image src="/images/section2-title.png" width="2000" height="210" alt="title" />
           )}
         </div>
         <div className={styles.subtitle}>
-          <Image
-            src="/images/section2-subtitle.png"
-            width="1200"
-            height="166"
-            alt="title"
-          />
+          <Image src="/images/section2-subtitle.png" width="541" height="66" alt="title" />
         </div>
         <div className={styles.countdown}>
           <div className={styles.led}>

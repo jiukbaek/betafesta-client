@@ -136,7 +136,7 @@
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(10, minmax(60px, auto));
+  grid-template-rows: repeat(12, minmax(60px, auto));
 
   @include mobile {
     padding: 5px;
@@ -229,14 +229,23 @@
   &Pink {
     background: #ff7d96;
   }
+  &Pink2 {
+    background: #ffc0de;
+  }
   &Blue {
     background: #b8e9ff;
+  }
+  &Blue2 {
+    background: #99adff;
   }
   &Purple {
     background: #ebccff;
   }
   &Yellow {
     background: #ffe388;
+  }
+  &Yellow2 {
+    background: #ffcd8a;
   }
   &Green {
     background: #d6ffd4;

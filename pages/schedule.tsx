@@ -10,13 +10,24 @@ const Day1 = () => (
   <>
     <div
       className={clsx(styles.daySchedule, styles.bgGray)}
-      style={{ gridRow: "2 / 10", gridColumn: 2 }}
+      style={{ gridRow: "2 / 13", gridColumn: 2 }}
     >
       <div>스타트업 전시관</div>
       <div className={styles.divide} />
       <div>창업 컨설팅</div>
       <div className={styles.divide} />
       <div>기업투자 상담</div>
+    </div>
+    <div
+      className={clsx(styles.daySchedule, styles.bgPink2)}
+      style={{
+        animationDelay: "0.1s",
+        gridRow: "5",
+        gridColumn: 3,
+      }}
+    >
+      <div>식전 공연</div>
+      <div>(코맨스 밴드)</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgPink)}
@@ -48,15 +59,26 @@ const Day1 = () => (
       <div>예비창업자 경진대회</div>
     </div>
     <div
+      className={clsx(styles.daySchedule, styles.bgBlue2)}
+      style={{
+        animationDelay: "0.1s",
+        gridRow: "11 / 13",
+        gridColumn: 3,
+      }}
+    >
+      <div>창업 교육</div>
+      <div>(MBC PD)</div>
+    </div>
+    <div
       className={clsx(styles.daySchedule, styles.bgPurple)}
-      style={{ animationDelay: "0.19s", gridRow: "4", gridColumn: 4 }}
+      style={{ animationDelay: "0.19s", gridRow: "5", gridColumn: 4 }}
     >
       <div>버스킹 공연</div>
       <div>(아티스트 커니)</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgPurple)}
-      style={{ animationDelay: "0.22s", gridRow: "7", gridColumn: 4 }}
+      style={{ animationDelay: "0.22s", gridRow: "8", gridColumn: 4 }}
     >
       <div>버스킹 공연</div>
       <div>(어쿠스틱 정인용)</div>
@@ -96,13 +118,20 @@ const Day2 = () => (
   <>
     <div
       className={clsx(styles.daySchedule, styles.bgGray)}
-      style={{ gridRow: "2 / 10", gridColumn: 2 }}
+      style={{ gridRow: "2 / 9", gridColumn: 2 }}
     >
       <div>스타트업 전시관</div>
       <div className={styles.divide} />
       <div>창업 컨설팅</div>
       <div className={styles.divide} />
       <div>기업투자 상담</div>
+    </div>
+    <div
+      className={clsx(styles.daySchedule, styles.bgYellow2)}
+      style={{ animationDelay: "0.1s", gridRow: "2", gridColumn: 3 }}
+    >
+      <div>스마트팜</div>
+      <div>기업 전시회</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgYellow)}
@@ -167,37 +196,23 @@ const Schedule = () => {
             <div className={styles.titleSmall}>schedule</div>
           </div>
           <div className={styles.buttons}>
-            <div
-              onClick={() => display(1)}
-              className={displayed === 1 ? styles.button1 : ""}
-            >
+            <div onClick={() => display(1)} className={displayed === 1 ? styles.button1 : ""}>
               <div className={styles.buttonText}>11.18. Thu</div>
               <div className={styles.buttonIcon}>
                 {displayed === 1 ? (
                   <Image src="/images/icon-down.png" width="32" height="32" />
                 ) : (
-                  <Image
-                    src="/images/icon-down-default.png"
-                    width="32"
-                    height="32"
-                  />
+                  <Image src="/images/icon-down-default.png" width="32" height="32" />
                 )}
               </div>
             </div>
-            <div
-              onClick={() => display(2)}
-              className={displayed === 2 ? styles.button2 : ""}
-            >
+            <div onClick={() => display(2)} className={displayed === 2 ? styles.button2 : ""}>
               <div className={styles.buttonText}>11.19 Fri</div>
               <div className={styles.buttonIcon}>
                 {displayed === 2 ? (
                   <Image src="/images/icon-down.png" width="32" height="32" />
                 ) : (
-                  <Image
-                    src="/images/icon-down-default.png"
-                    width="32"
-                    height="32"
-                  />
+                  <Image src="/images/icon-down-default.png" width="32" height="32" />
                 )}
               </div>
             </div>
@@ -234,6 +249,12 @@ const Schedule = () => {
               </div>
               <div className={styles.itemTime} style={{ gridRow: "10" }}>
                 18:00 - 19:00
+              </div>
+              <div className={styles.itemTime} style={{ gridRow: "11" }}>
+                19:00 - 20:00
+              </div>
+              <div className={styles.itemTime} style={{ gridRow: "12" }}>
+                20:00 - 21:00
               </div>
               {displayed === 1 ? <Day1 /> : <Day2 />}
             </div>

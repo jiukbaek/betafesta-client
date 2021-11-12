@@ -187,10 +187,6 @@ export const Section2 = () => (
             2022 수요맞춤형 지원사업 수혜기업 선정 안동과학대학교 (최대 1000만원 지원)
           </div>
           <div>안동과학대학교 총장</div>
-          <div>장려상</div>
-          <div></div>
-          <div>부상</div>
-          <div style={{ gridColumn: "span 3" }}></div>
         </div>
         <Note>적격자가 없을 경우 선정하지 않을 수 있음</Note>
       </div>
@@ -208,9 +204,6 @@ export const Section2 = () => (
         <div>가톨릭상지대학교 총장</div>
         <div style={{ gridRow: "span 2" }}>200만원</div>
         <div>안동과학대학교 총장</div>
-        <div>장려상</div>
-        <div></div>
-        <div>부상</div>
         <div className={styles.tableHeader} style={{ gridColumn: "span 3" }}>
           창업기업 아이디어톤
         </div>

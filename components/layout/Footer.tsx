@@ -14,14 +14,33 @@ const Footer = () => (
       </div>
       <div className={styles.center}>
         <div className={styles.sns}>
-          <div onClick={() => openLink("https://www.facebook.com/profile.php?id=100073682116389")}>
+          <div
+            onClick={() =>
+              openLink(
+                "https://www.facebook.com/profile.php?id=100073682116389"
+              )
+            }
+          >
             <Image src="/images/icon-fb.png" width="70" height="70" />
           </div>
-          <div onClick={() => openLink("https://www.instagram.com/beta_festival_/")}>
+          <div
+            onClick={() =>
+              openLink("https://www.instagram.com/beta_festival_/")
+            }
+          >
             <Image src="/images/icon-insta.png" width="70" height="70" />
           </div>
-          <div onClick={() => openLink("https://www.youtube.com/channel/UCX7IRsH1eGOruoGZhY-kebw")}>
+          <div
+            onClick={() =>
+              openLink(
+                "https://www.youtube.com/channel/UCX7IRsH1eGOruoGZhY-kebw"
+              )
+            }
+          >
             <Image src="/images/icon-youtube.png" width="70" height="70" />
+          </div>
+          <div onClick={() => openLink("http://pf.kakao.com/_xgxnxjEb")}>
+            <Image src="/images/icon-kakao.png" width="70" height="70" />
           </div>
         </div>
         <div className={styles.info}>
@@ -30,7 +49,10 @@ const Footer = () => (
             전화번호 : <a href="tel:054-820-6368">054-820-6368</a>~9
           </div>
           <div>
-            이메일: <a href="mailto:andongbetafesta@gmail.com">andongbetafesta@gmail.com</a>
+            이메일:{" "}
+            <a href="mailto:andongbetafesta@gmail.com">
+              andongbetafesta@gmail.com
+            </a>
           </div>
           <div>COPYRIGHT © 2021 안동형 일자리 BETA페스티벌</div>
         </div>

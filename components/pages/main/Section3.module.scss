@@ -23,15 +23,27 @@
 
 .schedules {
   display: flex;
-
-  & > div {
-    margin: 0 10px;
-    @include mobile {
-      margin: 0 0 10px 0;
-    }
-  }
+  text-align: center;
 
   @include mobile {
     flex-direction: column;
+  }
+}
+
+.schedule {
+  margin: 0 10px;
+
+  @include mobile {
+    margin: 0 0 10px 0;
+  }
+
+  &Date {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 5px;
+
+    @include mobile {
+      font-size: 20px;
+    }
   }
 }

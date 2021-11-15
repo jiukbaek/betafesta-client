@@ -124,7 +124,7 @@ export const Section2 = () => (
       </div>
       <div>
         <Title>신청방법</Title>
-        <SubTitle>신청기간: 2021.10.29.(금) ~ 11.16.(금), 자정까지</SubTitle>
+        <SubTitle>신청기간: 2021.10.29.(금) ~ 11.16.(화), 자정까지</SubTitle>
         <SubTitle>
           신청방법: ‘2021 B ETA 페스티벌 아이디어톤 경진대회
           (www.betafesta.kr)’에 접속하여 ‘2021 온라인 참가 신청’ 페이지를 통해

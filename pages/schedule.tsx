@@ -145,7 +145,7 @@ const Day2 = () => (
       style={{ animationDelay: "0.13s", gridRow: "7", gridColumn: 3 }}
     >
       <div>
-        창업특강 ① - <span className={styles.name}>조용민</span>
+        창업특강 ② - <span className={styles.name}>조용민</span>
       </div>
     </div>
     <div
@@ -196,23 +196,37 @@ const Schedule = () => {
             <div className={styles.titleSmall}>schedule</div>
           </div>
           <div className={styles.buttons}>
-            <div onClick={() => display(1)} className={displayed === 1 ? styles.button1 : ""}>
+            <div
+              onClick={() => display(1)}
+              className={displayed === 1 ? styles.button1 : ""}
+            >
               <div className={styles.buttonText}>11.18. Thu</div>
               <div className={styles.buttonIcon}>
                 {displayed === 1 ? (
                   <Image src="/images/icon-down.png" width="32" height="32" />
                 ) : (
-                  <Image src="/images/icon-down-default.png" width="32" height="32" />
+                  <Image
+                    src="/images/icon-down-default.png"
+                    width="32"
+                    height="32"
+                  />
                 )}
               </div>
             </div>
-            <div onClick={() => display(2)} className={displayed === 2 ? styles.button2 : ""}>
+            <div
+              onClick={() => display(2)}
+              className={displayed === 2 ? styles.button2 : ""}
+            >
               <div className={styles.buttonText}>11.19 Fri</div>
               <div className={styles.buttonIcon}>
                 {displayed === 2 ? (
                   <Image src="/images/icon-down.png" width="32" height="32" />
                 ) : (
-                  <Image src="/images/icon-down-default.png" width="32" height="32" />
+                  <Image
+                    src="/images/icon-down-default.png"
+                    width="32"
+                    height="32"
+                  />
                 )}
               </div>
             </div>

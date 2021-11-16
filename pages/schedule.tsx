@@ -149,7 +149,7 @@ const Day2 = () => (
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgYellow)}
-      style={{ animationDelay: "0.1s", gridRow: "4/7", gridColumn: 3 }}
+      style={{ animationDelay: "0.1s", gridRow: "3/7", gridColumn: 3 }}
     >
       <div>아이디어톤 ②</div>
       <div>창업기업 경진대회</div>
@@ -208,14 +208,14 @@ const Day2 = () => (
       style={{ animationDelay: "0.25s", gridRow: "2", gridColumn: 5 }}
     >
       <div>스타트업 라이브 커머스</div>
-      <div>(리더스팜-후지불고기)</div>
+      <div>(정진푸드몰-목애(액상차))</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgGreen)}
       style={{ animationDelay: "0.28s", gridRow: "5", gridColumn: 5 }}
     >
       <div>스타트업 라이브 커머스</div>
-      <div>(리더스팜-후지불고기)</div>
+      <div>(세중투어몰-관광상품)</div>
     </div>
   </>
 );

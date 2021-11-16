@@ -149,7 +149,7 @@ const Day2 = () => (
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgYellow)}
-      style={{ animationDelay: "0.1s", gridRow: "3/7", gridColumn: 3 }}
+      style={{ animationDelay: "0.1s", gridRow: "4/7", gridColumn: 3 }}
     >
       <div>아이디어톤 ②</div>
       <div>창업기업 경진대회</div>

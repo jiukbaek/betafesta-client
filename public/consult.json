@@ -12,18 +12,17 @@
       "link": "https://forms.gle/8WERqrPokUGfcJpW7",
       "logo": "gepa.png"
     },
-
+    {
+      "company": "이음교육",
+      "field": "지식 서비스, 겨육 / 특허분야 \n(제조업 특허 제외)",
+      "link": "https://forms.gle/RvNwwa4jA1Axe5zEA",
+      "logo": "beta.png"
+    },
     {
       "company": "공인회계사",
       "field": "회계",
       "link": "https://forms.gle/E5oHYQtHJWzQx2MYA",
       "logo": "kicpa.png"
     }
-  ],
-  "temp": {
-    "company": "이음교육",
-    "field": "지식 서비스, 겨육 / 특허분야 \n(제조업 특허 제외)",
-    "link": "https://forms.gle/RvNwwa4jA1Axe5zEA",
-    "logo": "/images/logo-color.png"
-  }
+  ]
 }

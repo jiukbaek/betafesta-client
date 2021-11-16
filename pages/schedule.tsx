@@ -67,7 +67,14 @@ const Day1 = () => (
       }}
     >
       <div>창업 교육</div>
-      <div>(MBC PD)</div>
+      <div>(MBC 최별 PD)</div>
+    </div>
+    <div
+      className={clsx(styles.daySchedule, styles.bgOrange)}
+      style={{ animationDelay: "0.19s", gridRow: "2 / 5", gridColumn: 4 }}
+    >
+      <div>베타 놀이터</div>
+      <div>(카페, 휴식공간)</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgPurple)}
@@ -75,6 +82,13 @@ const Day1 = () => (
     >
       <div>버스킹 공연</div>
       <div>(아티스트 커니)</div>
+    </div>
+    <div
+      className={clsx(styles.daySchedule, styles.bgOrange)}
+      style={{ animationDelay: "0.19s", gridRow: "6 / 8", gridColumn: 2 / 4 }}
+    >
+      <div>베타 놀이터</div>
+      <div>(카페, 휴식공간)</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgPurple)}
@@ -94,22 +108,22 @@ const Day1 = () => (
       className={clsx(styles.daySchedule, styles.bgGreen)}
       style={{ animationDelay: "0.28s", gridRow: "3", gridColumn: 5 }}
     >
-      <div>스타트업</div>
-      <div>라이브 커머스</div>
+      <div>스타트업 라이브 커머스</div>
+      <div>(연화단지-두부,순두부)</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgGreen)}
       style={{ animationDelay: "0.31s", gridRow: "6", gridColumn: 5 }}
     >
-      <div>스타트업</div>
-      <div>라이브 커머스</div>
+      <div>스타트업 라이브 커머스</div>
+      <div>(안동종가문화원-생강청)</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgGreen)}
       style={{ animationDelay: "0.34s", gridRow: "9", gridColumn: 5 }}
     >
-      <div>스타트업</div>
-      <div>라이브 커머스</div>
+      <div>스타트업 라이브 커머스</div>
+      <div>(리더스팜-후지불고기)</div>
     </div>
   </>
 );
@@ -131,7 +145,7 @@ const Day2 = () => (
       style={{ animationDelay: "0.1s", gridRow: "2", gridColumn: 3 }}
     >
       <div>스마트팜</div>
-      <div>기업 전시회</div>
+      <div>기업 네트워킹</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgYellow)}
@@ -155,11 +169,25 @@ const Day2 = () => (
       <div>시상 및 폐막식</div>
     </div>
     <div
+      className={clsx(styles.daySchedule, styles.bgOrange)}
+      style={{ animationDelay: "0.19s", gridRow: "2 / 4", gridColumn: 2 / 4 }}
+    >
+      <div>베타 놀이터</div>
+      <div>(카페, 휴식공간)</div>
+    </div>
+    <div
       className={clsx(styles.daySchedule, styles.bgPurple)}
       style={{ animationDelay: "0.19s", gridRow: "4", gridColumn: 4 }}
     >
       <div>버스킹 공연</div>
       <div>(보컬리스트 이의정)</div>
+    </div>
+    <div
+      className={clsx(styles.daySchedule, styles.bgOrange)}
+      style={{ animationDelay: "0.19s", gridRow: "5", gridColumn: 2 / 4 }}
+    >
+      <div>베타 놀이터</div>
+      <div>(카페, 휴식공간)</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgPurple)}
@@ -169,18 +197,25 @@ const Day2 = () => (
       <div>(랩퍼 Rearkraz)</div>
     </div>
     <div
+      className={clsx(styles.daySchedule, styles.bgOrange)}
+      style={{ animationDelay: "0.19s", gridRow: "7 / 9", gridColumn: 2 / 4 }}
+    >
+      <div>베타 놀이터</div>
+      <div>(카페, 휴식공간)</div>
+    </div>
+    <div
       className={clsx(styles.daySchedule, styles.bgGreen)}
       style={{ animationDelay: "0.25s", gridRow: "2", gridColumn: 5 }}
     >
-      <div>스타트업</div>
-      <div>라이브 커머스</div>
+      <div>스타트업 라이브 커머스</div>
+      <div>(리더스팜-후지불고기)</div>
     </div>
     <div
       className={clsx(styles.daySchedule, styles.bgGreen)}
       style={{ animationDelay: "0.28s", gridRow: "5", gridColumn: 5 }}
     >
-      <div>스타트업</div>
-      <div>라이브 커머스</div>
+      <div>스타트업 라이브 커머스</div>
+      <div>(리더스팜-후지불고기)</div>
     </div>
   </>
 );
@@ -196,37 +231,23 @@ const Schedule = () => {
             <div className={styles.titleSmall}>schedule</div>
           </div>
           <div className={styles.buttons}>
-            <div
-              onClick={() => display(1)}
-              className={displayed === 1 ? styles.button1 : ""}
-            >
+            <div onClick={() => display(1)} className={displayed === 1 ? styles.button1 : ""}>
               <div className={styles.buttonText}>11.18. Thu</div>
               <div className={styles.buttonIcon}>
                 {displayed === 1 ? (
                   <Image src="/images/icon-down.png" width="32" height="32" />
                 ) : (
-                  <Image
-                    src="/images/icon-down-default.png"
-                    width="32"
-                    height="32"
-                  />
+                  <Image src="/images/icon-down-default.png" width="32" height="32" />
                 )}
               </div>
             </div>
-            <div
-              onClick={() => display(2)}
-              className={displayed === 2 ? styles.button2 : ""}
-            >
+            <div onClick={() => display(2)} className={displayed === 2 ? styles.button2 : ""}>
               <div className={styles.buttonText}>11.19 Fri</div>
               <div className={styles.buttonIcon}>
                 {displayed === 2 ? (
                   <Image src="/images/icon-down.png" width="32" height="32" />
                 ) : (
-                  <Image
-                    src="/images/icon-down-default.png"
-                    width="32"
-                    height="32"
-                  />
+                  <Image src="/images/icon-down-default.png" width="32" height="32" />
                 )}
               </div>
             </div>

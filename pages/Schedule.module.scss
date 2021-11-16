@@ -173,7 +173,7 @@
   opacity: 0;
   transform: translateY(-40px);
   animation: show 0.5s forwards;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: bold;
   padding: 5px;
   text-align: center;
@@ -198,7 +198,7 @@
 
 .bigText {
   font-family: NanumEB;
-  font-size: 30px;
+  font-size: 24px;
 
   @include mobile {
     font-size: 15px;
@@ -236,7 +236,7 @@
     background: #b8e9ff;
   }
   &Blue2 {
-    background: #99adff;
+    background: #b3c5ff;
   }
   &Purple {
     background: #ebccff;
@@ -249,6 +249,9 @@
   }
   &Green {
     background: #d6ffd4;
+  }
+  &Orange {
+    background: #ffcebd;
   }
 }
 

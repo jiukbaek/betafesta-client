@@ -118,18 +118,17 @@
       position: absolute;
       bottom: 15px;
       right: 80px;
-      width: 300px;
+      width: 220px;
       height: 200px;
       background-repeat: no-repeat;
-      background-image: url("/images/image-roadsign.png"),
-        url("/images/image-bus.png");
-      background-size: 75px, 200px;
+      background-image: url("/images/image-roadsign.png"), url("/images/image-bus.png");
+      background-size: 50px, 150px;
       background-position: left bottom, right bottom;
 
       @include mobile {
         bottom: 7px;
         right: 20px;
-        width: 120px;
+        width: 110px;
         height: 80px;
         background-size: 25px, 80px;
       }
@@ -163,19 +162,16 @@
 }
 
 .course {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 
   @include mobile {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
   }
 
   &Image {
-    @include mobile {
-      width: 43%;
-      font-size: 0;
-    }
+    font-size: 0;
   }
 
   &Icon {
@@ -338,6 +334,7 @@
 
     @include mobile {
       grid-column: 2 span;
+      text-align: left !important;
     }
   }
 }

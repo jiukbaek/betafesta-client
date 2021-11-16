@@ -121,16 +121,8 @@ const Location = () => {
                 <div className={styles.shuttleContent}>11월 18일 ~ 19일 (2일간)</div>
               </div>
               <div className={styles.shuttleInfo}>
-                <div className={styles.shuttleTitle}>· 운행시간</div>
-                <div className={styles.shuttleContent}>09:00 ~ 19:00</div>
-              </div>
-              <div className={styles.shuttleInfo}>
                 <div className={styles.shuttleTitle}>· 운행대수</div>
                 <div className={styles.shuttleContent}>1시간당 1대 운행</div>
-              </div>
-              <div className={styles.shuttleInfo}>
-                <div className={styles.shuttleTitle}>· 운행구간</div>
-                <div className={styles.shuttleContent}>모디 684 → 용상사거리 → 안동그랜드호텔</div>
               </div>
             </div>
           </div>

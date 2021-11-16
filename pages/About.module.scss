@@ -123,12 +123,11 @@
 .logo {
   width: 100%;
   display: flex;
-  padding: 35px 40px 20px;
-  background-color: #e6e6e6;
+  padding: 35px 0 20px;
 
   @include mobile {
     flex-direction: column;
-    padding: 20px 10px;
+    padding: 20px 0px;
   }
 
   &Left {
@@ -147,7 +146,7 @@
   &Item {
     display: flex;
     height: 32px;
-    margin: 0 20px 20px 0;
+    margin: 0 10px 15px 0;
   }
 
   &Title {
@@ -167,7 +166,7 @@
 
   & > div {
     height: 35px;
-    margin: 0 20px 20px 0;
+    margin: 0 10px 15px 0;
   }
 
   & .sk {

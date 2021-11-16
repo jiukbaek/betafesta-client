@@ -6,6 +6,7 @@ import styles from "./Consult.module.scss";
 import Button from "components/Button";
 import { useEffect, useState } from "react";
 import useMobile from "util/useMobile";
+import { openLink } from "util/base";
 
 const Consult = () => {
   const [active, setActive] = useState(null);
@@ -39,20 +40,18 @@ const Consult = () => {
                       </div>
                     </div>
                   ))
-              : data.consults.map(({ company, logo }) => (
+              : data.consults.map(({ company, logo, field, link }) => (
                   <div className={styles.item} key={company}>
                     <div className={styles.itemArea} />
                     <div className={styles.itemImage}>
-                      <Image src={logo} width="500" height="500" />
+                      <Image src={`/images/consult/${logo}`} width="500" height="500" />
                     </div>
                     <div className={styles.itemEvent} />
                     <div className={styles.itemEventMobile} />
                     <div className={styles.itemActive}>
                       <div className={styles.itemCompany}>{company}</div>
-                      <Button
-                        className={styles.itemButton}
-                        onClick={console.log}
-                      >
+                      <div className={styles.itemField}>{field}</div>
+                      <Button className={styles.itemButton} onClick={() => openLink(link)}>
                         예약하기
                       </Button>
                     </div>

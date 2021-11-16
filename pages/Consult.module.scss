@@ -49,6 +49,11 @@
     position: absolute;
     top: 0;
     left: 0;
+    padding: 20px;
+
+    @include mobile {
+      padding: 10px;
+    }
   }
 
   &Active {
@@ -71,9 +76,25 @@
     font-weight: bold;
     color: white;
     font-size: 28px;
+    text-align: center;
 
     @include mobile {
       font-size: 18px;
+    }
+  }
+
+  &Field {
+    margin-top: 15px;
+    font-family: Nanum;
+    color: white;
+    font-size: 18px;
+    white-space: pre-line;
+    text-align: center;
+    letter-spacing: -1px;
+
+    @include mobile {
+      margin-top: 8px;
+      font-size: 13px;
     }
   }
 

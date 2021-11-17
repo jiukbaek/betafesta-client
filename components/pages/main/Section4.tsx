@@ -25,7 +25,9 @@ export const Section4 = () => {
           >
             유튜브 바로가기
           </Button>
-          <Button onClick={ready}>라이브 커머스 바로가기</Button>
+          <Button onClick={() => openLink("https://linktr.ee/BETA_live")}>
+            라이브 커머스 바로가기
+          </Button>
         </div>
       </div>
     </div>

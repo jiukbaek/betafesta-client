@@ -4,8 +4,10 @@ import { useEffect } from "react";
 
 import Layout from "components/layout/Layout";
 import Image from "components/Image";
+import { ShuttleDesktop, ShuttleMobile } from "components/pages/location";
 
 import styles from "./Location.module.scss";
+import useMobile from "util/useMobile";
 
 declare const naver: any;
 
@@ -29,11 +31,19 @@ const TimeTable: React.FC<TimeTableProp> = ({ type }) => (
     <div>1차 도착</div>
     <div className={styles[`timeTable${type}Alive`]}>
       <div>
-        <div className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}>1</div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          1
+        </div>
         <div>10:20</div>
       </div>
       <div>
-        <div className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}>2</div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          2
+        </div>
         <div>11:00</div>
       </div>
     </div>
@@ -48,23 +58,39 @@ const TimeTable: React.FC<TimeTableProp> = ({ type }) => (
     <div>2차 도착</div>
     <div className={styles[`timeTable${type}Alive`]}>
       <div>
-        <div className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}>1</div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          1
+        </div>
         12:30
       </div>
       <div>
-        <div className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}>2</div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          2
+        </div>
         13:00
       </div>
     </div>
     <div className={styles.timeTableCourse}>
       <div>
         <div>노선</div>
-        <div className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}>1</div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          1
+        </div>
         <div>안동과학대학교 ▶ 가톨릭상지대학교 ▶ 모디684 ▶ 안동 그랜드호텔</div>
       </div>
       <div>
         <div>노선</div>
-        <div className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}>2</div>
+        <div
+          className={clsx(styles[`timeTableNum`], styles[`timeTable${type}BG`])}
+        >
+          2
+        </div>
         안동대학교 ▶ 안동 그랜드호텔
       </div>
     </div>
@@ -77,6 +103,8 @@ const TimeTable: React.FC<TimeTableProp> = ({ type }) => (
 );
 
 const Location = () => {
+  const isMobile = useMobile();
+
   useEffect(() => {
     const position = new naver.maps.LatLng(36.5672341, 128.7804888);
     const map = new naver.maps.Map("map", {
@@ -110,44 +138,19 @@ const Location = () => {
           <div className={styles.section2}>
             <div className={styles.sectionTitle}>
               <div className={styles.sectionTitleIcon} />
-              무료 셔틀버스
+              <div>무료 셔틀버스</div>
+              <div className={styles.sectionTitleSmall}>출차 노선 | </div>
+              <div className={styles.sectionTitleMiddle}>
+                안동그랜드호텔 ▶ 국립안동대학교 ▶ 모디684 ▶ 가톨릭상지대학교 ▶
+                안동과학대학교
+              </div>
             </div>
             <div className={styles.shuttleBG}>
               <div className={styles.shuttleBGObj} />
             </div>
             <div className={styles.shuttle}>
-              <div className={styles.shuttleInfo}>
-                <div className={styles.shuttleTitle}>· 운행기간</div>
-                <div className={styles.shuttleContent}>11월 18일 ~ 19일 (2일간)</div>
-              </div>
-              <div className={styles.shuttleInfo}>
-                <div className={styles.shuttleTitle}>· 운행대수</div>
-                <div className={styles.shuttleContent}>1시간당 1대 운행</div>
-              </div>
+              {isMobile ? <ShuttleMobile /> : <ShuttleDesktop />}
             </div>
-          </div>
-          <div className={styles.section}>
-            <div className={styles.course}>
-              <div className={styles.courseImage}>
-                <Image src="/images/image-location1.png" width="708" height="653" />
-              </div>
-              <div className={styles.courseImage}>
-                <Image src="/images/image-location2.png" width="708" height="653" />
-              </div>
-              <div className={styles.courseImage}>
-                <Image src="/images/image-location3.png" width="708" height="653" />
-              </div>
-              <div className={styles.courseImage}>
-                <Image src="/images/image-location4.png" width="708" height="653" />
-              </div>
-              <div className={styles.courseImage}>
-                <Image src="/images/image-location5.png" width="708" height="653" />
-              </div>
-            </div>
-          </div>
-          <div>
-            <TimeTable type={1} />
-            <TimeTable type={2} />
           </div>
         </div>
       </div>

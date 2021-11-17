@@ -1,0 +1,189 @@
+.course {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  grid-auto-rows: auto;
+  gap: 10px;
+
+  &Row1 {
+    display: grid;
+    align-items: center;
+    gap: 15px;
+    grid-template-columns: 2fr 30px 2fr 30px 2fr 30px 2fr;
+  }
+
+  & > div:nth-child(even) {
+    margin-left: 20px;
+  }
+
+  & > div:nth-child(1),
+  & > div:nth-child(2) {
+    margin-bottom: 20px;
+  }
+
+  &Item {
+    font-size: 0;
+  }
+
+  margin-bottom: 60px;
+}
+
+.next {
+  width: 30px;
+  display: flex;
+}
+
+.title {
+  font-size: 28px !important;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+
+  &1 {
+    @extend .title;
+    background-color: #ff537f;
+  }
+
+  &2 {
+    @extend .title;
+    background-color: #6e50d4;
+  }
+}
+
+.time {
+  &Table {
+    font-size: 20px;
+    display: grid;
+    font-weight: bold;
+    text-align: center;
+    gap: 15px;
+    grid-template-columns: 2fr 30px 2fr 30px 2fr 30px 2fr;
+  }
+
+  &Head {
+    font-family: NanumEB;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #e6e6e6;
+  }
+}
+
+.divide {
+  display: flex;
+  justify-content: center;
+
+  & > div {
+    width: 2px;
+    background-color: #e6e6e6;
+  }
+}
+
+.m {
+  &Container {
+    & > div {
+      margin-bottom: 40px;
+    }
+  }
+
+  &Course {
+    padding: 0 15px;
+    display: grid;
+    row-gap: 10px;
+
+    & > div {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      place-items: center;
+    }
+
+    &Line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(50% + 1.5px);
+      border-bottom: dashed 3px #b0b0b0;
+    }
+
+    &Head {
+      align-self: flex-end;
+      text-align: center;
+      font-family: NanumEB;
+      place-items: flex-end center !important;
+      color: #ff537f;
+    }
+  }
+
+  &Title {
+    text-align: center;
+    padding: 5px 0;
+    color: white;
+    margin-bottom: 30px;
+  }
+
+  &Next {
+    grid-column: span 3;
+    width: 20px;
+  }
+
+  &CourseImage {
+    font-size: 0;
+    width: 50%;
+  }
+
+  &CourseTime {
+    width: 100%;
+    position: relative;
+    border-radius: 100px;
+    border: solid 1px #515151;
+    background: white;
+
+    &Area {
+      padding-top: 100%;
+    }
+
+    &Text {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &Head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    font-size: 10px;
+    gap: 6px 3px;
+
+    &Middle {
+      font-family: NanumEB;
+    }
+
+    &Date {
+      font-size: 13px;
+    }
+
+    &Time {
+      display: flex;
+
+      & > div {
+        padding: 1px 5px;
+        border-radius: 10px;
+      }
+
+      & > div:nth-child(odd) {
+        background-color: #e6e6e6;
+      }
+    }
+  }
+}

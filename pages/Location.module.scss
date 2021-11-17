@@ -44,6 +44,13 @@
   padding: 15px 0;
   margin: 15px 0;
 
+  @include mobile {
+    flex-wrap: wrap;
+    font-size: 18px;
+    padding: 8px 0;
+    margin: 8px 0;
+  }
+
   &Icon {
     width: 20px;
     height: 20px;
@@ -57,11 +64,23 @@
     }
   }
 
-  @include mobile {
-    flex-wrap: wrap;
+  &Small {
+    margin: 0 5px 0 15px;
     font-size: 18px;
-    padding: 8px 0;
-    margin: 8px 0;
+    font-weight: normal;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &Middle {
+    font-family: NanumEB;
+    font-size: 18px;
+
+    @include mobile {
+      display: none;
+    }
   }
 }
 
@@ -90,8 +109,8 @@
     margin-bottom: 100px;
 
     @include mobile {
-      padding-bottom: 60px;
-      margin-bottom: 40px;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
     }
   }
 }
@@ -111,7 +130,7 @@
     background-position: bottom;
 
     @include mobile {
-      background-size: 100% 20px;
+      display: none;
     }
 
     &Obj {
@@ -121,17 +140,10 @@
       width: 220px;
       height: 200px;
       background-repeat: no-repeat;
-      background-image: url("/images/image-roadsign.png"), url("/images/image-bus.png");
+      background-image: url("/images/image-roadsign.png"),
+        url("/images/image-bus.png");
       background-size: 50px, 150px;
       background-position: left bottom, right bottom;
-
-      @include mobile {
-        bottom: 7px;
-        right: 20px;
-        width: 110px;
-        height: 80px;
-        background-size: 25px, 80px;
-      }
     }
 
     z-index: -1;

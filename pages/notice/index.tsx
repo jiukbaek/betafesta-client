@@ -15,8 +15,6 @@ const Notice = () => {
     axios.get(`${apiHost}/board`).then(({ data }) => setList(data));
   }, []);
 
-  console.log(list);
-
   return (
     <Layout>
       <div className={styles.container}>
@@ -29,13 +27,13 @@ const Notice = () => {
               <div>날짜</div>
             </div>
             {list.length > 0 ? (
-              list.map((item: any) => (
+              list.map((item: any, index: number) => (
                 <div
                   className={styles.itemRow}
                   key={item.id}
                   onClick={() => router.push(`${router.asPath}/${item.id}`)}
                 >
-                  <div>{item.id}</div>
+                  <div>{index + 1}</div>
                   <div>{item.title}</div>
                   <div>{formatDate(item.createdAt)}</div>
                 </div>

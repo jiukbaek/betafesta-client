@@ -33,7 +33,7 @@ const Notice = () => {
                   key={item.id}
                   onClick={() => router.push(`${router.asPath}/${item.id}`)}
                 >
-                  <div>{index + 1}</div>
+                  <div>{list.length - index}</div>
                   <div>{item.title}</div>
                   <div>{formatDate(item.createdAt)}</div>
                 </div>

@@ -11,8 +11,8 @@ const Mobile = () => (
           안동그랜드호텔 ▶ 국립안동대학교 ▶ 모디684 ▶ 가톨릭상지대학교 ▶
           안동과학대학교
         </div>
-        <div className={styles.mHeadDate}>
-          18일 <span style={{ color: "#ff537f" }}>▶</span>
+        <div className={styles.mHeadDate} style={{ color: "#ff537f" }}>
+          18일 ▶
         </div>
         <div className={styles.mHeadTime}>
           <div>1차 출차</div>
@@ -20,8 +20,8 @@ const Mobile = () => (
           <div>2차 출차</div>
           <div>18:30</div>
         </div>
-        <div className={styles.mHeadDate}>
-          19일 <span style={{ color: "#6e50d4" }}>▶</span>
+        <div className={styles.mHeadDate} style={{ color: "#6e50d4" }}>
+          19일 ▶
         </div>
         <div className={styles.mHeadTime}>
           <div>1차 출차</div>

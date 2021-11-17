@@ -139,11 +139,6 @@ const Location = () => {
             <div className={styles.sectionTitle}>
               <div className={styles.sectionTitleIcon} />
               <div>무료 셔틀버스</div>
-              <div className={styles.sectionTitleSmall}>출차 노선 | </div>
-              <div className={styles.sectionTitleMiddle}>
-                안동그랜드호텔 ▶ 국립안동대학교 ▶ 모디684 ▶ 가톨릭상지대학교 ▶
-                안동과학대학교
-              </div>
             </div>
             <div className={styles.shuttleBG}>
               <div className={styles.shuttleBGObj} />

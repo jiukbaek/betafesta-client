@@ -92,6 +92,29 @@ const Desktop = () => (
         <div style={{ color: "#6e50d4" }}>13:00</div>
       </div>
     </div>
+    <div className={styles.startTime}>
+      <div>
+        <div style={{ color: "#ff537f" }}>18일 ▶</div>
+        <div>1차출차</div>
+        <div>15:30</div>
+        <div>2차출차</div>
+        <div>18:30</div>
+      </div>
+      <div>
+        <div style={{ color: "#6e50d4" }}>19일 ▶</div>
+        <div>1차출차</div>
+        <div>14:30</div>
+        <div>2차출차</div>
+        <div>17:30</div>
+      </div>
+    </div>
+    <div className={styles.startCourse}>
+      <div>출차 노선 |</div>
+      <div>
+        안동그랜드호텔 ▶ 국립안동대학교 ▶ 모디684 ▶ 가톨릭상지대학교 ▶
+        안동과학대학교
+      </div>
+    </div>
   </div>
 );
 

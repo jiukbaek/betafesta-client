@@ -63,25 +63,6 @@
       margin-right: 8px;
     }
   }
-
-  &Small {
-    margin: 0 5px 0 15px;
-    font-size: 18px;
-    font-weight: normal;
-
-    @include mobile {
-      display: none;
-    }
-  }
-
-  &Middle {
-    font-family: NanumEB;
-    font-size: 18px;
-
-    @include mobile {
-      display: none;
-    }
-  }
 }
 
 .address {

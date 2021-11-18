@@ -13,16 +13,14 @@ export const Section4 = () => {
             style={{ position: "absolute", top: 0, left: 0 }}
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/Lwy5az10SPU"
+            src="https://www.youtube.com/embed/59eEyzb94ns"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>
         <div className={styles.buttons}>
-          <Button
-            onClick={() => openLink("https://www.youtube.com/c/Andongcity")}
-          >
+          <Button onClick={() => openLink("https://www.youtube.com/c/Andongcity")}>
             유튜브 바로가기
           </Button>
           <Button onClick={() => openLink("https://linktr.ee/BETA_live")}>
